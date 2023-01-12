@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import HelloWorld from "./components/HelloWorld.vue";
 import TheWelcome from "./components/TheWelcome.vue";
+import test from "./components/test";
 console.log("12");
 </script>
 
@@ -19,6 +20,7 @@ console.log("12");
 
   <main>
     <TheWelcome />
+    <test></test>
   </main>
 </template>
 
