@@ -1,9 +1,10 @@
 <script setup lang="ts">
-console.log("12");
+import { Button } from "@/components/button/index";
 </script>
 
 <template>
   <main>hello word</main>
+  <Button></Button>
 </template>
 
 <style scoped>
