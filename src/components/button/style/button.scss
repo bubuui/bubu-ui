@@ -1,12 +1,33 @@
-@use "./button-config.scss";
-@import "./button-base.scss";
+@use "sass:map";
+@use "../../../styles/var" as *;
+@import "../../../styles/variables";
 
-.b-btn {
+@import "./button-base.scss";
+@import "./button-mixins.scss";
+
+.bu-btn {
+  // 基础样式
   @include button-base;
-  // 导入type相关的样式
-  @include button-variant(button-config.$type);
-  // 导入size相关的样式
-  @include button-variant(button-config.$size);
-  // 导入hover等伪类
-  @include button-variant(button-config.$pseudo, true);
+  @include button-size(
+    $btn-padding-y,
+    $btn-padding-x,
+    $btn-font-size,
+    map.get($border-radius, "base")
+  );
+}
+
+.bu-btn--primary {
+  @include button-style($color-primary, $color-primary, $color-white);
+}
+
+.bu-btn--success {
+  @include button-style($color-success, $color-success, $color-white);
+}
+
+.bu-btn--info {
+  @include button-style($color-info, $color-info, $color-white);
+}
+
+.bu-btn--error {
+  @include button-style($color-error, $color-error, $color-white);
 }

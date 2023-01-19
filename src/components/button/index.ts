@@ -1,11 +1,11 @@
 import type { App } from "vue";
-import Button from "./src/button";
+import BuButton from "./src/button";
 // 具名导出
-export { Button };
+export { BuButton };
 
 // 导出插件
 export default {
   install(app: App) {
-    app.component("b-button", Button);
+    app.component("bu-button", BuButton);
   },
 };

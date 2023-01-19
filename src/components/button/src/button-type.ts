@@ -4,7 +4,6 @@ export type IButtonType =
   | "primary"
   | "success"
   | "warning"
-  | "default"
   | "error"
   | "info"
   | "link";
@@ -14,7 +13,7 @@ export type IButtonShape = "circle" | "default";
 export const buttonProps = {
   type: {
     type: String as PropType<IButtonType>,
-    default: "default",
+    default: "",
   },
   size: {
     type: String as PropType<IButtonSize>,

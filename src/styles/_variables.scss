@@ -1,0 +1,45 @@
+// 变量
+$prefix: "bb";
+
+// 通用的变量定义在_var中，本文件定义对应组件的样式
+// 组件中目前只引入本文件
+
+$body-background: #fff;
+$component-background: #fff;
+$font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB",
+  "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+$code-family: Consolas, Menlo, Courier, monospace;
+$title-color: #17233d;
+$text-color: #515a6e;
+$heading-color: fade(#000, 85%);
+
+// 字体大小
+$s-font-size-sm: var(--s-font-size-md, 10px); //当组件size为''时使用此字号大小
+$s-font-size-md: var(--s-font-size-md, 12px); //当组件size为''时使用此字号大小
+$s-font-size-lg: var(--s-font-size-md, 14px); //当组件size为''时使用此字号大小
+
+$btn-font-size: var(--s-font-size-md, 14px);
+
+$padding-lg: 24px; // containers
+$padding-md: 16px; // small containers and buttons
+$padding-sm: 12px; // Form controls and items
+$padding-xs: 8px; // small items
+
+$btn-padding-y: 0.375rem !default;
+$btn-padding-x: 0.75rem !default;
+
+$btn-primary-disabled: var(--s-primary-disabled, #879ada); //
+$btn-disabled-opacity: 0.65 !default;
+
+$btn-height-base: 32px;
+$btn-height-large: 40px;
+$btn-height-small: 24px;
+
+$btn-padding-base: 0 $padding-md - 1px;
+$btn-padding-large: $btn-padding-base;
+$btn-padding-small: 0 $padding-xs - 1px;
+
+$line-height-base: 1.5;
+$border-radius-base: 6px;
+$border-radius-small: 4px;
+$cursor-disabled: not-allowed;

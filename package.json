@@ -15,7 +15,9 @@
     "docs:serve": "vitepress serve docs",
     "install": "husky install",
     "commit": "git add . && git-cz",
-    "register:components": "vitepress-rc"
+    "register:components": "vitepress-rc",
+    "gen-version": "node scripts/gen-version",
+    "build:prod": "npm run gen-version && node ./scripts/build.js"
   },
   "config": {
     "commitizen": {

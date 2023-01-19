@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { Button } from "@/components/button/index";
+// import { BuButton } from "../build/";
 </script>
 
 <template>
   <main>hello word</main>
-  <Button></Button>
+  <bu-button type="primary"></bu-button>
 </template>
 
 <style scoped>

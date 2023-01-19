@@ -1,24 +1,32 @@
+@use "sass:map";
+@use "../../../styles/var" as *;
+@import "../../../styles/variables";
+
 @mixin button-base {
-  position: relative;
-  display: inline-block;
-  font-weight: $btn-font-weight;
-  line-height: $btn-line-height;
-  color: $body-color;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
   white-space: nowrap;
-  text-align: center;
-  vertical-align: middle;
-  background-image: none;
-  border: $btn-border-width solid transparent;
-  @include button-size(
-    $btn-padding-y,
-    $btn-padding-x,
-    $btn-font-size,
-    $border-radius
-  );
-  box-shadow: $btn-box-shadow;
   cursor: pointer;
-  transition: $btn-transition;
-  &.disabled,
+  -webkit-appearance: none;
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  transition: 0.1s;
+  user-select: none;
+  vertical-align: middle;
+  border-width: 0;
+  background-color: $color-white;
+  color: map.get($colors, "primary", "base");
+  border: 1px solid $color-primary;
+  border-radius: map.get($border-radius, "base");
+  height: $btn-height-base;
+  padding: $btn-padding-base;
+  & + & {
+    margin-left: 12px;
+  }
   &[disabled] {
     cursor: not-allowed;
     opacity: $btn-disabled-opacity;
@@ -26,9 +34,6 @@
     > * {
       pointer-events: none;
     }
-  }
-  &:focus {
-    outline: 0;
   }
 }
 

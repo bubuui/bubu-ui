@@ -1,5 +1,7 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 
-import "./style/index.scss";
-createApp(App).mount("#app");
+import "./styles/index.scss";
+
+import BuBuUI from "../build/";
+createApp(App).use(BuBuUI).mount("#app");
