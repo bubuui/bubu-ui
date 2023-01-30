@@ -1,4 +1,4 @@
-import type { ExtractPropTypes, Prop, PropType } from "vue";
+import type { ExtractPropTypes, PropType } from "vue";
 
 export type IButtonType =
   | "primary"
@@ -7,7 +7,7 @@ export type IButtonType =
   | "error"
   | "info"
   | "link";
-export type IButtonSize = "mini" | "small" | "medium" | "large";
+export type IButtonSize = "mini" | "small" | "default" | "large";
 export type IButtonShape = "circle" | "default";
 
 export const buttonProps = {
@@ -17,7 +17,7 @@ export const buttonProps = {
   },
   size: {
     type: String as PropType<IButtonSize>,
-    default: "medium",
+    default: "default",
   },
   shape: {
     type: String as PropType<IButtonShape>,

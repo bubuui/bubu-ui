@@ -1,5 +1,5 @@
 @use "sass:map";
-
+$prefix: "bb";
 $colors: () !default;
 $colors: map.deep-merge(
   (
@@ -58,4 +58,48 @@ $input-font-size: map.merge(
     "small": 12px,
   ),
   $input-font-size
+);
+
+$font-size: () !default;
+$font-size: map.merge(
+  (
+    "extra-large": 20px,
+    "large": 18px,
+    "medium": 16px,
+    "base": 14px,
+    "small": 13px,
+    "extra-small": 12px,
+  ),
+  $font-size
+);
+
+// button
+$button-padding-x: () !default;
+$button-padding-x: map.merge(
+  (
+    "small": 12px,
+    "default": 16px,
+    "large": 20px,
+  ),
+  $button-padding-x
+);
+
+$button-padding-y: () !default;
+$button-padding-y: map.merge(
+  (
+    "small": 6px,
+    "default": 9px,
+    "large": 13px,
+  ),
+  $button-padding-y
+);
+
+$button-font-size: () !default;
+$button-font-size: map.merge(
+  (
+    "large": var(--el-font-size-base, map.get($font-size, "base")),
+    "default": var(--el-font-size-base, map.get($font-size, "base")),
+    "small": 12px,
+  ),
+  $button-font-size
 );
