@@ -1,6 +1,7 @@
 @use "sass:map";
 @use "../../../styles/var" as *;
 
+@import "../../../styles/commom";
 @import "./button-mixins.scss";
 
 @mixin button-base {
@@ -47,6 +48,13 @@
     map.get($button-font-size, "default"),
     map.get($border-radius, "base")
   );
+}
+
+.bu-btn--circle {
+  border-radius: 50%;
+  padding: 0;
+  height: $button-height;
+  width: $button-height;
 }
 
 @each $type in (primary, success, info, error) {
