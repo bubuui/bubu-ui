@@ -1,27 +1,28 @@
 import type { ExtractPropTypes, PropType } from "vue";
 
 export type IButtonType =
+  | "default"
   | "primary"
   | "success"
   | "warning"
   | "error"
   | "info"
   | "link";
-export type IButtonSize = "mini" | "small" | "default" | "large";
-export type IButtonShape = "circle" | "default";
+export type IButtonSize = "small" | "large";
+export type IButtonShape = "circle" | "";
 
 export const buttonProps = {
   type: {
     type: String as PropType<IButtonType>,
-    default: "primary",
+    default: "default",
   },
   size: {
     type: String as PropType<IButtonSize>,
-    default: "default",
+    default: "",
   },
   shape: {
     type: String as PropType<IButtonShape>,
-    default: "default",
+    default: "",
   },
   block: {
     type: Boolean,

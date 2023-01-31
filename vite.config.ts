@@ -17,7 +17,7 @@ export default defineConfig({
     // jest like test apis
     globals: true,
     // 模拟dom环境
-    environment: "happy-dom",
+    // environment: "happy-dom",
     // 支持tsx
     transformMode: {
       web: [/.[tj]sx$/],

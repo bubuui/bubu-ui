@@ -1,10 +1,13 @@
 <script setup lang="ts">
-// import { BuButton } from "../build/";
+import { BuButton } from "../build";
+const handleClick = () => {
+  console.log("click");
+};
 </script>
 
 <template>
   <main>hello word</main>
-  <bu-button type="primary"></bu-button>
+  <BuButton type="primary" @click="handleClick"></BuButton>
 </template>
 
 <style scoped>

@@ -38,6 +38,7 @@ $color-warning: map.get($colors, "warning", "base") !default;
 $color-danger: map.get($colors, "danger", "base") !default;
 $color-error: map.get($colors, "error", "base") !default;
 $color-info: map.get($colors, "info", "base") !default;
+$color-line: var(--bu-line, #dcdee2);
 
 $border-radius: () !default;
 $border-radius: map.merge(
@@ -103,5 +104,3 @@ $button-font-size: map.merge(
   ),
   $button-font-size
 );
-
-

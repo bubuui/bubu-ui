@@ -20,18 +20,12 @@
   user-select: none;
   vertical-align: middle;
   border-width: 0;
-  // background-color: $color-white;
-  // color: map.get($colors, "primary", "base");
-  // border: 1px solid $color-primary;
-  border-radius: map.get($border-radius, "base");
-  // height: $btn-height-base;
-  // padding: $btn-padding-base;
   & + & {
     margin-left: 12px;
   }
   &[disabled] {
     cursor: not-allowed;
-    // opacity: $btn-disabled-opacity;
+    opacity: $disabled-opacity;
     box-shadow: none;
     > * {
       pointer-events: none;
@@ -51,18 +45,55 @@
 }
 
 .bu-btn--circle {
-  border-radius: 50%;
-  padding: 0;
+  border-radius: $button-height;
   height: $button-height;
+}
+
+.bu-btn--block {
+  width: 100%;
+}
+
+.bu-btn--circle-icon {
+  @extend .bu-btn--circle;
   width: $button-height;
 }
 
-@each $type in (primary, success, info, error) {
+@each $type in (primary, success, info, error, warning) {
   .bu-btn--#{$type} {
     @include button-style(
       map.get($colors, "#{$type}", "base"),
       map.get($colors, "#{$type}", "base"),
       $color-white
     );
+  }
+}
+
+@each $size in (small, large) {
+  .bu-btn--#{$size} {
+    @include button-size(
+      map.get($button-padding-y, "#{$size}"),
+      map.get($button-padding-x, "#{$size}"),
+      map.get($button-font-size, "default"),
+      map.get($border-radius, "base")
+    );
+  }
+}
+
+.bu-btn--default {
+  background-color: $color-white;
+  border: 1px solid $color-line;
+  border-radius: map.get($border-radius, "base");
+  &:hover {
+    color: $color-primary;
+    border-color: $color-primary;
+  }
+}
+
+.bu-btn--link {
+  border-width: 0;
+  padding: 0;
+  color: $color-primary !important;
+  &:hover {
+    color: lighten($color-primary, 7.5%) !important;
   }
 }
