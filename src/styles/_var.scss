@@ -98,9 +98,27 @@ $button-padding-y: map.merge(
 $button-font-size: () !default;
 $button-font-size: map.merge(
   (
-    "large": var(--el-font-size-base, map.get($font-size, "base")),
-    "default": var(--el-font-size-base, map.get($font-size, "base")),
+    "large": var(-bu-font-size-base, map.get($font-size, "base")),
+    "default": var(--bu-font-size-base, map.get($font-size, "base")),
     "small": 12px,
   ),
   $button-font-size
+);
+
+$title: () !default;
+$title: map.merge(
+  (
+    "height": var(--bu-title-height, 40px),
+    "sub-width": var(--bu-title-sub-w, 4px),
+    "sub-height": var(--bu-title-sub-h, 28px),
+    "title-padding": var(--bu-title-padding, 15px),
+    "title-font-szie": var(--bu-title-font, 28px),
+    "sub-font-szie": var(--bu-title-font, 20px),
+    "border":
+      var(
+        --bu-title-border,
+        1px solid var(--bu-border-color-lighter, $color-line)
+      ),
+  ),
+  $title
 );

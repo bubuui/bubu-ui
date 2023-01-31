@@ -25,6 +25,10 @@ function sidebarComponent() {
           text: "Button组件",
           link: "/components/button",
         },
+        {
+          text: "Title组件",
+          link: "/components/title",
+        },
       ],
     },
   ];

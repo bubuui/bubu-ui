@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { BuButton } from "../build";
 const handleClick = () => {
   console.log("click");
 };
@@ -7,7 +6,7 @@ const handleClick = () => {
 
 <template>
   <main>hello word</main>
-  <BuButton type="primary" @click="handleClick"></BuButton>
+  <bu-title>nihao</bu-title>
 </template>
 
 <style scoped>
