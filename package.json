@@ -25,6 +25,7 @@
     }
   },
   "dependencies": {
+    "async-validator": "^4.2.5",
     "sass": "^1.57.1",
     "vitepress-theme-demoblock": "^2.0.2",
     "vue": "^3.2.44"

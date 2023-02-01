@@ -7,14 +7,21 @@
     <slot name="right"></slot>
   </div>
 </template>
+
+<script lang="ts">
+export default {
+  name: 'BuTitle',
+};
+</script>
+
 <script setup lang="ts">
-import { computed } from "vue";
-import type { TitleProps } from "./title-type";
-const prefix = "bu-title";
+import { computed } from 'vue';
+import type { TitleProps } from './title-type';
+const prefix = 'bu-title';
 const props = withDefaults(defineProps<TitleProps>(), {
   sub: false,
   border: false,
-  type: "primary",
+  type: 'primary',
 });
 
 const classes = computed(() => {
