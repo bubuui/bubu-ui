@@ -1,11 +1,17 @@
 {
   "hash": "db3de416",
-  "browserHash": "81cb3ad1",
+  "browserHash": "14c90a60",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
       "fileHash": "55eb12cb",
+      "needsInterop": false
+    },
+    "async-validator": {
+      "src": "../../../../node_modules/async-validator/dist-web/index.js",
+      "file": "async-validator.js",
+      "fileHash": "ec660ae5",
       "needsInterop": false
     }
   },
