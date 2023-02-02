@@ -25,13 +25,6 @@ export default defineComponent({
   },
 });
 </script>
-
-<!-- <script setup lang="ts">
-import { reactive } from 'vue';
-const form = reactive({
-  name: '234',
-});
-</script> -->
 ```
 
 :::
