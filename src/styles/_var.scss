@@ -1,52 +1,52 @@
-@use "sass:map";
-$prefix: "bb";
+@use 'sass:map';
+$prefix: 'bb';
 $colors: () !default;
 $colors: map.deep-merge(
   (
-    "white": #ffffff,
-    "black": #000000,
-    "primary": (
-      "base": #2d8cf0,
+    'white': #ffffff,
+    'black': #000000,
+    'primary': (
+      'base': #2d8cf0,
     ),
-    "success": (
-      "base": #19be6b,
+    'success': (
+      'base': #19be6b,
     ),
-    "warning": (
-      "base": #ff9900,
+    'warning': (
+      'base': #ff9900,
     ),
-    "danger": (
-      "base": #f56c6c,
+    'danger': (
+      'base': #f56c6c,
     ),
-    "error": (
-      "base": #ed4014,
+    'error': (
+      'base': #ed4014,
     ),
-    "info": (
-      "base": #2db7f5,
+    'info': (
+      'base': #2db7f5,
     ),
-    "normal": (
-      "base": "#e6ebf1",
+    'normal': (
+      'base': '#e6ebf1',
     ),
   ),
   $colors
 );
 
-$color-white: map.get($colors, "white") !default;
-$color-black: map.get($colors, "black") !default;
-$color-primary: map.get($colors, "primary", "base") !default;
-$color-success: map.get($colors, "success", "base") !default;
-$color-warning: map.get($colors, "warning", "base") !default;
-$color-danger: map.get($colors, "danger", "base") !default;
-$color-error: map.get($colors, "error", "base") !default;
-$color-info: map.get($colors, "info", "base") !default;
+$color-white: map.get($colors, 'white') !default;
+$color-black: map.get($colors, 'black') !default;
+$color-primary: map.get($colors, 'primary', 'base') !default;
+$color-success: map.get($colors, 'success', 'base') !default;
+$color-warning: map.get($colors, 'warning', 'base') !default;
+$color-danger: map.get($colors, 'danger', 'base') !default;
+$color-error: map.get($colors, 'error', 'base') !default;
+$color-info: map.get($colors, 'info', 'base') !default;
 $color-line: var(--bu-line, #dcdee2);
 
 $border-radius: () !default;
 $border-radius: map.merge(
   (
-    "base": 4px,
-    "small": 2px,
-    "round": 20px,
-    "circle": 100%,
+    'base': 4px,
+    'small': 2px,
+    'round': 20px,
+    'circle': 100%,
   ),
   $border-radius
 );
@@ -54,9 +54,9 @@ $border-radius: map.merge(
 $input-font-size: () !default;
 $input-font-size: map.merge(
   (
-    "large": 14px,
-    "base": 14px,
-    "small": 12px,
+    'large': 14px,
+    'base': 14px,
+    'small': 12px,
   ),
   $input-font-size
 );
@@ -64,12 +64,12 @@ $input-font-size: map.merge(
 $font-size: () !default;
 $font-size: map.merge(
   (
-    "extra-large": 20px,
-    "large": 18px,
-    "medium": 16px,
-    "base": 14px,
-    "small": 13px,
-    "extra-small": 12px,
+    'extra-large': 20px,
+    'large': 18px,
+    'medium': 16px,
+    'base': 14px,
+    'small': 13px,
+    'extra-small': 12px,
   ),
   $font-size
 );
@@ -78,9 +78,9 @@ $font-size: map.merge(
 $button-padding-x: () !default;
 $button-padding-x: map.merge(
   (
-    "small": 12px,
-    "default": 16px,
-    "large": 20px,
+    'small': 12px,
+    'default': 16px,
+    'large': 20px,
   ),
   $button-padding-x
 );
@@ -88,9 +88,9 @@ $button-padding-x: map.merge(
 $button-padding-y: () !default;
 $button-padding-y: map.merge(
   (
-    "small": 6px,
-    "default": 9px,
-    "large": 13px,
+    'small': 6px,
+    'default': 9px,
+    'large': 13px,
   ),
   $button-padding-y
 );
@@ -98,9 +98,9 @@ $button-padding-y: map.merge(
 $button-font-size: () !default;
 $button-font-size: map.merge(
   (
-    "large": var(-bu-font-size-base, map.get($font-size, "base")),
-    "default": var(--bu-font-size-base, map.get($font-size, "base")),
-    "small": 12px,
+    'large': var(-bu-font-size-base, map.get($font-size, 'base')),
+    'default': var(--bu-font-size-base, map.get($font-size, 'base')),
+    'small': 12px,
   ),
   $button-font-size
 );
@@ -108,17 +108,30 @@ $button-font-size: map.merge(
 $title: () !default;
 $title: map.merge(
   (
-    "height": var(--bu-title-height, 40px),
-    "sub-width": var(--bu-title-sub-w, 4px),
-    "sub-height": var(--bu-title-sub-h, 28px),
-    "title-padding": var(--bu-title-padding, 15px),
-    "title-font-szie": var(--bu-title-font, 28px),
-    "sub-font-szie": var(--bu-title-font, 20px),
-    "border":
+    'height': var(--bu-title-height, 40px),
+    'sub-width': var(--bu-title-sub-w, 4px),
+    'sub-height': var(--bu-title-sub-h, 28px),
+    'title-padding': var(--bu-title-padding, 15px),
+    'title-font-szie': var(--bu-title-font, 28px),
+    'sub-font-szie': var(--bu-title-font, 20px),
+    'border':
       var(
         --bu-title-border,
         1px solid var(--bu-border-color-lighter, $color-line)
       ),
   ),
   $title
+);
+
+$input: () !default;
+$input: map.merge(
+  (
+    'bg-color': var(--bu-input-bg-color, $color-white),
+    'border-color': var(--bu-input-border-color, $color-line),
+    'border-radius':
+      var(--bu-input-border-radius, map.get($border-radius, 'base')),
+    'padding-x': var(--bu-input-padding-x, 10px),
+    'padding-y': var(--bu-input-padding-y, 1px),
+  ),
+  $input
 );

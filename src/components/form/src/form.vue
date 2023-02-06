@@ -1,7 +1,7 @@
 <template>
-  <div :class="classes">
+  <form :class="classes">
     <slot></slot>
-  </div>
+  </form>
 </template>
 <script lang="ts">
 export default {
@@ -52,4 +52,3 @@ defineExpose({
   validate,
 });
 </script>
-<style lang="scss"></style>

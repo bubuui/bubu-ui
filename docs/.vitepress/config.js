@@ -35,6 +35,10 @@ function sidebarComponent() {
       text: '表单组件',
       items: [
         {
+          text: 'Input组件',
+          link: '/components/input',
+        },
+        {
           text: 'Form组件',
           link: '/components/form',
         },

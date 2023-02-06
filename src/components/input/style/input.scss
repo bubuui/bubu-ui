@@ -1,0 +1,33 @@
+@use 'sass:map';
+@use '../../../styles/var' as *;
+
+@import '../../../styles/commom';
+
+.bu-input {
+  width: 100%;
+  box-sizing: border-box;
+  display: inline-flex;
+  vertical-align: middle;
+  .bu-input__wrapper {
+    display: inline-flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 0 1px map.get($input, 'border-color') inset;
+    background-color: map.get($input, 'bg-color');
+    border-radius: map.get($input, 'border-radius');
+    padding: map.get($input, padding-y) map.get($input, padding-x);
+    .bu-input__inner {
+      width: 100%;
+    }
+  }
+  &.is-disabled {
+    cursor: not-allowed;
+    .bu-input__wrapper {
+      background-color: $diabled-color;
+    }
+    .bu-input__inner {
+      cursor: not-allowed;
+    }
+  }
+}

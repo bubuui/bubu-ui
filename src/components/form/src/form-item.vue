@@ -54,7 +54,7 @@ const buFormItem = reactive({
 provide('buFormItem', buFormItem);
 
 function validate() {
-  if (buForm?.rules === undefined) {
+  if (buForm && buForm.rules === undefined) {
     return Promise.resolve({ result: true });
   }
 
@@ -72,7 +72,7 @@ function validate() {
 
 onMounted(() => {
   if (props.prop) {
-    buForm?.addField(buFormItem);
+    buForm && buForm.addField(buFormItem);
   }
 });
 </script>

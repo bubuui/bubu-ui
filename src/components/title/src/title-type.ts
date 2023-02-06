@@ -1,9 +1,9 @@
-import type { ExtractPropTypes, PropType } from "vue";
+import type { ExtractPropTypes, PropType } from 'vue';
 
-export type ITitleType = "primary" | "success" | "warning" | "error" | "info";
+export type ITitleType = 'primary' | 'success' | 'warning' | 'error' | 'info';
 
 export interface TitleProps {
-  sub: boolean;
-  border: boolean;
-  type: ITitleType;
+  sub?: boolean;
+  border?: boolean;
+  type?: ITitleType;
 }

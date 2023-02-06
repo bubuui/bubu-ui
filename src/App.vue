@@ -1,12 +1,15 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 const handleClick = () => {
-  console.log("click");
+  console.log('click');
 };
+const input = ref('');
 </script>
 
 <template>
   <main>hello word</main>
   <bu-title>nihao</bu-title>
+  <bu-input placeholder="Please input" v-model="input" />
 </template>
 
 <style scoped>

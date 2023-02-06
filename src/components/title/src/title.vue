@@ -18,18 +18,26 @@ export default {
 import { computed } from 'vue';
 import type { TitleProps } from './title-type';
 const prefix = 'bu-title';
-const props = withDefaults(defineProps<TitleProps>(), {
-  sub: false,
-  border: false,
-  type: 'primary',
-});
+// 这种写法，test中会报ts异常，类型不兼容
+// const props = withDefaults(defineProps<TitleProps>(), {
+//   sub: false,
+//   border: false,
+//   type: 'primary',
+// });
+
+// 实验特性，解构
+const {
+  sub = false,
+  border = false,
+  type = 'primary',
+} = defineProps<TitleProps>();
 
 const classes = computed(() => {
-  let cl = [prefix, `${prefix}--${props.type}`];
-  if (props.sub) {
+  let cl = [prefix, `${prefix}--${type}`];
+  if (sub) {
     cl.push(`${prefix}--sub`);
   }
-  if (props.border) {
+  if (border) {
     cl.push(`${prefix}--border`);
   }
   return cl;
