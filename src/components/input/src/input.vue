@@ -7,11 +7,12 @@
         @input="onInput"
         v-bind="$attrs"
         :disabled="disabled"
-        @focus="isFoucs = true"
+        @focus="handleFocus"
         @blur.stop="isFoucs = false"
       />
       {{ modelValue }}
       <span
+        class="bu-input--clear"
         v-if="clearable && isFoucs && modelValue"
         @mousedown.prevent
         @click="clear"
@@ -55,6 +56,7 @@ const classesWrapper = computed(() => {
 
 const emit = defineEmits<{
   (e: 'update:model-value', value: string): void;
+  (e: 'focus', value: FocusEvent): void;
 }>();
 
 const isFoucs = ref(false);
@@ -64,6 +66,11 @@ function onInput(e: Event) {
   emit('update:model-value', input.value);
   formItem && (formItem as any).validate();
 }
+
+const handleFocus = (event: FocusEvent) => {
+  isFoucs.value = true;
+  emit('focus', event);
+};
 
 const clear = () => {
   emit('update:model-value', '');

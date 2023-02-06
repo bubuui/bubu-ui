@@ -1,9 +1,10 @@
 import { describe, it, expect } from 'vitest';
 import Title from '../src/title.vue';
+import Button from '../../button/src/button';
 import { mount } from '@vue/test-utils';
 
 describe('title component test', () => {
-  it('compoent is work', () => {
+  it('title is work', () => {
     const wrapper = mount(Title, {
       slots: {
         default: 'this is title',
@@ -46,5 +47,15 @@ describe('title component test', () => {
       },
     });
     expect(wrapper.classes()).toContain('bu-title--border');
+  });
+
+  it('slot is work', () => {
+    const wrapper = mount(Title, {
+      slots: {
+        default: 'title',
+        right: `right`,
+      },
+    });
+    expect(wrapper.text()).toContain('right');
   });
 });
