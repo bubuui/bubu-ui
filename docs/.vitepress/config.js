@@ -29,6 +29,10 @@ function sidebarComponent() {
           text: 'Title组件',
           link: '/components/title',
         },
+        {
+          text: 'Icon组件',
+          link: '/components/icon',
+        },
       ],
     },
     {

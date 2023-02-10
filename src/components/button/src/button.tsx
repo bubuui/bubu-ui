@@ -1,16 +1,16 @@
-import { computed, defineComponent, toRefs } from "vue";
-import { buttonProps, type ButtonProps } from "./button-type";
+import { computed, defineComponent, toRefs } from 'vue';
+import { buttonProps, type ButtonProps } from './button-type';
 export default defineComponent({
-  name: "BuButton",
+  name: 'BuButton',
   props: buttonProps,
   emits: {
     click: (evt: MouseEvent) => evt instanceof MouseEvent,
   },
   setup(props: ButtonProps, { slots, attrs, emit }) {
     const { type, size, block, disabled, shape, loading } = toRefs(props);
-    const prefixCls = "bu-btn";
-    const shapClass = shape.value ? `${prefixCls}--${shape.value}` : "";
-    const sizeClass = size.value ? `${prefixCls}--${size.value}` : "";
+    const prefixCls = 'bu-btn';
+    const shapClass = shape.value ? `${prefixCls}--${shape.value}` : '';
+    const sizeClass = size.value ? `${prefixCls}--${size.value}` : '';
     const classes = computed(() => [
       prefixCls,
       `${prefixCls}--${type.value}`,
@@ -20,12 +20,12 @@ export default defineComponent({
         [`${prefixCls}--block`]: block.value,
       },
     ]);
-    const defaultSlot = slots.default ? slots.default() : "按钮";
-    const Component = type.value === "link" ? "a" : "button";
+    const defaultSlot = slots.default ? slots.default() : '按钮';
+    const Component = type.value === 'link' ? 'a' : 'button';
 
     const handleClick = (e: MouseEvent) => {
       if (props.loading || props.disabled) return;
-      emit("click", e);
+      emit('click', e);
     };
     return () => (
       <Component
@@ -34,7 +34,9 @@ export default defineComponent({
         onClick={handleClick}
         {...attrs}
       >
-        {/* {loading && <svg class="animate-spin" viewBox="0 0 24 24"></svg>} */}
+        {loading.value && (
+          <bu-icon class="bu-load-loop" name="loading" size="18"></bu-icon>
+        )}
         {defaultSlot}
       </Component>
     );

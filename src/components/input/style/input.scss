@@ -8,7 +8,7 @@
   box-sizing: border-box;
   display: inline-flex;
   vertical-align: middle;
-  .bu-input__wrapper {
+  .bu-input--wrapper {
     display: inline-flex;
     flex-grow: 1;
     align-items: center;
@@ -17,16 +17,52 @@
     background-color: map.get($input, 'bg-color');
     border-radius: map.get($input, 'border-radius');
     padding: map.get($input, padding-y) map.get($input, padding-x);
-    .bu-input__inner {
+    .bu-input--inner {
       width: 100%;
+    }
+    @each $type in (default, small, large) {
+      .bu-input--#{$type} {
+        height: map.get($common-component-size, $type);
+        line-height: map.get($common-component-size, $type);
+      }
+    }
+    .bu-input--prefix {
+      display: inline-flex;
+      white-space: nowrap;
+      flex-shrink: 0;
+      flex-wrap: nowrap;
+      height: 100%;
+      text-align: center;
+      align-items: center;
+      color: $color-line;
+      transition: all 0.3s;
+      pointer-events: none;
+      .bu-input--prefix-inner {
+        pointer-events: all;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 8px;
+      }
+    }
+    .bu-input--suffix {
+      @extend .bu-input--prefix;
+      .bu-input--suffix-inner {
+        @extend .bu-input--prefix-inner;
+        margin-right: 0px;
+        margin-left: 8px;
+      }
+    }
+    .bu-input--clear {
+      cursor: pointer;
     }
   }
   &.is-disabled {
     cursor: not-allowed;
-    .bu-input__wrapper {
+    .bu-input--wrapper {
       background-color: $diabled-color;
     }
-    .bu-input__inner {
+    .bu-input--inner {
       cursor: not-allowed;
     }
   }

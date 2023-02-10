@@ -22,7 +22,9 @@
 <template>
   <bu-title sub>
     title
-    <template #left> icon </template>
+    <template #left>
+      <bu-icon name="question-circle" size="16"></bu-icon>
+    </template>
     <template #right>
       <bu-button type="primary">save</bu-button>
     </template>

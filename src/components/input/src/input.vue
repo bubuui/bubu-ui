@@ -1,23 +1,38 @@
 <template>
-  <div :class="classes">
-    <div :class="classesWrapper">
+  <div :class="[prefix, disabled ? 'is-disabled' : '', $attrs.class]">
+    <div
+      :class="[prefix + '--wrapper', isFoucs && clearable ? 'is-focus' : '']"
+    >
+      <span class="bu-input--prefix" v-if="$slots.prefix || prefixIcon">
+        <span class="bu-input--prefix-inner">
+          <slot name="prefix"></slot>
+          <bu-icon v-if="prefixIcon" size="20" :name="prefixIcon"> </bu-icon>
+        </span>
+      </span>
       <input
         :value="modelValue"
-        class="bu-input__inner"
+        :class="[`${prefix}--${size || 'default'}`, 'bu-input--inner']"
         @input="onInput"
         v-bind="$attrs"
         :disabled="disabled"
         @focus="handleFocus"
         @blur.stop="isFoucs = false"
       />
-      {{ modelValue }}
+      <span class="bu-input--suffix" v-if="$slots.suffix || suffixIcon">
+        <span class="bu-input--suffix-inner">
+          <slot name="suffix"></slot>
+          <bu-icon v-if="suffixIcon" size="20" :name="suffixIcon"> </bu-icon>
+        </span>
+      </span>
       <span
-        class="bu-input--clear"
+        class="bu-input--suffix bu-input--clear"
         v-if="clearable && isFoucs && modelValue"
         @mousedown.prevent
         @click="clear"
       >
-        X
+        <span class="bu-input--suffix-inner">
+          <bu-icon size="20" name="close"> </bu-icon>
+        </span>
       </span>
     </div>
   </div>
@@ -28,31 +43,19 @@ export default {
 };
 </script>
 <script setup lang="ts">
-import { computed, ref } from 'vue';
+import { computed, ref, type Component } from 'vue';
 import { useFormItem } from '../../../hooks/use-form-item';
 const { formItem } = useFormItem();
 const prefix = 'bu-input';
-const props = defineProps<{
+type IInputSize = 'small' | 'large';
+defineProps<{
   modelValue?: string;
   disabled?: boolean;
   clearable?: boolean;
+  size?: IInputSize;
+  prefixIcon?: string;
+  suffixIcon?: string;
 }>();
-
-const classes = computed(() => {
-  const cla = [prefix];
-  if (props.disabled) {
-    cla.push('is-disabled');
-  }
-  return cla;
-});
-
-const classesWrapper = computed(() => {
-  const cls = [prefix + '__wrapper'];
-  if (isFoucs.value && props.clearable) {
-    cls.push('is-focus');
-  }
-  return cls;
-});
 
 const emit = defineEmits<{
   (e: 'update:model-value', value: string): void;
