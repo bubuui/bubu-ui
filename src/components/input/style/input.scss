@@ -3,6 +3,19 @@
 
 @import '../../../styles/commom';
 
+@mixin group {
+  border-radius: map.get($input, 'border-radius');
+  background-color: var(--bu-input-group-background-color, #f5f7fa);
+  color: var(--bu-input-group-color, #999);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  padding: 0 20px;
+  white-space: nowrap;
+}
+
 .bu-input {
   width: 100%;
   box-sizing: border-box;
@@ -17,6 +30,7 @@
     background-color: map.get($input, 'bg-color');
     border-radius: map.get($input, 'border-radius');
     padding: map.get($input, padding-y) map.get($input, padding-x);
+
     .bu-input--inner {
       width: 100%;
     }
@@ -64,6 +78,41 @@
     }
     .bu-input--inner {
       cursor: not-allowed;
+    }
+  }
+  &.bu-input-group {
+    display: inline-flex;
+    width: 100%;
+    align-items: stretch;
+    &.bu-input-group--prepend {
+      .bu-input--wrapper {
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+      }
+    }
+    &.bu-input-group--append {
+      .bu-input--wrapper {
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+      }
+    }
+    .group--prepend {
+      @include group;
+      border-right: 0;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      box-shadow: 1px 0 0 0 map.get($input, 'border-color') inset,
+        0 1px 0 0 map.get($input, 'border-color') inset,
+        0 -1px 0 0 map.get($input, 'border-color') inset;
+    }
+    .group--append {
+      @include group;
+      border-left: 0;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      box-shadow: 0 1px 0 0 map.get($input, 'border-color') inset,
+        0 -1px 0 0 map.get($input, 'border-color') inset,
+        -1px 0 0 0 map.get($input, 'border-color') inset;
     }
   }
 }

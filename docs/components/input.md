@@ -27,9 +27,9 @@ export default defineComponent({
 
 ```vue
 <template>
-  <bu-input size="small" class="m-b-10" placeholder="Please input" />
-  <bu-input placeholder="Please input" />
-  <bu-input size="large" placeholder="Please input" />
+  <bu-input class="m-b-10" size="small" placeholder="Please input" />
+  <bu-input class="m-b-10" placeholder="Please input" />
+  <bu-input class="m-b-10" size="large" placeholder="Please input" />
 </template>
 ```
 
@@ -88,19 +88,30 @@ export default defineComponent({
 ```vue
 <template>
   <bu-input
+    class="m-b-10"
     placeholder="Please input"
     clearable
     v-model="input"
     prefixIcon="search"
-  />
+  ></bu-input>
 
-  <bu-input
-    placeholder="Please input"
-    v-model="input">
+  <bu-input class="m-b-10" placeholder="Please input" v-model="input">
     <template #suffix>
       <bu-icon name="search" size="20"></bu-icon>
     </template>
-  <bu-input>
+  </bu-input>
+
+  <bu-input class="m-b-10" placeholder="Please input">
+    <template #prepend>
+      <bu-icon name="search" size="20"></bu-icon>
+    </template>
+  </bu-input>
+
+  <bu-input class="m-b-10" placeholder="Please input">
+    <template #append>
+      <bu-icon name="search" size="20"></bu-icon>
+    </template>
+  </bu-input>
 </template>
 <script lang="ts">
 import { ref } from 'vue';

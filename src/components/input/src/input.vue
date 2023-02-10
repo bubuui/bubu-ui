@@ -1,5 +1,17 @@
 <template>
-  <div :class="[prefix, disabled ? 'is-disabled' : '', $attrs.class]">
+  <div
+    :class="[
+      prefix,
+      disabled ? 'is-disabled' : '',
+      $attrs.class,
+      $slots.prepend || $slots.append ? `${prefix}-group` : '',
+      $slots.prepend ? `${prefix}-group--prepend` : '',
+      $slots.append ? `${prefix}-group--append` : '',
+    ]"
+  >
+    <div v-if="$slots.prepend" class="group--prepend">
+      <slot name="prepend" />
+    </div>
     <div
       :class="[prefix + '--wrapper', isFoucs && clearable ? 'is-focus' : '']"
     >
@@ -13,7 +25,7 @@
         :value="modelValue"
         :class="[`${prefix}--${size || 'default'}`, 'bu-input--inner']"
         @input="onInput"
-        v-bind="$attrs"
+        v-bind="attrs"
         :disabled="disabled"
         @focus="handleFocus"
         @blur.stop="isFoucs = false"
@@ -35,6 +47,10 @@
         </span>
       </span>
     </div>
+    <!-- append slot -->
+    <div v-if="$slots.append" class="group--append">
+      <slot name="append" />
+    </div>
   </div>
 </template>
 <script lang="ts">
@@ -43,8 +59,9 @@ export default {
 };
 </script>
 <script setup lang="ts">
-import { computed, ref, type Component } from 'vue';
-import { useFormItem } from '../../../hooks/use-form-item';
+import { ref } from 'vue';
+import { useFormItem } from '@/hooks/use-form-item';
+import { useAttrs } from '@/hooks/use-attrs';
 const { formItem } = useFormItem();
 const prefix = 'bu-input';
 type IInputSize = 'small' | 'large';
@@ -61,6 +78,8 @@ const emit = defineEmits<{
   (e: 'update:model-value', value: string): void;
   (e: 'focus', value: FocusEvent): void;
 }>();
+
+const attrs = useAttrs();
 
 const isFoucs = ref(false);
 
