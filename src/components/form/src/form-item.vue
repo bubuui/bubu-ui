@@ -8,12 +8,12 @@
       v-if="label"
       >{{ label }}</label
     >
-    <div>
+    <div class="bu-form-item--content">
       <slot></slot>
+      <div class="bu-form-item--error" v-if="error">
+        {{ error }}
+      </div>
     </div>
-    <p v-if="error">
-      {{ error }}
-    </p>
   </div>
 </template>
 
@@ -51,7 +51,7 @@ const error = ref('');
 
 const prefix = 'bu-form-item';
 const classes = computed(() => {
-  let cl = [prefix];
+  let cl = [prefix, error.value ? `is-error` : ''];
   return cl;
 });
 

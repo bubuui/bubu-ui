@@ -1,5 +1,5 @@
 <template>
-  <form :class="classes">
+  <form :class="classes" @submit="submit">
     <slot></slot>
   </form>
 </template>
@@ -12,7 +12,6 @@ export default {
 import { computed, provide, reactive, toRefs } from 'vue';
 import type { formProps } from '../src/form.type';
 const fields: any[] = [];
-
 const prefix = 'bu-form';
 const props = defineProps<formProps>();
 const classes = computed(() => {
@@ -20,6 +19,10 @@ const classes = computed(() => {
   console.log('cl', cl);
   return cl;
 });
+
+const emit = defineEmits<{
+  (e: 'submit', event: Event): void;
+}>();
 
 const addField = (field: any) => {
   if (field) {
@@ -45,6 +48,11 @@ function validate(cb: any) {
     .catch(() => {
       cb(false);
     });
+}
+
+function submit(event: Event) {
+  event.preventDefault();
+  emit('submit', event);
 }
 
 defineExpose({

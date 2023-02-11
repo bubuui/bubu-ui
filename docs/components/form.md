@@ -11,7 +11,7 @@
     :rules="rules"
     ref="formEl"
     label-width="120px"
-    label-position="top"
+    label-position="left"
   >
     <bu-form-item label="账号" prop="name">
       <bu-input

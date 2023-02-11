@@ -20,6 +20,12 @@
     display: flex;
     margin-bottom: map.get($form, 'form-item-spacing');
     align-items: center;
+    &.is-error {
+      .bu-input--wrapper {
+        box-shadow: 0 0 0 1px $color-danger inset;
+      }
+      margin-bottom: calc(map.get($form, 'form-item-spacing') + 8px);
+    }
   }
   @each $type in (right, left) {
     &.bu-form--#{$type} {
@@ -38,6 +44,20 @@
       text-align: left;
       display: block;
       margin-bottom: 8px;
+    }
+  }
+  .bu-form-item--content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex: 1;
+    position: relative;
+    .bu-form-item--error {
+      color: $color-danger;
+      font-size: 12px;
+      position: absolute;
+      left: 0;
+      top: 100%;
     }
   }
 }

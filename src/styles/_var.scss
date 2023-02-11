@@ -141,7 +141,7 @@ $input: map.merge(
     'border-radius':
       var(--bu-input-border-radius, map.get($border-radius, 'base')),
     'padding-x': var(--bu-input-padding-x, 10px),
-    'padding-y': var(--bu-input-padding-y, 1px),
+    'padding-y': var(--bu-input-padding-y, 0px),
   ),
   $input
 );
