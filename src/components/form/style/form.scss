@@ -1,0 +1,43 @@
+@use 'sass:map';
+@use '../../../styles/var' as *;
+
+@import '../../../styles/commom';
+
+@mixin label {
+  vertical-align: middle;
+  box-sizing: border-box;
+  text-align: right;
+  padding: 0 12px 0 0;
+  display: inline-flex;
+  align-items: flex-start;
+  flex: 0 0 auto;
+  box-sizing: border-box;
+}
+
+.bu-form {
+  font-size: map.get($form, 'label-font-size');
+  .bu-form-item {
+    display: flex;
+    margin-bottom: map.get($form, 'form-item-spacing');
+    align-items: center;
+  }
+  @each $type in (right, left) {
+    &.bu-form--#{$type} {
+      .bu-form-item-label {
+        @include label;
+        text-align: #{type};
+      }
+    }
+  }
+  &.bu-form--top {
+    .bu-form-item {
+      display: block;
+    }
+    .bu-form-item-label {
+      @include label;
+      text-align: left;
+      display: block;
+      margin-bottom: 8px;
+    }
+  }
+}

@@ -10,17 +10,16 @@ export default {
 </script>
 <script setup lang="ts">
 import { computed, provide, reactive, toRefs } from 'vue';
-import { formProps } from '../src/form.type';
+import type { formProps } from '../src/form.type';
 const fields: any[] = [];
 
 const prefix = 'bu-form';
+const props = defineProps<formProps>();
 const classes = computed(() => {
-  let cl = [prefix];
+  let cl = [prefix, `${prefix}--${props.labelPosition || 'right'}`];
+  console.log('cl', cl);
   return cl;
 });
-const props = defineProps(formProps);
-
-console.log('props', props);
 
 const addField = (field: any) => {
   if (field) {

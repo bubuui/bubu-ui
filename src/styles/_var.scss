@@ -145,3 +145,12 @@ $input: map.merge(
   ),
   $input
 );
+
+$form: () !default;
+$form: map.merge(
+  (
+    'label-font-size': var(--bu-font-size-base, 14px),
+    'form-item-spacing': var(--bu-form-item-spacing, 18px),
+  ),
+  $form
+);

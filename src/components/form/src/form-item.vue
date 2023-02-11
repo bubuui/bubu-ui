@@ -1,7 +1,16 @@
 <template>
   <div :class="classes">
-    <label v-if="label">{{ label }}</label>
-    <slot></slot>
+    <label
+      class="bu-form-item-label"
+      :style="{
+        width: labelWidth,
+      }"
+      v-if="label"
+      >{{ label }}</label
+    >
+    <div>
+      <slot></slot>
+    </div>
     <p v-if="error">
       {{ error }}
     </p>
@@ -49,6 +58,12 @@ const classes = computed(() => {
 const buFormItem = reactive({
   ...toRefs(props),
   validate,
+});
+
+const labelWidth = computed(() => {
+  return typeof buForm.labelWidth === 'string'
+    ? buForm.labelWidth
+    : buForm.labelWidth + 'px';
 });
 
 provide('buFormItem', buFormItem);
