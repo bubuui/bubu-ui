@@ -6,26 +6,12 @@
 
 ```vue
 <template>
-  <bu-form
-    :model="form"
-    :rules="rules"
-    ref="formEl"
-    label-width="120px"
-    label-position="left"
-  >
-    <bu-form-item label="账号" prop="name">
-      <bu-input
-        style="border: 1px solid #f0f0f0"
-        type="text"
-        v-model="form.name"
-      />
+  <bu-form :model="form" :rules="rules" ref="formEl" label-position="left">
+    <bu-form-item label="账号144534" prop="name">
+      <bu-input type="text" v-model="form.name" />
     </bu-form-item>
     <bu-form-item label="密码" prop="password">
-      <bu-input
-        style="border: 1px solid #f0f0f0"
-        type="text"
-        v-model="form.password"
-      />
+      <bu-input type="text" v-model="form.password" />
     </bu-form-item>
     <bu-button type="primary" @click="submit">submit</bu-button>
   </bu-form>
@@ -40,20 +26,24 @@ export default defineComponent({
     });
     const formEl = ref();
     const rules = reactive({
-      name: {
-        required: true,
-        min: 4,
-        max: 20,
-        message: '长度在 1 到 20 个字符',
-        trigger: 'blur',
-      },
-      password: {
-        required: true,
-        min: 4,
-        max: 20,
-        message: '长度在 1 到 20 个字符',
-        trigger: 'blur',
-      },
+      name: [
+        {
+          required: true,
+          min: 4,
+          max: 20,
+          message: '长度在 1 到 20 个字符',
+          trigger: 'blur',
+        },
+      ],
+      password: [
+        {
+          required: false,
+          min: 4,
+          max: 20,
+          message: '长度在 1 到 20 个字符',
+          trigger: 'blur',
+        },
+      ],
     });
     const submit = () => {
       console.log('formEl.value', formEl.value);

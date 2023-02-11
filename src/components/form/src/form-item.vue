@@ -1,13 +1,23 @@
 <template>
   <div :class="classes">
-    <label
-      class="bu-form-item-label"
+    <div
+      ref="formItemRef"
       :style="{
-        width: labelWidth,
+        width:
+          buForm.autoLabelWidth > 0 ? buForm.autoLabelWidth + 'px' : 'auto',
       }"
-      v-if="label"
-      >{{ label }}</label
     >
+      <label
+        class="bu-form-item-label"
+        :style="{
+          width: labelWidth,
+        }"
+        v-if="label"
+        >{{ label }}</label
+      >
+      <slot name="label"></slot>
+    </div>
+
     <div class="bu-form-item--content">
       <slot></slot>
       <div class="bu-form-item--error" v-if="error">
@@ -33,6 +43,7 @@ import {
   reactive,
   ref,
   toRefs,
+  nextTick,
 } from 'vue';
 
 type Props = {
@@ -49,9 +60,21 @@ const props = withDefaults(defineProps<Props>(), {
 // 错误
 const error = ref('');
 
+const isRequired = computed(() => {
+  console.log('uForm?.rules.value', buForm.rules[props.prop]);
+  return (
+    buForm.rules[props.prop] &&
+    buForm.rules[props.prop].some((rule: any) => rule.required)
+  );
+});
+
 const prefix = 'bu-form-item';
 const classes = computed(() => {
-  let cl = [prefix, error.value ? `is-error` : ''];
+  let cl = [
+    prefix,
+    error.value && `is-error`,
+    isRequired.value && 'is-required',
+  ];
   return cl;
 });
 
@@ -61,10 +84,16 @@ const buFormItem = reactive({
 });
 
 const labelWidth = computed(() => {
-  return typeof buForm.labelWidth === 'string'
-    ? buForm.labelWidth
-    : buForm.labelWidth + 'px';
+  if (buForm.labelWidth) {
+    return typeof buForm.labelWidth === 'string'
+      ? buForm.labelWidth
+      : buForm.labelWidth + 'px';
+  } else {
+    return 'auto';
+  }
 });
+
+const formItemRef = ref<HTMLDivElement>();
 
 provide('buFormItem', buFormItem);
 
@@ -88,6 +117,11 @@ function validate() {
 onMounted(() => {
   if (props.prop) {
     buForm && buForm.addField(buFormItem);
+    if (props.label && !buForm.labelWidth && formItemRef.value) {
+      nextTick(() => {
+        buForm.getMaxLabelWidth(formItemRef.value);
+      });
+    }
   }
 });
 </script>

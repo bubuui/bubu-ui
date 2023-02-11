@@ -12,6 +12,7 @@
   align-items: flex-start;
   flex: 0 0 auto;
   box-sizing: border-box;
+  width: auto;
 }
 
 .bu-form {
@@ -25,6 +26,15 @@
         box-shadow: 0 0 0 1px $color-danger inset;
       }
       margin-bottom: calc(map.get($form, 'form-item-spacing') + 8px);
+    }
+    &.is-required {
+      .bu-form-item-label {
+        &::before {
+          content: "*";
+          color: $color-danger;
+          margin-right: 4px;
+        }
+      }
     }
   }
   @each $type in (right, left) {
