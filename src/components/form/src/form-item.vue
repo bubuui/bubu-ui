@@ -1,7 +1,7 @@
 <template>
   <div :class="classes">
     <div
-      ref="formItemRef"
+      ref="formItemLabelRef"
       :style="{
         width:
           buForm.autoLabelWidth > 0 ? buForm.autoLabelWidth + 'px' : 'auto',
@@ -45,15 +45,12 @@ import {
   toRefs,
   nextTick,
 } from 'vue';
+import type { FormItemContext, FormItemProps } from './form.type';
 
-type Props = {
-  label?: string;
-  prop?: string;
-};
-
+const prefix = 'bu-form-item';
+const formItemLabelRef = ref<HTMLDivElement>();
 const buForm = inject('buFormKey', {} as any);
-
-const props = withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<FormItemProps>(), {
   label: '',
   prop: '',
 });
@@ -68,7 +65,6 @@ const isRequired = computed(() => {
   );
 });
 
-const prefix = 'bu-form-item';
 const classes = computed(() => {
   let cl = [
     prefix,
@@ -76,11 +72,6 @@ const classes = computed(() => {
     isRequired.value && 'is-required',
   ];
   return cl;
-});
-
-const buFormItem = reactive({
-  ...toRefs(props),
-  validate,
 });
 
 const labelWidth = computed(() => {
@@ -93,11 +84,7 @@ const labelWidth = computed(() => {
   }
 });
 
-const formItemRef = ref<HTMLDivElement>();
-
-provide('buFormItem', buFormItem);
-
-function validate() {
+const validate: FormItemContext['validate'] = () => {
   if (buForm && buForm.rules === undefined) {
     return Promise.resolve({ result: true });
   }
@@ -112,16 +99,21 @@ function validate() {
       error.value = '';
     }
   });
-}
+};
+
+const buFormItem = reactive({
+  ...toRefs(props),
+  validate,
+  $label: formItemLabelRef,
+});
+
+provide('buFormItem', buFormItem);
 
 onMounted(() => {
   if (props.prop) {
-    buForm && buForm.addField(buFormItem);
-    if (props.label && !buForm.labelWidth && formItemRef.value) {
-      nextTick(() => {
-        buForm.getMaxLabelWidth(formItemRef.value);
-      });
-    }
+    nextTick(() => {
+      buForm && buForm.addField(buFormItem);
+    });
   }
 });
 </script>

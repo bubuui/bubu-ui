@@ -1,0 +1,14 @@
+@use 'sass:map';
+@use '../../../styles/var' as *;
+
+@import '../../../styles/commom';
+
+.bu-space {
+    display: inline-flex;
+    vertical-align: top;
+    .bu-sapce-item {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+

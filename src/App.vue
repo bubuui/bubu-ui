@@ -43,7 +43,7 @@ export default defineComponent({
   <!-- <main>hello word</main>
   <bu-title>nihao</bu-title>
   <bu-input placeholder="Please input" v-model="input" /> -->
-  <bu-form
+  <!-- <bu-form
     :model="form"
     :rules="rules"
     ref="formEl"
@@ -65,7 +65,13 @@ export default defineComponent({
       />
     </bu-form-item>
     <button @click="submit">submit</button>
-  </bu-form>
+  </bu-form> -->
+  <bu-space>
+    <div>TEST1</div>
+    <bu-button>TEST2</bu-button>
+    <bu-button>TEST3</bu-button>
+    <bu-button>TEST4</bu-button>
+  </bu-space>
 </template>
 
 <style scoped>

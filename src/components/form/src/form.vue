@@ -10,10 +10,12 @@ export default {
 </script>
 <script setup lang="ts">
 import { computed, provide, reactive, toRefs, ref } from 'vue';
-import type { formProps } from '../src/form.type';
-const fields: any[] = [];
+import type { FormItemContext, FormProps } from '../src/form.type';
 const prefix = 'bu-form';
-const props = defineProps<formProps>();
+const props = defineProps<FormProps>();
+const fields: FormItemContext[] = [];
+const autoLabelWidth = ref(0);
+
 const classes = computed(() => {
   let cl = [prefix, `${prefix}--${props.labelPosition || 'right'}`];
   return cl;
@@ -23,13 +25,15 @@ const emit = defineEmits<{
   (e: 'submit', event: Event): void;
 }>();
 
-const addField = (field: any) => {
+const addField = (field: FormItemContext) => {
   if (field) {
     fields.push(field);
+    console.log('field.$label', field.$label);
+    if (field.$label && !props.labelWidth) {
+      getMaxLabelWidth(field.$label);
+    }
   }
 };
-
-const autoLabelWidth = ref(0);
 
 const getMaxLabelWidth = (el: HTMLDivElement) => {
   const width = window.getComputedStyle(el.firstElementChild!).width;
@@ -40,19 +44,8 @@ const getMaxLabelWidth = (el: HTMLDivElement) => {
   console.log(w, Number.parseFloat(width), Math.ceil(Number.parseFloat(width)));
 };
 
-const buForm = reactive({
-  ...toRefs(props),
-  addField,
-  getMaxLabelWidth,
-  autoLabelWidth,
-});
-
-provide('buFormKey', buForm);
-
-function validate(cb: any) {
-  console.log('tasks', fields);
+function validate(cb: (result: boolean) => void) {
   const tasks = fields.map((item) => item.validate());
-  console.log('tasks after', tasks);
   Promise.all(tasks)
     .then(() => {
       cb(true);
@@ -67,14 +60,13 @@ function submit(event: Event) {
   emit('submit', event);
 }
 
-function validateField(
-  props: string[] | string,
-  callback: (errorMessage: string) => void
-) {
-  // if(typeof props === 'string') {
-  //   fields.find(item)
-  // }
-}
+const buForm = reactive({
+  ...toRefs(props),
+  addField,
+  autoLabelWidth,
+});
+
+provide('buFormKey', buForm);
 
 defineExpose({
   validate,
