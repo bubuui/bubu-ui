@@ -1,13 +1,4 @@
-import {
-  computed,
-  defineComponent,
-  toRefs,
-  renderSlot,
-  isVNode,
-  Fragment,
-  createVNode,
-  h,
-} from 'vue';
+import { computed, defineComponent, toRefs, renderSlot, h } from 'vue';
 import { sapceProps, type SapceProps } from './space.type';
 
 export default defineComponent({
@@ -23,7 +14,13 @@ export default defineComponent({
     return () => {
       const children = renderSlot(slots, 'default', { key: 0 }, () => []);
       if ((children.children ?? []).length === 0) return null;
-      return children.children;
+      return (
+        <div class={classes.value}>
+          {children.children.map((item) =>
+            h('div', { class: 'bu-space-item' }, item)
+          )}
+        </div>
+      );
     };
   },
 });
