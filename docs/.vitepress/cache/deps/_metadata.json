@@ -1,24 +1,24 @@
 {
-  "hash": "508cd151",
-  "browserHash": "87123689",
+  "hash": "d55cf3c0",
+  "browserHash": "3ce30bef",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "e4039b1e",
+      "fileHash": "7b5cbe98",
+      "needsInterop": false
+    },
+    "async-validator": {
+      "src": "../../../../node_modules/async-validator/dist-web/index.js",
+      "file": "async-validator.js",
+      "fileHash": "eb0ff00d",
       "needsInterop": false
     },
     "lodash": {
       "src": "../../../../node_modules/lodash/lodash.js",
       "file": "lodash.js",
-      "fileHash": "e7677ec9",
+      "fileHash": "fc7d3f99",
       "needsInterop": true
-    },
-    "async-validator": {
-      "src": "../../../../node_modules/async-validator/dist-web/index.js",
-      "file": "async-validator.js",
-      "fileHash": "7e6b52f2",
-      "needsInterop": false
     }
   },
   "chunks": {

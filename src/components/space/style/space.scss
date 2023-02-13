@@ -4,11 +4,14 @@
 @import '../../../styles/commom';
 
 .bu-space {
-    display: inline-flex;
-    vertical-align: top;
-    .bu-sapce-item {
-        display: flex;
-        flex-wrap: wrap;
-    }
+  display: inline-flex;
+  vertical-align: top;
+  .bu-space--item {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 8px;
+  }
+  &.bu-space--vertical {
+    flex-direction: column;
+  }
 }
-
