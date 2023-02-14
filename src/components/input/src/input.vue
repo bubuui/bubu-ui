@@ -62,6 +62,7 @@ export default {
 import { ref } from 'vue';
 import { useFormItem } from '@/hooks/use-form-item';
 import { useAttrs } from '@/hooks/use-attrs';
+import { BuIcon } from '@/components/icon';
 const { formItem } = useFormItem();
 const prefix = 'bu-input';
 type IInputSize = 'small' | 'large';

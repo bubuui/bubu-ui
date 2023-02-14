@@ -1,4 +1,4 @@
-import { computed, defineComponent, toRefs, renderSlot, h } from 'vue';
+import { computed, defineComponent, toRefs, renderSlot, h, Comment } from 'vue';
 import { sapceProps, type SapceProps } from './space.type';
 
 export default defineComponent({
@@ -29,21 +29,26 @@ export default defineComponent({
             'align-items': alignment.value,
           }}
         >
-          {children.children.map((item) =>
-            h(
-              'div',
-              {
-                class: 'bu-space--item',
-                style: {
-                  'margin-bottom':
-                    direction.value === 'horizontal' ? 0 : sizeSpace.value,
-                  'margin-right':
-                    direction.value === 'horizontal' ? sizeSpace.value : 0,
+          {children.children.map((item) => {
+            console.log('item', item.type === Comment);
+            if (item.type === Comment) {
+              return h(item);
+            } else {
+              return h(
+                'div',
+                {
+                  class: 'bu-space--item',
+                  style: {
+                    'margin-bottom':
+                      direction.value === 'horizontal' ? 0 : sizeSpace.value,
+                    'margin-right':
+                      direction.value === 'horizontal' ? sizeSpace.value : 0,
+                  },
                 },
-              },
-              item
-            )
-          )}
+                item
+              );
+            }
+          })}
         </div>
       );
     };

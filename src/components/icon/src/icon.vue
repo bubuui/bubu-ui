@@ -18,14 +18,21 @@
     ></span>
   </template>
 </template>
+
+<script lang="ts">
+export default {
+  name: 'BuIcon',
+};
+</script>
+
 <script setup lang="ts">
 import { computed } from 'vue';
 
 const props = defineProps<{
   name: string;
-  size: string | number;
-  color: string;
-  component: string;
+  size?: string | number;
+  color?: string;
+  component?: string;
 }>();
 
 const iconSize = computed(() =>
