@@ -52,6 +52,15 @@ function sidebarComponent() {
         },
       ],
     },
+    {
+      text: '反馈组件',
+      items: [
+        {
+          text: 'Notification',
+          link: '/components/notification',
+        },
+      ],
+    },
   ];
 }
 
@@ -92,7 +101,15 @@ export default defineConfig({
   markdown: {
     config(md) {
       // 这里可以使用markdown-it插件
-      md.use(demoBlockPlugin);
+      md.use(demoBlockPlugin, {
+        scriptImports: ["import * as bubuUI from '@/index'"],
+        scriptReplaces: [
+          {
+            searchValue: /import ({.*}) from 'bubu-ui'/g,
+            replaceValue: (s, s1) => `const ${s1} = bubuUI`,
+          },
+        ],
+      });
     },
   },
 });

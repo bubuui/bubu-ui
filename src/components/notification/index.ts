@@ -1,11 +1,12 @@
 import type { App } from 'vue';
-import BuNotification from './src/notification.vue';
-// 具名导出
-export { BuNotification };
+import Notify from './src/notify';
 
-// 导出插件
-export default {
-  install(app: App) {
-    app.component('bu-notification', BuNotification);
-  },
-};
+function withInstallFunction() {
+  Notify.install = (app: App) => {
+    app.config.globalProperties[('$notify', Notify)];
+  };
+  return Notify;
+}
+
+export const BuNotification = withInstallFunction();
+export default BuNotification;

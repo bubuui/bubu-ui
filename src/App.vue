@@ -1,10 +1,18 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { BuNotification } from '@/index';
+const open = () => {
+  BuNotification({
+    title: '34234',
+    message: 'hahah',
+  });
+};
+</script>
 
 <template>
   <!-- <Acom msg="234"></Acom> -->
   <bu-space size="20px">
     <div>TEST1</div>
-    <bu-button>TEST2</bu-button>
+    <bu-button @click="open">TEST2</bu-button>
     <bu-button>TEST3</bu-button>
     <bu-button>TEST4</bu-button>
   </bu-space>

@@ -2,5 +2,6 @@ export { default as BuButton } from './components/button';
 export { default as BuTitle } from './components/title';
 export { default as BuForm } from './components/form';
 export { default as BuInput } from './components/input';
-export { default as Icon } from './components/icon';
-export { default as Space } from './components/space';
+export { default as BuIcon } from './components/icon';
+export { default as BuSpace } from './components/space';
+export { default as BuNotification } from './components/notification';
