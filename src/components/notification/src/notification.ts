@@ -1,4 +1,4 @@
-import type { ExtractPropTypes, PropType } from 'vue';
+import type { ExtractPropTypes, PropType, VNode } from 'vue';
 export const notificationProps = {
   id: {
     type: String,
@@ -9,12 +9,16 @@ export const notificationProps = {
     values: ['top-right', 'top-left', 'bottom-right', 'bottom-left'],
     default: 'top-right',
   },
+  dangerouslyUseHTMLString: {
+    type: Boolean,
+    default: false,
+  },
   title: {
     type: String,
     default: '',
   },
   message: {
-    type: String as PropType<string | VNod>,
+    type: String as PropType<string | VNode>,
     default: '',
   },
   duration: {
@@ -33,6 +37,12 @@ export const notificationProps = {
     type: Function as PropType<() => void>,
     required: true,
   },
+};
+
+export type NotificationParams = Partial<NotificationOptions> | string | VNode;
+
+export type NotificationOptions = Omit<NotificationProps, 'id'> & {
+  appendTo?: HTMLElement | string;
 };
 
 export type NotificationProps = ExtractPropTypes<typeof notificationProps>;

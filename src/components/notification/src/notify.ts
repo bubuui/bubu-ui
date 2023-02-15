@@ -1,6 +1,17 @@
-import { isVNode, createVNode, render } from 'vue';
+import {
+  isVNode,
+  createVNode,
+  render,
+  type ComponentPublicInstance,
+  type VNode,
+} from 'vue';
 import NotificationConstructor from './notification.vue';
-import type { NotificationQueue, NotificationProps } from './notification';
+import type {
+  NotificationQueue,
+  NotificationProps,
+  NotificationOptions,
+  NotificationParams,
+} from './notification';
 
 const GAP_SIZE = 16;
 let seed = 1;
@@ -12,7 +23,7 @@ const notifications: Record<NotificationProps['position'], NotificationQueue> =
     'bottom-right': [],
   };
 
-const notify = function (options = {}) {
+const notify = function (options: NotificationParams = {}) {
   const appendTo: HTMLElement | null = document.body;
   const container = document.createElement('div');
 

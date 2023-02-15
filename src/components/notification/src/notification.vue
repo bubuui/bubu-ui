@@ -7,7 +7,7 @@
     <div
       v-show="visible"
       :id="id"
-      :class="['bu-nofication', horizontalClass]"
+      :class="['bu-notification', horizontalClass]"
       :style="positionStyle"
       @mouseenter="clearTimer"
       @mouseleave="startTimer"
@@ -16,8 +16,11 @@
         <div class="bu-notification--title">
           {{ title }}
         </div>
-        <div class="bu-notification__message">
-          {{ message }}
+        <div class="bu-notification--content">
+          <slot>
+            <p v-if="!dangerouslyUseHTMLString">{{ message }}</p>
+            <p v-else v-html="message" />
+          </slot>
         </div>
         <bu-icon
           @click="close"
