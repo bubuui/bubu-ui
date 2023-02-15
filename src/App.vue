@@ -4,6 +4,7 @@ const open = () => {
   BuNotification({
     title: '34234',
     message: 'hahah',
+    duration: 0,
   });
 };
 </script>
@@ -15,6 +16,7 @@ const open = () => {
     <bu-button @click="open">TEST2</bu-button>
     <bu-button>TEST3</bu-button>
     <bu-button>TEST4</bu-button>
+    <bu-icon name="search" size="18px" color="red"></bu-icon>
   </bu-space>
 </template>
 

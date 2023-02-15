@@ -33,4 +33,11 @@
   &.right {
     right: 16px;
   }
+  .bu-notification--close {
+    position: absolute;
+    top: 18px;
+    right: 15px;
+    cursor: pointer;
+    color: var(--bu-notification-color, #999);
+  }
 }

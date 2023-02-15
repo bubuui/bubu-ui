@@ -1,35 +1,107 @@
 <template>
-  <transition name="bu-notification-fade">
-    <div :class="['bu-nofication', position || 'right']">
+  <transition
+    name="bu-notification-fade"
+    @before-leave="onClose"
+    @after-leave="$emit('destroy')"
+  >
+    <div
+      v-show="visible"
+      :id="id"
+      :class="['bu-nofication', horizontalClass]"
+      :style="positionStyle"
+      @mouseenter="clearTimer"
+      @mouseleave="startTimer"
+    >
       <div class="bu-nofication--group">
-        <div class="bu-notification--title">{{ title }}</div>
+        <div class="bu-notification--title">
+          {{ title }}
+        </div>
         <div class="bu-notification__message">
           {{ message }}
         </div>
-        <bu-button v-if="showClose" @click="onCloseHandler"></bu-button>
+        <bu-icon
+          @click="close"
+          class="bu-notification--close"
+          name="close"
+          size="18px"
+        ></bu-icon>
       </div>
     </div>
   </transition>
 </template>
+
 <script lang="ts">
-export default {
+import { BuIcon } from '@/components/icon';
+import {
+  ref,
+  computed,
+  type CSSProperties,
+  defineComponent,
+  onMounted,
+} from 'vue';
+import {
+  type NotificationProps,
+  notificationProps,
+  notificationEmits,
+} from './notification';
+import { useTimeoutFn } from '@vueuse/core';
+export default defineComponent({
   name: 'BuNofication',
-};
-</script>
+  emits: notificationEmits,
+  props: notificationProps,
+  components: {
+    BuIcon,
+  },
+  setup(props: NotificationProps) {
+    const visible = ref(false);
+    let timer: (() => void) | undefined = undefined;
 
-<script setup lang="ts">
-import { BuButton } from '@/components/button';
-import { ref } from 'vue';
+    const horizontalClass = computed(() =>
+      props.position.endsWith('right') ? 'right' : 'left'
+    );
 
-type PositionType = 'left' | 'right' | 'top' | 'bottom';
-defineProps<{
-  title?: string;
-  message?: string;
-  position?: PositionType;
-}>();
+    const verticalProperty = computed(() =>
+      props.position.startsWith('top') ? 'top' : 'bottom'
+    );
 
-// top需要根据数量进行计算
+    const positionStyle = computed<CSSProperties>(() => {
+      return {
+        [verticalProperty.value]: `${props.offset}px`,
+        zIndex: props.zIndex,
+      };
+    });
 
-const showClose = ref(false);
-const onCloseHandler = () => {};
+    const close = () => {
+      console.log('en');
+      visible.value = false;
+    };
+
+    const startTimer = () => {
+      if (props.duration > 0) {
+        ({ stop: timer } = useTimeoutFn(() => {
+          if (visible.value) close();
+        }, props.duration));
+      }
+    };
+
+    const clearTimer = () => {
+      timer?.();
+    };
+
+    onMounted(() => {
+      startTimer();
+      visible.value = true;
+    });
+
+    return {
+      visible,
+      horizontalClass,
+      positionStyle,
+
+      close,
+      startTimer,
+      clearTimer,
+    };
+  },
+});
 </script>

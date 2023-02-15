@@ -12,10 +12,10 @@ import { BuNotification } from 'bubu-ui';
 export default defineComponent({
   setup() {
     const open = () => {
-      console.log('243', BuNotification);
       BuNotification({
         title: '34234',
         message: 'hahah',
+        duration: 0,
       });
     };
     return {

@@ -3,14 +3,16 @@
     v-if="component"
     :class="[$attrs.class, 'icon']"
     :style="{ width: iconSize, height: iconSize }"
+    v-bind="$attrs"
   >
     <use :xlinkHref="`icon-${component}`" :fill="color"></use>
   </svg>
   <template v-if="name">
-    <img v-if="/http|https/.test(name)" :src="name" v-bind="$attrs" alt="" />
+    <img v-bind="$attrs" v-if="/http|https/.test(name)" :src="name" alt="" />
     <span
       v-else
       :class="['bu-icon', 'icon-' + name, $attrs.class]"
+      v-bind="$attrs"
       :style="{
         fontSize: iconSize,
         color: color,

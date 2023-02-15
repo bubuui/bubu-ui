@@ -1,9 +1,37 @@
-import type { ExtractPropTypes } from 'vue';
+import type { ExtractPropTypes, PropType } from 'vue';
 export const notificationProps = {
+  id: {
+    type: String,
+    default: '0',
+  },
   position: {
     type: String,
     values: ['top-right', 'top-left', 'bottom-right', 'bottom-left'],
     default: 'top-right',
+  },
+  title: {
+    type: String,
+    default: '',
+  },
+  message: {
+    type: String as PropType<string | VNod>,
+    default: '',
+  },
+  duration: {
+    type: Number,
+    default: 450,
+  },
+  zIndex: {
+    type: Number,
+    default: 0,
+  },
+  offset: {
+    type: Number,
+    default: 0,
+  },
+  onClose: {
+    type: Function as PropType<() => void>,
+    required: true,
   },
 };
 
@@ -13,3 +41,8 @@ export interface NotificationQueueItem {
   vm: VNode;
 }
 export type NotificationQueue = NotificationQueueItem[];
+
+export const notificationEmits = {
+  destroy: () => true,
+};
+export type NotificationEmits = typeof notificationEmits;
