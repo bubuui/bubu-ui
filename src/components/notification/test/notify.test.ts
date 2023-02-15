@@ -1,4 +1,4 @@
-import notify from '../src/notify';
+import Notification from '../src/notify';
 import { mount } from '@vue/test-utils';
 import { describe, it, expect, vi } from 'vitest';
 

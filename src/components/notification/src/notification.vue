@@ -12,7 +12,7 @@
       @mouseenter="clearTimer"
       @mouseleave="startTimer"
     >
-      <div class="bu-nofication--group">
+      <div class="bu-notification--group">
         <div class="bu-notification--title">
           {{ title }}
         </div>
