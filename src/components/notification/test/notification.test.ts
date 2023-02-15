@@ -36,19 +36,20 @@ describe('Notification', () => {
       },
     });
     expect(wrapper.find('.bu-notification').classes()).toContain('right');
-    expect(wrapper.find('.bu-notification').element.style.bottom).toBe('0px');
+    expect(
+      wrapper.find('.bu-notification').element.getAttribute('style')
+    ).toContain('bottom: 0px');
   });
 
-  // it('位置偏移', () => {
-  //   const verticalOffset = 50;
-  //   const wrapper = mount(Notification, {
-  //     props: {
-  //       verticalOffset,
-  //     },
-  //   });
-  //   expect(wrapper.vm.verticalProperty).toBe('top');
-  //   expect(wrapper.find('.el-notification').element.style.top).toBe(
-  //     `${verticalOffset}px`
-  //   );
-  // });
+  it('位置偏移', () => {
+    const offset = 50;
+    const wrapper = mount(Notification, {
+      props: {
+        offset,
+      },
+    });
+    expect(
+      wrapper.find('.bu-notification').element.getAttribute('style')
+    ).toContain(`top: ${offset}px`);
+  });
 });
