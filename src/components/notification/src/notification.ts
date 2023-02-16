@@ -9,6 +9,11 @@ export const notificationProps = {
     values: ['top-right', 'top-left', 'bottom-right', 'bottom-left'],
     default: 'top-right',
   },
+  type: {
+    type: String,
+    values: ['', 'success', 'warning', 'info', 'error'],
+    default: '',
+  },
   dangerouslyUseHTMLString: {
     type: Boolean,
     default: false,

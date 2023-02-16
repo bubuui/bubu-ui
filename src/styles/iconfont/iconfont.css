@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'iconfont';
   /* Project id 3889283 */
-  src: url('iconfont.woff2?t=1676012494256') format('woff2'),
-    url('iconfont.woff?t=1676012494256') format('woff'),
-    url('iconfont.ttf?t=1676012494256') format('truetype');
+  src: url('iconfont.woff2?t=1676545980573') format('woff2'),
+    url('iconfont.woff?t=1676545980573') format('woff'),
+    url('iconfont.ttf?t=1676545980573') format('truetype');
 }
 
 .bu-icon {
@@ -12,6 +12,22 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-success:before {
+  content: '\e66b';
+}
+
+.icon-info:before {
+  content: '\e67e';
+}
+
+.icon-warning:before {
+  content: '\e848';
+}
+
+.icon-error:before {
+  content: '\e651';
 }
 
 .icon-close:before {

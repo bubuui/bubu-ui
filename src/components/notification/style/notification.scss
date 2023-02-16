@@ -29,9 +29,27 @@
   position: fixed;
   background-color: $color-white;
   transition: all 0.3s;
-  top: 200px;
+  // top: 200px;
   &.right {
     right: 16px;
+  }
+  &.left {
+    left: 16px;
+  }
+  .notification-title-icon {
+    margin-right: 10px;
+    &.success {
+      color: $color-success;
+    }
+    &.info {
+      color: $color-info;
+    }
+    &.error {
+      color: $color-danger;
+    }
+    &.warning {
+      color: $color-warning;
+    }
   }
   .bu-notification--close {
     position: absolute;

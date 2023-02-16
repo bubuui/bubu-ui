@@ -12,6 +12,12 @@
       @mouseenter="clearTimer"
       @mouseleave="startTimer"
     >
+      <bu-icon
+        :name="type"
+        size="24px"
+        :class="['notification-title-icon', type]"
+        v-if="type"
+      ></bu-icon>
       <div class="bu-notification--group">
         <div class="bu-notification--title">
           {{ title }}
