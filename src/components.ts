@@ -5,3 +5,4 @@ export { default as BuInput } from './components/input';
 export { default as BuIcon } from './components/icon';
 export { default as BuSpace } from './components/space';
 export { default as BuNotification } from './components/notification';
+export { default as BuContainer } from './components/container';

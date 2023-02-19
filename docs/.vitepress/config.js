@@ -19,6 +19,15 @@ function sidebarGuide() {
 function sidebarComponent() {
   return [
     {
+      text: '布局组件',
+      items: [
+        {
+          text: 'Container组件',
+          link: '/components/container',
+        },
+      ],
+    },
+    {
       text: '基础组件',
       items: [
         {
