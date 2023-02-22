@@ -25,6 +25,10 @@ function sidebarComponent() {
           text: 'Container组件',
           link: '/components/container',
         },
+        {
+          text: 'Grid组件',
+          link: '/components/grid',
+        },
       ],
     },
     {
