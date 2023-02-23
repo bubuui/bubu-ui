@@ -238,7 +238,7 @@ function pausableFilter(extendFilter = bypassFilter) {
   const eventFilter = (...args) => {
     if (isActive.value) extendFilter(...args);
   };
-  return { isActive, pause, resume, eventFilter };
+  return { isActive: readonly(isActive), pause, resume, eventFilter };
 }
 function __onlyVue3(name = 'this function') {
   if (isVue3) return;
@@ -377,7 +377,9 @@ function createGlobalState(stateFactory) {
 function createInjectionState(composable) {
   const key = Symbol('InjectionState');
   const useProvidingState = (...args) => {
-    provide(key, composable(...args));
+    const state = composable(...args);
+    provide(key, state);
+    return state;
   };
   const useInjectedState = () => inject(key);
   return [useProvidingState, useInjectedState];
@@ -1111,11 +1113,12 @@ function useIntervalFn(cb, interval = 1e3, options = {}) {
     clean();
   }
   function resume() {
-    if (unref(interval) <= 0) return;
+    const intervalValue = resolveUnref(interval);
+    if (intervalValue <= 0) return;
     isActive.value = true;
     if (immediateCallback) cb();
     clean();
-    timer = setInterval(cb, resolveUnref(interval));
+    timer = setInterval(cb, intervalValue);
   }
   if (immediate && isClient) resume();
   if (isRef(interval) || isFunction(interval)) {
@@ -1217,7 +1220,7 @@ function useTimeoutFn(cb, interval, options = {}) {
   }
   tryOnScopeDispose(stop);
   return {
-    isPending,
+    isPending: readonly(isPending),
     start,
     stop,
   };
@@ -1725,9 +1728,14 @@ function computedAsync(evaluationCallback, initialState, optionsOrRef) {
   } else {
     options = optionsOrRef || {};
   }
-  const { lazy = false, evaluating = void 0, onError = noop } = options;
+  const {
+    lazy = false,
+    evaluating = void 0,
+    shallow = false,
+    onError = noop,
+  } = options;
   const started = ref(!lazy);
-  const current = ref(initialState);
+  const current = shallow ? shallowRef(initialState) : ref(initialState);
   let counter = 0;
   watchEffect(async (onInvalidate) => {
     if (!started.value) return;
@@ -4017,7 +4025,7 @@ function useRafFn(fn, options = {}) {
   if (immediate) resume();
   tryOnScopeDispose(pause);
   return {
-    isActive,
+    isActive: readonly(isActive),
     pause,
     resume,
   };
@@ -4046,9 +4054,12 @@ var __spreadValues$d = (a, b) => {
 };
 function useElementByPoint(options) {
   const element = ref(null);
-  const { x, y } = options;
+  const { x, y, document: document2 = defaultDocument } = options;
   const controls = useRafFn(() => {
-    element.value = document.elementFromPoint(resolveUnref(x), resolveUnref(y));
+    element.value =
+      (document2 == null
+        ? void 0
+        : document2.elementFromPoint(resolveUnref(x), resolveUnref(y))) || null;
   });
   return __spreadValues$d(
     {
@@ -4068,7 +4079,14 @@ function useElementSize(
   initialSize = { width: 0, height: 0 },
   options = {}
 ) {
-  const { box = 'content-box' } = options;
+  const { window: window2 = defaultWindow, box = 'content-box' } = options;
+  const isSVG = computed(() => {
+    var _a2, _b;
+    return (_b =
+      (_a2 = unrefElement(target)) == null ? void 0 : _a2.namespaceURI) == null
+      ? void 0
+      : _b.includes('svg');
+  });
   const width = ref(initialSize.width);
   const height = ref(initialSize.height);
   useResizeObserver(
@@ -4080,18 +4098,28 @@ function useElementSize(
           : box === 'content-box'
           ? entry.contentBoxSize
           : entry.devicePixelContentBoxSize;
-      if (boxSize) {
-        width.value = boxSize.reduce(
-          (acc, { inlineSize }) => acc + inlineSize,
-          0
-        );
-        height.value = boxSize.reduce(
-          (acc, { blockSize }) => acc + blockSize,
-          0
-        );
+      if (window2 && isSVG.value) {
+        const $elem = unrefElement(target);
+        if ($elem) {
+          const styles = window2.getComputedStyle($elem);
+          width.value = parseFloat(styles.width);
+          height.value = parseFloat(styles.height);
+        }
       } else {
-        width.value = entry.contentRect.width;
-        height.value = entry.contentRect.height;
+        if (boxSize) {
+          const formatBoxSize = Array.isArray(boxSize) ? boxSize : [boxSize];
+          width.value = formatBoxSize.reduce(
+            (acc, { inlineSize }) => acc + inlineSize,
+            0
+          );
+          height.value = formatBoxSize.reduce(
+            (acc, { blockSize }) => acc + blockSize,
+            0
+          );
+        } else {
+          width.value = entry.contentRect.width;
+          height.value = entry.contentRect.height;
+        }
       }
     },
     options
@@ -5851,7 +5879,10 @@ function useMediaControls(target, options = {}) {
   useEventListener(target, 'seeking', () => (seeking.value = true));
   useEventListener(target, 'seeked', () => (seeking.value = false));
   useEventListener(target, 'waiting', () => (waiting.value = true));
-  useEventListener(target, 'playing', () => (waiting.value = false));
+  useEventListener(target, 'playing', () => {
+    waiting.value = false;
+    ended.value = false;
+  });
   useEventListener(
     target,
     'ratechange',
@@ -6118,6 +6149,9 @@ function useMouseInElement(target, options = {}) {
       },
       { immediate: true }
     );
+    useEventListener(document, 'mouseleave', () => {
+      isOutside.value = true;
+    });
   }
   return {
     x,
@@ -6549,6 +6583,65 @@ function usePointer(options = {}) {
     isInside,
   });
 }
+function usePointerLock(target, options = {}) {
+  const { document: document2 = defaultDocument, pointerLockOptions } = options;
+  const isSupported = useSupported(
+    () => document2 && 'pointerLockElement' in document2
+  );
+  const element = ref();
+  const triggerElement = ref();
+  let targetElement;
+  if (isSupported.value) {
+    useEventListener(document2, 'pointerlockchange', () => {
+      var _a2;
+      const currentElement =
+        (_a2 = document2.pointerLockElement) != null ? _a2 : element.value;
+      if (targetElement && currentElement === targetElement) {
+        element.value = document2.pointerLockElement;
+        if (!element.value) targetElement = triggerElement.value = null;
+      }
+    });
+    useEventListener(document2, 'pointerlockerror', () => {
+      var _a2;
+      const currentElement =
+        (_a2 = document2.pointerLockElement) != null ? _a2 : element.value;
+      if (targetElement && currentElement === targetElement) {
+        const action = document2.pointerLockElement ? 'release' : 'acquire';
+        throw new Error(`Failed to ${action} pointer lock.`);
+      }
+    });
+  }
+  async function lock(e, options2) {
+    var _a2;
+    if (!isSupported.value)
+      throw new Error('Pointer Lock API is not supported by your browser.');
+    triggerElement.value = e instanceof Event ? e.currentTarget : null;
+    targetElement =
+      e instanceof Event
+        ? (_a2 = unrefElement(target)) != null
+          ? _a2
+          : triggerElement.value
+        : unrefElement(e);
+    if (!targetElement) throw new Error('Target element undefined.');
+    targetElement.requestPointerLock(
+      options2 != null ? options2 : pointerLockOptions
+    );
+    return await until(element).toBe(targetElement);
+  }
+  async function unlock() {
+    if (!element.value) return false;
+    document2.exitPointerLock();
+    await until(element).toBeNull();
+    return true;
+  }
+  return {
+    isSupported,
+    element,
+    triggerElement,
+    lock,
+    unlock,
+  };
+}
 var SwipeDirection;
 (function (SwipeDirection2) {
   SwipeDirection2['UP'] = 'UP';
@@ -6791,6 +6884,17 @@ function usePreferredReducedMotion(options) {
     if (isReduced.value) return 'reduce';
     return 'no-preference';
   });
+}
+function usePrevious(value, initialValue) {
+  const previous = shallowRef(initialValue);
+  watch(
+    resolveRef(value),
+    (_, oldValue) => {
+      previous.value = oldValue;
+    },
+    { flush: 'sync' }
+  );
+  return readonly(previous);
 }
 var useScreenOrientation = (options = {}) => {
   const { window: window2 = defaultWindow } = options;
@@ -8289,19 +8393,17 @@ function useVirtualListResources(list) {
   return { state, source, currentList, size, containerRef };
 }
 function createGetViewCapacity(state, source, itemSize) {
-  return (containerHeight) => {
+  return (containerSize) => {
     if (typeof itemSize === 'number')
-      return Math.ceil(containerHeight / itemSize);
+      return Math.ceil(containerSize / itemSize);
     const { start = 0 } = state.value;
     let sum = 0;
     let capacity = 0;
     for (let i = start; i < source.value.length; i++) {
-      const height = itemSize(i);
-      sum += height;
-      if (sum >= containerHeight) {
-        capacity = i;
-        break;
-      }
+      const size = itemSize(i);
+      sum += size;
+      capacity = i;
+      if (sum > containerSize) break;
     }
     return capacity - start;
   };
@@ -8616,7 +8718,7 @@ function useWebSocket(url, options = {}) {
     return true;
   };
   const _init = () => {
-    if (explicitlyClosed) return;
+    if (explicitlyClosed || typeof urlRef.value === 'undefined') return;
     const ws = new WebSocket(urlRef.value, protocols);
     wsRef.value = ws;
     status.value = 'CONNECTING';
@@ -9091,12 +9193,14 @@ export {
   useParallax,
   usePermission,
   usePointer,
+  usePointerLock,
   usePointerSwipe,
   usePreferredColorScheme,
   usePreferredContrast,
   usePreferredDark,
   usePreferredLanguages,
   usePreferredReducedMotion,
+  usePrevious,
   useRafFn,
   useRefHistory,
   useResizeObserver,

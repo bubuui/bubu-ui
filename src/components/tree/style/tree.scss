@@ -1,0 +1,22 @@
+@use 'sass:map';
+@use '../../../styles/var' as *;
+
+@import '../../../styles/commom';
+
+.bu-tree {
+  .bu-tree--node {
+    position: relative;
+    .bu-tree--node-vline {
+      position: absolute;
+      width: 1px;
+      background-color: $color-line;
+    }
+    .bu-tree--node-content {
+      display: flex;
+      align-items: center;
+      .bu-tree--checkbox {
+        position: relative;
+      }
+    }
+  }
+}
