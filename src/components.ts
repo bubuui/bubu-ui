@@ -7,3 +7,4 @@ export { default as BuSpace } from './components/space';
 export { default as BuNotification } from './components/notification';
 export { default as BuContainer } from './components/container';
 export { default as BuGrid } from './components/grid';
+export { default as BuTree } from './components/tree';

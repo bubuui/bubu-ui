@@ -66,6 +66,15 @@ function sidebarComponent() {
       ],
     },
     {
+      text: '数据展示',
+      items: [
+        {
+          text: 'Tree组件',
+          link: '/components/tree',
+        },
+      ],
+    },
+    {
       text: '反馈组件',
       items: [
         {

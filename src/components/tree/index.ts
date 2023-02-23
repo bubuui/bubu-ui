@@ -1,5 +1,5 @@
 import type { App } from 'vue';
-import BuTree from './src/tree.vue';
+import BuTree from './src/tree';
 // 具名导出
 export { BuTree };
 

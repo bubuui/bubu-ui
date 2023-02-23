@@ -1,6 +1,6 @@
 {
   "hash": "77ee677f",
-  "browserHash": "272734f4",
+  "browserHash": "d9e1bcfa",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
@@ -14,17 +14,17 @@
       "fileHash": "d8f38e7e",
       "needsInterop": false
     },
-    "lodash": {
-      "src": "../../../../node_modules/lodash/lodash.js",
-      "file": "lodash.js",
-      "fileHash": "deda7cb0",
-      "needsInterop": true
-    },
     "@vueuse/core": {
       "src": "../../../../node_modules/@vueuse/core/index.mjs",
       "file": "@vueuse_core.js",
       "fileHash": "55059672",
       "needsInterop": false
+    },
+    "lodash": {
+      "src": "../../../../node_modules/lodash/lodash.js",
+      "file": "lodash.js",
+      "fileHash": "deda7cb0",
+      "needsInterop": true
     }
   },
   "chunks": {

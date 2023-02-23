@@ -1,5 +1,5 @@
 import type { App } from 'vue';
-import BuGrid from './src/grid.vue';
+import BuGrid from './src/grid';
 import BuGridItem from './src/grid-item.vue';
 // 具名导出
 export { BuGrid };
