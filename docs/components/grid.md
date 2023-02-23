@@ -31,7 +31,6 @@
   <bu-grid :cols="4">
     <bu-grid-item :offset="1"><div class="demo"></div></bu-grid-item>
     <bu-grid-item :offset="1"> <div class="demo"></div></bu-grid-item>
-    <bu-grid-item :offset="1"> <div class="demo"></div></bu-grid-item>
   </bu-grid>
 </template>
 <style>
