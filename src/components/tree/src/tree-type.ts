@@ -28,6 +28,10 @@ export const treeProps = {
     type: Boolean,
     default: false,
   },
+  dragdrop: {
+    type: Boolean,
+    default: false,
+  },
   height: {
     type: Number,
   },
@@ -38,6 +42,7 @@ export const treeProps = {
 };
 
 export interface IInnerTreeNode extends ITreeNode {
+  indeterminate?: boolean;
   parentId?: string; // 父节点ID
   level: number; // 节点层级
   isLeaf?: boolean; // 是否叶子结点

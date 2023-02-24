@@ -11,8 +11,21 @@ export default defineComponent({
   name: 'BuTreeNode',
   props: treeNodeProps,
   setup(props: TreeNodeProps, { slots }) {
-    const { treeNode, lineable, checkable } = toRefs(props);
-    const { getChildrenExpanded } = inject('TREE_UTILS') as TreeUtils;
+    const { treeNode, lineable, checkable, dragdrop } = toRefs(props);
+    const { getChildrenExpanded, toggleCheckNode } = inject(
+      'TREE_UTILS'
+    ) as TreeUtils;
+    let dragdropProps = {};
+    if (dragdrop.value) {
+      dragdropProps = {
+        draggable: true,
+        // onDragend: (event: DragEvent) => onDragend(event),
+        // onDragleave: (event: DragEvent) => onDragleave(event),
+        // onDragover: (event: DragEvent) => onDragover(event),
+        // onDragstart: (event: DragEvent) => onDragstart(event, treeNode.value),
+        // onDrop: (event: DragEvent) => onDrop(event, treeNode.value),
+      };
+    }
     return () => (
       <div
         class="bu-tree--node"
@@ -35,7 +48,7 @@ export default defineComponent({
               }}
             ></span>
           )}
-        <div class="bu-tree--node-content">
+        <div class="bu-tree--node-content" {...dragdropProps}>
           {/* 图标 */}
           {treeNode.value.isLeaf ? (
             <span
@@ -55,7 +68,7 @@ export default defineComponent({
               v-model={treeNode.value.checked}
               class="bu-tree--checkbox"
               onClick={() => {
-                // toggleCheckNode(treeNode.value);
+                toggleCheckNode(treeNode.value);
               }}
             />
           )}

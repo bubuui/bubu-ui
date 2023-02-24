@@ -11,7 +11,12 @@ export type IUseToggle = {
   toggleNode: (treeNode: IInnerTreeNode) => void;
 };
 
+export type IUseCheck = {
+  toggleCheckNode: (treeNode: IInnerTreeNode) => void;
+};
+
 export type TreeUtils = {
   treeData: Ref<IInnerTreeNode[]>;
 } & IUseCore &
-  IUseToggle;
+  IUseToggle &
+  IUseCheck;

@@ -6,7 +6,7 @@
 
 ```vue
 <template>
-  <bu-tree :data="data" lineable checkable></bu-tree>
+  <bu-tree :data="data" lineable checkable dragdrop></bu-tree>
 </template>
 
 <script lang="ts">
