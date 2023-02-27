@@ -6,7 +6,7 @@
 
 ```vue
 <template>
-  <bu-tree :data="data" lineable checkable dragdrop></bu-tree>
+  <bu-tree :data="data" lineable checkable :dragdrop="dragdrop"></bu-tree>
 </template>
 
 <script lang="ts">
@@ -39,8 +39,14 @@ export default defineComponent({
         id: '13',
       },
     ]);
+    const dragdrop = reactive({
+      dropNext: true,
+      dropPrev: true,
+      dropInner: true,
+    });
     return {
       data,
+      dragdrop,
     };
   },
 });

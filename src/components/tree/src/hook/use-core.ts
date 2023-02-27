@@ -62,9 +62,14 @@ export function useCore(innerData: Ref<IInnerTreeNode[]>) {
     return result;
   };
 
+  const getParent = (node: IInnerTreeNode) => {
+    return innerData.value.find((item) => item.id === node.parentId);
+  };
+
   return {
     expendedTree,
     getChildren,
+    getParent,
     getChildrenExpanded,
   };
 }

@@ -14,7 +14,7 @@ export default defineComponent({
   props: treeProps,
   setup(props: TreeProps, { slots }) {
     const { data } = toRefs(props);
-    const treeData = useTree(data?.value as ITreeNode[]);
+    const treeData = useTree(data?.value as ITreeNode[], props);
     provide('TREE_UTILS', treeData);
 
     const TreeNode = (treeNode: IInnerTreeNode) => (

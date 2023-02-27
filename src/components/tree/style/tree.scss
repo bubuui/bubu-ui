@@ -11,12 +11,22 @@
       width: 1px;
       background-color: $color-line;
     }
-    .bu-tree--node-content {
+    &-content {
       display: flex;
       align-items: center;
       .bu-tree--checkbox {
         position: relative;
       }
+    }
+    &--drop-prev {
+      border-top: 2px solid $color-primary;
+    }
+    &--drop-next {
+      border-bottom: 2px solid $color-primary;
+    }
+    &--drop-inner {
+      background-color: $color-primary;
+      color: #fff;
     }
   }
 }

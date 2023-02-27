@@ -1,4 +1,5 @@
 import type { ExtractPropTypes, PropType } from 'vue';
+import type { IDragdrop } from './hook/use-tree-type';
 
 export interface ITreeNode {
   label: string;
@@ -29,7 +30,7 @@ export const treeProps = {
     default: false,
   },
   dragdrop: {
-    type: Boolean,
+    type: [Boolean, Object] as PropType<IDragdrop>,
     default: false,
   },
   height: {
@@ -42,7 +43,7 @@ export const treeProps = {
 };
 
 export interface IInnerTreeNode extends ITreeNode {
-  indeterminate?: boolean;
+  // indeterminate?: boolean;
   parentId?: string; // 父节点ID
   level: number; // 节点层级
   isLeaf?: boolean; // 是否叶子结点
