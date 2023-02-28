@@ -9,8 +9,8 @@ import '../../../src/index.scss';
 import './common.scss';
 
 // 字体
-import '../../../src/styles/iconfont/iconfont.js';
 import '../../../src/styles/iconfont/iconfont.css';
+import '../../../src/styles/iconfont/iconfont.js';
 
 export default {
   ...DefaultTheme,

@@ -1,17 +1,23 @@
 <template>
   <svg
     v-if="component"
-    :class="[$attrs.class, 'icon']"
+    :class="[$attrs.class, 'icon', 'icon-svg', type && `icon-${type}`]"
     :style="{ width: iconSize, height: iconSize }"
+    aria-hidden="true"
     v-bind="$attrs"
   >
-    <use :xlinkHref="`icon-${component}`" :fill="color"></use>
+    <use :xlink:href="`#icon-${component}`" :fill="color"></use>
   </svg>
   <template v-if="name">
-    <img v-bind="$attrs" v-if="/http|https/.test(name)" :src="name" alt="" />
+    <img
+      v-bind="$attrs"
+      v-if="/http|https/.test(name)"
+      :src="name"
+      :alt="name"
+    />
     <span
       v-else
-      :class="['bu-icon', 'icon-' + name, $attrs.class]"
+      :class="['bu-icon', 'icon-' + name, type && `icon-${type}`, $attrs.class]"
       v-bind="$attrs"
       :style="{
         fontSize: iconSize,
@@ -29,11 +35,12 @@ export default {
 
 <script setup lang="ts">
 import { computed } from 'vue';
-
+import { useAttrs } from '@/hooks/use-attrs';
 const props = defineProps<{
   name: string;
   size?: string | number;
   color?: string;
+  type?: 'primary' | 'success' | 'error' | 'info' | 'warning';
   component?: string;
 }>();
 

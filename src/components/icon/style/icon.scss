@@ -1,0 +1,24 @@
+@use 'sass:map';
+@use '../../../styles/var' as *;
+
+@import '../../../styles/commom';
+
+.icon-svg {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  // fill: currentColor;
+  overflow: hidden;
+}
+
+.icon,
+.bu-icon {
+  @each $type in (primary, success, info, error, warning) {
+    &.icon-#{$type} {
+      color: map.get($colors, '#{$type}', 'base');
+      use {
+        fill: map.get($colors, '#{$type}', 'base') !important;
+      }
+    }
+  }
+}

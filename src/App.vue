@@ -16,11 +16,21 @@ const open = () => {
     <bu-button @click="open">TEST2</bu-button>
     <bu-button>TEST3</bu-button>
     <bu-button>TEST4</bu-button>
-    <bu-icon name="search" size="18px" color="red"></bu-icon>
+    <bu-icon name="search" size="18px" color="origin"></bu-icon>
   </bu-space>
+  <!-- <svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-success" fill="#013430"></use>
+  </svg> -->
 </template>
 
 <style scoped>
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
 header {
   line-height: 1.5;
 }
