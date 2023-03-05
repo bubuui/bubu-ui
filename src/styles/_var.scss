@@ -40,6 +40,8 @@ $color-error: map.get($colors, 'error', 'base') !default;
 $color-info: map.get($colors, 'info', 'base') !default;
 $color-line: var(--bu-line, #dcdee2);
 
+$color-bg-info: var(--color-bg-info, #f5f7fa);
+
 $common-component-size: () !default;
 $common-component-size: map.merge(
   (

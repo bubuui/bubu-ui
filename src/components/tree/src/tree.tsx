@@ -18,7 +18,11 @@ export default defineComponent({
     provide('TREE_UTILS', treeData);
 
     const TreeNode = (treeNode: IInnerTreeNode) => (
-      <BuTreeNode {...props} treeNode={treeNode}>
+      <BuTreeNode
+        {...props}
+        treeNode={treeNode}
+        onClick={() => treeData.toggleNode(treeNode)}
+      >
         {{
           content: () =>
             slots.content ? slots.content(treeNode) : treeNode.label,
@@ -31,7 +35,7 @@ export default defineComponent({
             ) : (
               <BuTreeNodeToggle
                 expanded={!!treeNode.expanded}
-                onClick={() => treeData.toggleNode(treeNode)}
+                // onClick={() => treeData.toggleNode(treeNode)}
               ></BuTreeNodeToggle>
             ),
         }}

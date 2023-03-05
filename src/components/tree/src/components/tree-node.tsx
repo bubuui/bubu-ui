@@ -1,4 +1,4 @@
-import { defineComponent, inject, toRefs } from 'vue';
+import { defineComponent, inject, ref, toRefs } from 'vue';
 import type { TreeUtils } from '../hook/use-tree-type';
 import { treeNodeProps, type TreeNodeProps } from './tree-node-type';
 
@@ -38,6 +38,7 @@ export default defineComponent({
         style={{
           paddingLeft: `${NODE_INDENT * (treeNode.value.level - 1)}px`,
           height: NODE_HEIGHT + 'px',
+          lineHeight: NODE_HEIGHT + 'px',
         }}
       >
         {!treeNode.value.isLeaf &&

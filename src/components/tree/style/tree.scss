@@ -6,6 +6,9 @@
 .bu-tree {
   .bu-tree--node {
     position: relative;
+    &:hover {
+      background-color: $color-bg-info;
+    };
     .bu-tree--node-vline {
       position: absolute;
       width: 1px;

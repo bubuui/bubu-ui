@@ -39,14 +39,57 @@ export default defineComponent({
         id: '13',
       },
     ]);
-    const dragdrop = reactive({
-      dropNext: true,
-      dropPrev: true,
-      dropInner: true,
-    });
     return {
       data,
-      dragdrop,
+    };
+  },
+});
+</script>
+```
+
+:::
+
+### 多选
+
+:::demo
+
+```vue
+<template>
+  <bu-tree :data="data" checkable></bu-tree>
+</template>
+
+<script lang="ts">
+import { reactive } from 'vue';
+export default defineComponent({
+  setup() {
+    const data = reactive([
+      {
+        label: 'test1',
+        id: '12',
+        children: [
+          {
+            label: 'test1-1',
+            id: '12-1',
+            children: [
+              {
+                label: 'test1-1-1',
+                id: '12-1-1',
+              },
+            ],
+          },
+          {
+            label: 'test1-2',
+            id: '12-2',
+          },
+        ],
+      },
+      {
+        label: 'test2',
+        id: '13',
+      },
+    ]);
+    return {
+      data,
     };
   },
 });
@@ -94,14 +137,8 @@ export default defineComponent({
         id: '13',
       },
     ]);
-    const dragdrop = reactive({
-      dropNext: true,
-      dropPrev: true,
-      dropInner: true,
-    });
     return {
       data,
-      dragdrop,
     };
   },
 });
@@ -116,7 +153,7 @@ export default defineComponent({
 
 ```vue
 <template>
-  <bu-tree :data="data" dragdrop></bu-tree>
+  <bu-tree :data="data" :dragdrop="dragdrop"></bu-tree>
 </template>
 
 <script lang="ts">
@@ -135,6 +172,10 @@ export default defineComponent({
               {
                 label: 'test1-1-1',
                 id: '12-1-1',
+              },
+              {
+                label: 'test1-1-2',
+                id: '12-1-2',
               },
             ],
           },

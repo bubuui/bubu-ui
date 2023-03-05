@@ -1,17 +1,28 @@
 @font-face {
-  font-family: 'iconfont';
-  /* Project id 3889283 */
-  src: url('iconfont.woff2?t=1676545980573') format('woff2'),
-    url('iconfont.woff?t=1676545980573') format('woff'),
-    url('iconfont.ttf?t=1676545980573') format('truetype');
+  font-family: 'iconfont'; /* Project id 3889283 */
+  src: url('iconfont.woff2?t=1678027686548') format('woff2'),
+    url('iconfont.woff?t=1678027686548') format('woff'),
+    url('iconfont.ttf?t=1678027686548') format('truetype');
 }
 
-.bu-icon {
+.iconfont {
   font-family: 'iconfont' !important;
   font-size: 16px;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-checkbox:before {
+  content: '\e63e';
+}
+
+.icon-checkbox-select:before {
+  content: '\edaf';
+}
+
+.icon-checkbox-indeterminate:before {
+  content: '\ef3a';
 }
 
 .icon-success:before {
@@ -22,7 +33,7 @@
   content: '\e67e';
 }
 
-.icon-warning:before {
+.icon-warning-circle-fill:before {
   content: '\e848';
 }
 
