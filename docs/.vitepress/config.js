@@ -60,6 +60,10 @@ function sidebarComponent() {
           link: '/components/input',
         },
         {
+          text: 'Checkbox组件',
+          link: '/components/checkbox',
+        },
+        {
           text: 'Form组件',
           link: '/components/form',
         },

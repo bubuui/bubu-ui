@@ -1,11 +1,12 @@
 @font-face {
-  font-family: 'iconfont'; /* Project id 3889283 */
-  src: url('iconfont.woff2?t=1678027686548') format('woff2'),
-    url('iconfont.woff?t=1678027686548') format('woff'),
-    url('iconfont.ttf?t=1678027686548') format('truetype');
+  font-family: 'iconfont';
+  /* Project id 3889283 */
+  src: url('iconfont.woff2?t=1678071996119') format('woff2'),
+    url('iconfont.woff?t=1678071996119') format('woff'),
+    url('iconfont.ttf?t=1678071996119') format('truetype');
 }
 
-.iconfont {
+.bu-icon {
   font-family: 'iconfont' !important;
   font-size: 16px;
   font-style: normal;

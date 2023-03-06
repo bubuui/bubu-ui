@@ -23,12 +23,14 @@ export function useCheck(
     if (checkedSiblingNodes.length === siblingNodes.length) {
       // 如果所有兄弟节点都被勾选，则设置父节点的checked属性为true
       parentNode.checked = true;
+      parentNode.indeterminate = false;
     } else {
       // 否则设置父节点的checked属性为false
       parentNode.checked = false;
       parentNode.indeterminate =
         checkedSiblingNodes.length === 0 ? false : true;
     }
+    console.log('parentNode', parentNode);
   };
   return {
     toggleCheckNode,

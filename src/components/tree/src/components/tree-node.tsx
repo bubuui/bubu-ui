@@ -1,7 +1,7 @@
 import { defineComponent, inject, ref, toRefs } from 'vue';
 import type { TreeUtils } from '../hook/use-tree-type';
 import { treeNodeProps, type TreeNodeProps } from './tree-node-type';
-
+import { BuCheckbox } from '@/components/checkbox';
 // 节点高度
 const NODE_HEIGHT = 32;
 
@@ -67,13 +67,10 @@ export default defineComponent({
           ) : (
             slots.icon!()
           )}
-
           {/* 复选框 */}
           {checkable.value && (
-            <input
-              type="checkbox"
-              v-model={treeNode.value.checked}
-              class="bu-tree--checkbox"
+            <BuCheckbox
+              modelValue={treeNode.value.checked}
               onClick={() => {
                 toggleCheckNode(treeNode.value);
               }}

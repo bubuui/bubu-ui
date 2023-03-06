@@ -43,7 +43,7 @@ export const treeProps = {
 };
 
 export interface IInnerTreeNode extends ITreeNode {
-  // indeterminate?: boolean;
+  indeterminate?: boolean;
   parentId?: string; // 父节点ID
   level: number; // 节点层级
   isLeaf?: boolean; // 是否叶子结点
