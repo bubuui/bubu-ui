@@ -16,6 +16,10 @@ export type IUseCheck = {
   toggleCheckNode: (treeNode: IInnerTreeNode) => void;
 };
 
+export type IUseLazyLoad = {
+  lazyLoadNodes: (node: IInnerTreeNode) => void;
+};
+
 // 拖拽
 export type IDragdrop = boolean | IDropType;
 

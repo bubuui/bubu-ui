@@ -35,8 +35,13 @@ export default defineComponent({
             ) : (
               <BuTreeNodeToggle
                 expanded={!!treeNode.expanded}
-                // onClick={() => treeData.toggleNode(treeNode)}
               ></BuTreeNodeToggle>
+            ),
+          loading: () =>
+            slots.loading ? (
+              slots.loading({ nodeData: treeData })
+            ) : (
+              <span class="ml-1">loading...</span>
             ),
         }}
       </BuTreeNode>

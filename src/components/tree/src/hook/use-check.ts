@@ -11,7 +11,12 @@ export function useCheck(
     getChildren(treeNode).forEach((child) => {
       child.checked = treeNode.checked;
     });
+    checkParentNode(treeNode);
 
+    // console.log('parentNode', parentNode);
+  };
+
+  const checkParentNode = (treeNode: IInnerTreeNode) => {
     const parentNode = innerData.value.find(
       (item) => item.id === treeNode.parentId
     );
@@ -30,7 +35,8 @@ export function useCheck(
       parentNode.indeterminate =
         checkedSiblingNodes.length === 0 ? false : true;
     }
-    console.log('parentNode', parentNode);
+    console.log('treeNode', parentNode);
+    checkParentNode(parentNode);
   };
   return {
     toggleCheckNode,

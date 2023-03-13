@@ -11,7 +11,11 @@
     >
       <BuIcon v-if="modelValue" name="checkbox-select" size="18px" />
       <template v-else>
-        <BuIcon name="checkbox-indeterminate" v-if="indeterminate" />
+        <BuIcon
+          name="checkbox-indeterminate"
+          v-if="indeterminate"
+          size="18px"
+        />
         <BuIcon v-else name="checkbox" size="18px" />
       </template>
     </span>

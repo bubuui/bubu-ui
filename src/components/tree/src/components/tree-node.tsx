@@ -71,6 +71,7 @@ export default defineComponent({
           {checkable.value && (
             <BuCheckbox
               modelValue={treeNode.value.checked}
+              indeterminate={treeNode.value.indeterminate}
               onClick={() => {
                 toggleCheckNode(treeNode.value);
               }}

@@ -29,6 +29,14 @@ function sidebarComponent() {
           text: 'Grid组件',
           link: '/components/grid',
         },
+        {
+          text: 'Space组件',
+          link: '/components/space',
+        },
+        {
+          text: 'Split组件',
+          link: '/components/split',
+        },
       ],
     },
     {
@@ -45,10 +53,6 @@ function sidebarComponent() {
         {
           text: 'Icon组件',
           link: '/components/icon',
-        },
-        {
-          text: 'Space组件',
-          link: '/components/space',
         },
       ],
     },
