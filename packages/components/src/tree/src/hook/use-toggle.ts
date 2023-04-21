@@ -1,0 +1,26 @@
+import type { Ref, SetupContext } from 'vue';
+import type { IInnerTreeNode } from '../tree-type';
+import type { IUseCore, IUseLazyLoad, IUseToggle } from './use-tree-type';
+
+export function useToggle(
+  innerData: Ref<IInnerTreeNode[]>,
+  core: IUseCore,
+  context: SetupContext,
+  lazyLoad: IUseLazyLoad
+): IUseToggle {
+  const { lazyLoadNodes } = lazyLoad;
+  const toggleNode = (node: IInnerTreeNode) => {
+    const cur = innerData.value.find((item) => item.id === node.id);
+    if (cur) {
+      cur.expanded = !cur.expanded;
+
+      if (cur.expanded) {
+        // 节点懒加载
+        lazyLoadNodes(cur);
+      }
+    }
+  };
+  return {
+    toggleNode,
+  };
+}

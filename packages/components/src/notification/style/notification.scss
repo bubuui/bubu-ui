@@ -1,0 +1,61 @@
+@use 'sass:map';
+@use '../../../styles/var' as *;
+
+@import '../../../styles/commom';
+
+.bu-notification-fade-enter-from {
+  &.right {
+    right: 0;
+    transform: translateX(100%);
+  }
+
+  &.left {
+    left: 0;
+    transform: translateX(-100%);
+  }
+}
+.bu-notification-fade-fade-leave-to {
+  opacity: 0;
+}
+
+.bu-notification {
+  display: flex;
+  padding: $notification-padding;
+  width: $notification-width;
+  box-sizing: box-sizing;
+  border-radius: map.get($border-radius, 'base');
+  border: 1px solid $color-line;
+  box-shadow: $notification-box-shadow;
+  position: fixed;
+  background-color: $color-white;
+  transition: all 0.3s;
+  // top: 200px;
+  &.right {
+    right: 16px;
+  }
+  &.left {
+    left: 16px;
+  }
+  .notification-title-icon {
+    margin-right: 10px;
+    &.success {
+      color: $color-success;
+    }
+    &.info {
+      color: $color-info;
+    }
+    &.error {
+      color: $color-danger;
+    }
+    &.warning {
+      color: $color-warning;
+    }
+  }
+  .bu-notification--close {
+    position: absolute;
+    top: 18px;
+    right: 15px;
+    cursor: pointer;
+    color: var(--bu-notification-color, #999);
+  }
+}

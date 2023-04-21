@@ -1,0 +1,15 @@
+$button-height: var(--bu-button-height, 32px);
+$disabled-opacity: var(--bu-disabled-opacity, 0.7);
+$diabled-color: var(--bu-disabled-bg-color, #f5f7fa);
+$notification-padding: var(--bu-notification-padding, 14px 26px 14px 13px);
+$notification-width: var(--bu-notification-width, 330px);
+$notification-box-shadow: var(
+  --bu-notification-box-shadow,
+  0 0 12px rgba(0, 0, 0, 0.12)
+);
+$container-header-padding: 0 20px !default;
+$container-footer-padding: 0 20px !default;
+$container-main-padding: 20px !default;
+$checkbox-marign: var(--bu-heckbox-marign, 15px);
+$bu-transition-duration: var(--bu-transition-duration, 0.3s);
+$message-padding: var(--bu-message-padding, 10px 19px);

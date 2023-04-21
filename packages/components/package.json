@@ -1,5 +1,5 @@
 {
-  "name": "@easyest/components",
+  "name": "@bubu-ui/components",
   "version": "1.0.0",
   "description": "",
   "main": "./index.ts",
@@ -12,7 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@easyest/utils": "workspace:^1.0.0"
+    "@bubu-ui/hook": "workspace:^1.0.0",
+    "@bubu-ui/utils": "workspace:^1.0.2"
   },
   "devDependencies": {
     "@vitest/coverage-c8": "^0.29.2"

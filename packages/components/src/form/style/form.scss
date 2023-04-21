@@ -1,0 +1,73 @@
+@use 'sass:map';
+@use '../../../styles/var' as *;
+
+@import '../../../styles/commom';
+
+@mixin label {
+  vertical-align: middle;
+  box-sizing: border-box;
+  text-align: right;
+  padding: 0 12px 0 0;
+  display: inline-flex;
+  align-items: flex-start;
+  flex: 0 0 auto;
+  box-sizing: border-box;
+  width: auto;
+}
+
+.bu-form {
+  font-size: map.get($form, 'label-font-size');
+  .bu-form-item {
+    display: flex;
+    margin-bottom: map.get($form, 'form-item-spacing');
+    align-items: center;
+    &.is-error {
+      .bu-input--wrapper {
+        box-shadow: 0 0 0 1px $color-danger inset;
+      }
+      margin-bottom: calc(map.get($form, 'form-item-spacing') + 8px);
+    }
+    &.is-required {
+      .bu-form-item-label {
+        &::before {
+          content: "*";
+          color: $color-danger;
+          margin-right: 4px;
+        }
+      }
+    }
+  }
+  @each $type in (right, left) {
+    &.bu-form--#{$type} {
+      .bu-form-item-label {
+        @include label;
+        text-align: #{type};
+      }
+    }
+  }
+  &.bu-form--top {
+    .bu-form-item {
+      display: block;
+    }
+    .bu-form-item-label {
+      @include label;
+      text-align: left;
+      display: block;
+      margin-bottom: 8px;
+    }
+  }
+  .bu-form-item--content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex: 1;
+    position: relative;
+    .bu-form-item--error {
+      color: $color-danger;
+      font-size: 12px;
+      position: absolute;
+      left: 0;
+      top: 100%;
+    }
+  }
+}

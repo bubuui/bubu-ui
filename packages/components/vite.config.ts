@@ -13,7 +13,7 @@ export default defineConfig({
     //minify: false,
     rollupOptions: {
       //忽略打包vue文件
-      external: ['vue', /\.less/, '@easyest/utils'],
+      external: ['vue', /\.less/, '@bubu-ui/utils'],
       input: ['index.ts'],
       output: [
         {
@@ -25,7 +25,7 @@ export default defineConfig({
           preserveModules: true,
           exports: 'named',
           //配置打包根目录
-          dir: '../easyest/es'
+          dir: '../bubu-ui/es'
         },
         {
           //打包格式
@@ -36,20 +36,20 @@ export default defineConfig({
           preserveModules: true,
           exports: 'named',
           //配置打包根目录
-          dir: '../easyest/lib'
+          dir: '../bubu-ui/lib'
         }
       ]
     },
     lib: {
       entry: './index.ts',
-      name: 'easyest'
+      name: 'bubu-ui'
     }
   },
   plugins: [
     vue(),
     dts({
       entryRoot: 'src',
-      outputDir: ['../easyest/es/src', '../easyest/lib/src'],
+      outputDir: ['../bubu-ui/es/src', '../bubu-ui/lib/src'],
       //指定使用的tsconfig.json为我们整个项目根目录下,如果不配置,你也可以在components下新建tsconfig.json
       tsConfigFilePath: '../../tsconfig.json'
     }),
@@ -67,7 +67,7 @@ export default defineConfig({
           this.emitFile({
             type: 'asset',
             fileName: key, //文件名名不变
-            source: bundler.code.replace(/\.less/g, '.css')
+            source: bundler.code.replace(/\.scss/g, '.css')
           });
         }
       }

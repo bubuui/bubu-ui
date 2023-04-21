@@ -1,0 +1,38 @@
+@use "sass:map";
+@use "../../../styles/var" as *;
+
+@import "../../../styles/commom";
+
+@mixin title-base {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  height: map.get($title, "height");
+  font-size: map.get($title, "title-font-szie");
+}
+
+.bu-title {
+  @include title-base;
+}
+
+@each $type in (primary, success, info, error, warning) {
+  .bu-title--#{$type} {
+    &.bu-title--sub {
+      border-left: map.get($title, "sub-width")
+        solid
+        map.get($colors, "#{$type}", "base");
+    }
+  }
+}
+
+.bu-title--sub {
+  border-left: map.get($title, "sub-width") solid $color-primary;
+  height: map.get($title, "sub-height");
+  padding-left: map.get($title, "title-padding");
+  font-size: map.get($title, "sub-font-szie");
+}
+
+.bu-title--border {
+  border-bottom: map.get($title, "border");
+}

@@ -1,0 +1,27 @@
+@use 'sass:map';
+@use '../../../styles/var' as *;
+
+@import '../../../styles/commom';
+
+.bu-checkbox {
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  white-space: nowrap;
+  user-select: none;
+  cursor: pointer;
+  &--input {
+    white-space: nowrap;
+    cursor: pointer;
+    outline: none;
+    display: inline-flex;
+    position: relative;
+    margin-right: $checkbox-marign;
+    &.checked {
+      color: $color-primary;
+    }
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
