@@ -7,18 +7,21 @@
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
-    "docs:deploy": "node script/deploy.js"
+    "docs:deploy": "node script/deploy.js",
+    "register:components": "vitepress-rc"
   },
   "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@bubu-ui/components": "workspace:^1.0.0",
+    "@vitejs/plugin-vue-jsx": "^3.0.1",
+    "vite-plugin-vue-type-imports": "^0.2.4",
     "vitepress": "1.0.0-alpha.46",
     "vue": "^3.2.36"
   },
   "dependencies": {
-    "@easyest/components": "workspace:^1.0.0",
-    "easyest": "workspace:^1.0.4"
+    "bubu-ui": "workspace:^1.0.0"
   }
 }

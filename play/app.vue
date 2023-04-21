@@ -1,9 +1,9 @@
 <template>
   <div>
-    <ea-button>按钮</ea-button>
+    <BuButton>按钮</BuButton>
     <Button>123</Button>
   </div>
 </template>
 <script lang="ts" setup>
-import { Button } from '@easyest/components';
+import { BuButton } from '@bubu-ui/components';
 </script>

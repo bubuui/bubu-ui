@@ -1,6 +1,6 @@
 import { createApp } from 'vue';
 import App from './app.vue';
-import easyest from '@easyest/components';
+import BuBuUI from '@bubu-ui/components';
 const app = createApp(App);
-app.use(easyest);
+app.use(BuBuUI);
 app.mount('#app');
