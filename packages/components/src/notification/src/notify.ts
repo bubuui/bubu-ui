@@ -3,14 +3,14 @@ import {
   createVNode,
   render,
   type ComponentPublicInstance,
-  type VNode,
+  type VNode
 } from 'vue';
 import NotificationConstructor from './notification.vue';
 import type {
   NotificationQueue,
   NotificationProps,
   NotificationOptions,
-  NotificationParams,
+  NotificationParams
 } from './notification';
 
 const GAP_SIZE = 16;
@@ -20,7 +20,7 @@ const notifications: Record<NotificationProps['position'], NotificationQueue> =
     'top-left': [],
     'top-right': [],
     'bottom-left': [],
-    'bottom-right': [],
+    'bottom-right': []
   };
 
 const notify = function (options: NotificationParams = {}) {
@@ -50,7 +50,7 @@ const notify = function (options: NotificationParams = {}) {
     id,
     onClose: () => {
       close(id, position, userOnClose);
-    },
+    }
   };
   const vm = createVNode(
     NotificationConstructor,
@@ -58,7 +58,7 @@ const notify = function (options: NotificationParams = {}) {
     // 允许是一个插槽
     isVNode(props.message)
       ? {
-          default: () => props.message,
+          default: () => props.message
         }
       : null
   );
@@ -75,7 +75,7 @@ const notify = function (options: NotificationParams = {}) {
       return ((
         vm.component!.proxy as ComponentPublicInstance<{ visible: boolean }>
       ).visible = false);
-    },
+    }
   };
 };
 

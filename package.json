@@ -1,6 +1,6 @@
 {
   "name": "bubu-ui",
-  "version": "1.0.0",
+  "version": "0.0.8",
   "description": "",
   "main": "index.js",
   "type": "module",
@@ -19,6 +19,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/fs-extra": "^11.0.1",
     "@types/gulp": "^4.0.10",
     "@types/gulp-autoprefixer": "^0.0.33",
     "@types/gulp-less": "^0.0.32",
@@ -38,6 +39,7 @@
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.9.0",
+    "fs-extra": "^11.1.1",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-less": "^5.0.0",

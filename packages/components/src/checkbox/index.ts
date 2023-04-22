@@ -1,4 +1,5 @@
-import _Checkbox from './src/checkbox.vue';
+import Checkbox from './src/checkbox.vue';
 import { withInstall } from '@bubu-ui/utils';
-export const BuCheckbox = withInstall(_Checkbox);
+import './style/checkbox.scss';
+export const BuCheckbox = withInstall(Checkbox);
 export default BuCheckbox;

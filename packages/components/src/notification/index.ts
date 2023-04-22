@@ -1,5 +1,5 @@
 import './style/notification.scss';
-import _Notify from './src/notify';
-import { withInstall } from '@bubu-ui/utils';
-export const BuNotification = withInstall(_Notify);
+import Notify from './src/notify';
+import { withInstallFunction } from '@bubu-ui/utils';
+export const BuNotification = withInstallFunction(Notify, '$notify');
 export default BuNotification;

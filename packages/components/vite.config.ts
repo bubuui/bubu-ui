@@ -13,7 +13,7 @@ export default defineConfig({
     //minify: false,
     rollupOptions: {
       //忽略打包vue文件
-      external: ['vue', /\.less/, '@bubu-ui/utils'],
+      external: ['vue', /\.less/, '@bubu-ui/utils', '@bubu-ui/hook'],
       input: ['index.ts'],
       output: [
         {
@@ -48,8 +48,11 @@ export default defineConfig({
   plugins: [
     vue(),
     dts({
-      entryRoot: 'src',
-      outputDir: ['../bubu-ui/es/src', '../bubu-ui/lib/src'],
+      entryRoot: './src',
+      outputDir: [
+        '../bubu-ui/es/packages/components/src',
+        '../bubu-ui/lib/packages/components/src'
+      ],
       //指定使用的tsconfig.json为我们整个项目根目录下,如果不配置,你也可以在components下新建tsconfig.json
       tsConfigFilePath: '../../tsconfig.json'
     }),

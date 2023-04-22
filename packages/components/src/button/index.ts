@@ -1,4 +1,5 @@
-import _Button from './src/button';
+import Button from './src/button';
 import { withInstall } from '@bubu-ui/utils';
-export const BuButton = withInstall(_Button);
+import './style/button.scss';
+export const BuButton = withInstall(Button);
 export default BuButton;

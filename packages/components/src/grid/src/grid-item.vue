@@ -5,7 +5,7 @@
 </template>
 <script lang="ts">
 export default {
-  name: 'BuGridItem',
+  name: 'BuGridItem'
 };
 </script>
 <script setup lang="ts">

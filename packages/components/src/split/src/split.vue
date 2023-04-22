@@ -46,19 +46,19 @@
 </template>
 <script lang="ts">
 export default {
-  name: 'BuSplit',
+  name: 'BuSplit'
 };
 </script>
 <script setup lang="ts">
-import { isString } from '../../../utils/check-type';
-import { on, off } from '../../../utils/event';
+import { isString } from '@vue/shared';
+import { on, off } from '@bubu-ui/utils';
 import {
   computed,
   ref,
   nextTick,
   watch,
   onMounted,
-  onBeforeUnmount,
+  onBeforeUnmount
 } from 'vue';
 const props = withDefaults(
   defineProps<{
@@ -71,7 +71,7 @@ const props = withDefaults(
     modelValue: 0.5,
     mode: 'horizontal',
     min: '40px',
-    max: '40px',
+    max: '40px'
   }
 );
 const emit = defineEmits<{
@@ -93,7 +93,7 @@ const offsetSize = computed(() =>
 const anotherOffset = computed(() => 100 - offset.value);
 
 const paneClasses = computed(() => ({
-  'bu-split-pane-moving': isMoving.value,
+  'bu-split-pane-moving': isMoving.value
 }));
 watch(
   () => props.modelValue,
@@ -101,7 +101,7 @@ watch(
     computeOffset();
   },
   {
-    immediate: true,
+    immediate: true
   }
 );
 

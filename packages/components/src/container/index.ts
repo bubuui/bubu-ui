@@ -1,20 +1,20 @@
-import BuContainer from './src/container.vue';
-import BuAside from './src/aside.vue';
-import BuFooter from './src/footer.vue';
-import BuHeader from './src/header.vue';
-import BuMain from './src/main.vue';
-import type { App } from 'vue';
+import Container from './src/container.vue';
+import Aside from './src/aside.vue';
+import Footer from './src/footer.vue';
+import Header from './src/header.vue';
+import Main from './src/main.vue';
 import './style/container.scss';
+import { withInstall, withNoopInstall } from '@bubu-ui/utils';
 
-export { BuContainer, BuAside, BuFooter, BuHeader, BuMain };
+export const BuContainer = withInstall(Container, {
+  Aside,
+  Footer,
+  Header,
+  Main
+});
 
-// 导出插件
-export default {
-  install(app: App) {
-    app.component('bu-container', BuContainer);
-    app.component('bu-aside', BuAside);
-    app.component('bu-footer', BuFooter);
-    app.component('bu-header', BuHeader);
-    app.component('bu-main', BuMain);
-  }
-};
+export default BuContainer;
+export const BuAside = withNoopInstall(Aside);
+export const BuFooter = withNoopInstall(Footer);
+export const BuHeader = withNoopInstall(Header);
+export const BuMain = withNoopInstall(Main);

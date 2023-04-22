@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [vueJsx(), VueTypeImports()],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('../src', import.meta.url)),
+      '@': fileURLToPath(new URL('../../packages/components', import.meta.url)),
     },
   },
 });

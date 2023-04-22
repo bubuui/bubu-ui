@@ -1,14 +1,11 @@
-import type { App } from 'vue';
-import BuGrid from './src/grid';
-import BuGridItem from './src/grid-item.vue';
-import './src/grid';
-// 具名导出
-export { BuGrid };
+import Grid from './src/grid';
+import GridItem from './src/grid-item.vue';
+import { withInstall, withNoopInstall } from '@bubu-ui/utils';
 
-// 导出插件
-export default {
-  install(app: App) {
-    app.component('bu-grid', BuGrid);
-    app.component('bu-grid-item', BuGridItem);
-  }
-};
+export const BuGrid = withInstall(Grid, {
+  GridItem
+});
+
+export default BuGrid;
+
+export const BuGridItem = withNoopInstall(GridItem);

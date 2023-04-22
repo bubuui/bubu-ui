@@ -1,12 +1,6 @@
-import type { App } from 'vue';
-import BuSpace from './src/space';
+import Space from './src/space';
 import './style/space.scss';
-// 具名导出
-export { BuSpace };
+import { withInstall } from '@bubu-ui/utils';
 
-// 导出插件
-export default {
-  install(app: App) {
-    app.component('bu-space', BuSpace);
-  },
-};
+export const BuSpace = withInstall(Space);
+export default BuSpace;

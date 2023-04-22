@@ -21,7 +21,7 @@
       v-bind="$attrs"
       :style="{
         fontSize: iconSize,
-        color: color,
+        color: color
       }"
     ></span>
   </template>
@@ -29,14 +29,14 @@
 
 <script lang="ts">
 export default {
-  name: 'BuIcon',
+  name: 'BuIcon'
 };
 </script>
 
 <script setup lang="ts">
 import { computed } from 'vue';
 const props = defineProps<{
-  name: string;
+  name?: string;
   size?: string | number;
   color?: string;
   type?: 'primary' | 'success' | 'error' | 'info' | 'warning';

@@ -1,9 +1,17 @@
 <template>
   <div>
-    <BuButton>按钮</BuButton>
-    <Button>123</Button>
+    <bu-button @click="open()">open</bu-button>
+    <bu-button @click="open(0)">open</bu-button>
   </div>
 </template>
 <script lang="ts" setup>
-import { BuButton } from '@bubu-ui/components';
+import { BuButton, BuNotification } from '../packages/components/index.ts';
+// console.log('BuNotification', BuNotification);
+const open = (time) => {
+  BuNotification({
+    title: '34234',
+    message: 'hahah',
+    duration: time
+  });
+};
 </script>

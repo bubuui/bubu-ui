@@ -1,12 +1,39 @@
-import type { App, Plugin } from 'vue';
+import type { App, Plugin, AppContext } from 'vue';
+import { NOOP } from '@vue/shared';
+
 export type SFCWithInstall<T> = T & Plugin;
-export default <T>(comp: T) => {
-  (comp as SFCWithInstall<T>).install = (app: App) => {
-    // 当组件是 script setup 的形式时，会自动以为文件名注册，会挂载到组件的__name 属性上
-    // 所以要加上这个条件
-    const name = (comp as any).name || (comp as any).__name;
-    //注册组件
-    app.component(name, comp as SFCWithInstall<T>);
-  };
-  return comp as SFCWithInstall<T>;
+export type SFCInstallWithContext<T> = SFCWithInstall<T> & {
+  _context: AppContext | null;
 };
+
+const withInstall = <T, E extends Record<string, any>>(main: T, extra?: E) => {
+  (main as SFCWithInstall<T>).install = (app): void => {
+    for (const comp of [main, ...Object.values(extra ?? {})]) {
+      app.component(comp.name, comp);
+    }
+  };
+
+  if (extra) {
+    for (const [key, comp] of Object.entries(extra)) {
+      (main as any)[key] = comp;
+    }
+  }
+  return main as SFCWithInstall<T> & E;
+};
+
+const withInstallFunction = <T>(fn: T, name: string) => {
+  (fn as SFCWithInstall<T>).install = (app: App) => {
+    (fn as SFCInstallWithContext<T>)._context = app._context;
+    app.config.globalProperties[name] = fn;
+  };
+
+  return fn as SFCInstallWithContext<T>;
+};
+
+const withNoopInstall = <T>(component: T) => {
+  (component as SFCWithInstall<T>).install = NOOP;
+
+  return component as SFCWithInstall<T>;
+};
+
+export { withInstallFunction, withInstall, withNoopInstall };

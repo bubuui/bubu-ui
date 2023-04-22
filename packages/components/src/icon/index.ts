@@ -1,4 +1,7 @@
-import _Icon from './src/icon.vue';
+import Icon from './src/icon.vue';
 import { withInstall } from '@bubu-ui/utils';
-export const BuIcon = withInstall(_Icon);
+import './style/icon.scss';
+import '../../styles/iconfont/iconfont.css';
+import '../../styles/iconfont/iconfont.js';
+export const BuIcon = withInstall(Icon);
 export default BuIcon;

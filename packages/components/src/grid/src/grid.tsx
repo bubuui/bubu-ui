@@ -4,23 +4,23 @@ import {
   renderSlot,
   h,
   type VNodeArrayChildren,
-  type VNode,
+  type VNode
 } from 'vue';
 
 export default defineComponent({
-  name: 'BuSpace',
+  name: 'BuGrid',
   props: {
     cols: {
-      type: Number,
+      type: Number
     },
     xGap: {
       type: Number,
-      default: 15,
+      default: 15
     },
     yGap: {
       type: Number,
-      default: 15,
-    },
+      default: 15
+    }
   },
   setup(props: any, { slots }) {
     const { cols, xGap, yGap } = toRefs(props);
@@ -33,7 +33,7 @@ export default defineComponent({
           style={{
             'grid-template-columns': `repeat(${cols.value}, minmax(0px, 1fr))`,
             gap: `${yGap.value}px ${xGap.value}px`,
-            display: 'grid',
+            display: 'grid'
           }}
         >
           {children.children &&
@@ -43,8 +43,8 @@ export default defineComponent({
                 offset += item.props?.offset || 0;
                 config = {
                   style: {
-                    'grid-column': `${offset} / span ${item.props?.span || 1}`,
-                  },
+                    'grid-column': `${offset} / span ${item.props?.span || 1}`
+                  }
                 };
               }
               const vnode = h(item, config);
@@ -54,5 +54,5 @@ export default defineComponent({
         </div>
       );
     };
-  },
+  }
 });

@@ -1,6 +1,7 @@
 @use 'sass:map';
 @use '../../../styles/var' as *;
 @import '../../../styles/commom';
+@import '../../../styles/loading.scss';
 
 .bu-loading {
   &-mask {

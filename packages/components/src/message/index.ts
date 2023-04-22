@@ -1,5 +1,5 @@
 import './style/message.scss';
-import _Message from './src/method';
-import { withInstall } from '@bubu-ui/utils';
-export const BuMessage = withInstall(_Message);
+import Message from './src/method';
+import { withInstallFunction } from '@bubu-ui/utils';
+export const BuMessage = withInstallFunction(Message, '$message');
 export default BuMessage;
