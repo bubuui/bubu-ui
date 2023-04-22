@@ -7,8 +7,7 @@ import fse from 'fs-extra';
 import run from '../utils/run';
 const pck = require('../../package.json');
 const version = require('../../../../package.json').version;
-// const version = require('../../package.json');
-//删除easyest
+
 import dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 const sass = gulpSass(dartSass);
