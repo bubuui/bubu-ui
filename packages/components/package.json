@@ -12,7 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@bubu-ui/hook": "workspace:^1.0.0",
+    "@bubu-ui/hook": "workspace:^1.0.2",
     "@bubu-ui/utils": "workspace:^1.0.2"
   },
   "devDependencies": {
