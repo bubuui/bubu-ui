@@ -28,7 +28,9 @@ export const buildStyle = () => {
 const createPackage = () => {
   let dependencies: any = [];
   Object.keys(pck.dependencies).forEach((key) =>
-    dependencies.push(`"${key}": "${pck.dependencies[key]}"`)
+    dependencies.push(
+      `"${key}": "${pck.dependencies[key].replace('workspace:', '')}"`
+    )
   );
   const fileStr = `{
     "name": "bubu-ui",
@@ -58,7 +60,6 @@ const createPackage = () => {
       ${dependencies.join(',')}
     }
   }`;
-  console.log('pck.dependencies', pck.dependencies);
   fse.outputFile(
     resolve(__dirname, '../../../bubu-ui/package.json'),
     fileStr,
