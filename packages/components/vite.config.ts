@@ -14,7 +14,7 @@ export default defineConfig({
     //minify: false,
     rollupOptions: {
       //忽略打包vue文件
-      external: ['vue', /\.less/, '@bubu-ui/utils', '@bubu-ui/hook'],
+      external: ['vue', /\.scss/, '@bubu-ui/utils', '@bubu-ui/hook'],
       input: ['index.ts'],
       output: [
         {
