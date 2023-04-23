@@ -1,6 +1,7 @@
 /// <reference types="vitest" />
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
+import vueJsx from '@vitejs/plugin-vue-jsx';
 import dts from 'vite-plugin-dts';
 // @ts-ignore
 import DefineOptions from 'unplugin-vue-define-options/vite';
@@ -13,7 +14,7 @@ export default defineConfig({
     //minify: false,
     rollupOptions: {
       //忽略打包vue文件
-      external: ['vue', /\.less/],
+      external: ['vue', /\.less/, '@bubu-ui/utils', '@bubu-ui/hook'],
       input: ['index.ts'],
       output: [
         {
@@ -47,6 +48,7 @@ export default defineConfig({
   },
   plugins: [
     vue(),
+    vueJsx(),
     dts({
       entryRoot: './src',
       outputDir: [

@@ -6,29 +6,23 @@
     "author": "yeshaojun",
     "description": "基于vue3开源组件库",
     "files": [
-        "es",
-        "lib"
+      "es",
+      "lib"
     ],
     "repository": {
-        "type": "git",
-        "url": "https://github.com/bubuui/bubu-ui"
+      "type": "git",
+      "url": "https://github.com/bubuui/bubu-ui"
     },
     "sideEffects": [
-        "**/*.css"
+      "**/*.css"
     ],
-    "keywords": [
-        "vue3",
-        "组件库",
-        "tsx",
-        "UI"
-    ],
+    "keywords": ["vue3", "组件库", "tsx", "UI"],
     "license": "ISC",
     "types": "lib/packages/components/index.d.ts",
     "bugs": {
-        "url": "https://github.com/bubuui/bubu-ui"
+      "url": "https://github.com/bubuui/bubu-ui"
     },
     "dependencies": {
-        "@bubu-ui/hook": "^1.0.0",
-        "@bubu-ui/utils": "^1.0.2"
+      "@bubu-ui/hook": "^1.0.0","@bubu-ui/utils": "^1.0.2"
     }
-}
+  }
