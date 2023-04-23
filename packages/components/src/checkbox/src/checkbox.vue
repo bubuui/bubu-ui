@@ -32,6 +32,7 @@ export default {
 <script setup lang="ts">
 import { BuIcon } from '../../icon';
 import type { Fragment } from 'vue';
+import '../style/checkbox.scss';
 const emit = defineEmits<{
   (e: 'update:modelValue', newValue: boolean): void;
 }>();

@@ -139,13 +139,17 @@ importers:
   play:
     specifiers:
       '@bubu-ui/components': workspace:^1.0.0
+      '@bubu-ui/hook': workspace:^1.0.2
+      '@bubu-ui/utils': workspace:^1.0.2
       '@vitejs/plugin-vue': ^4.0.0
       '@vitejs/plugin-vue-jsx': ^3.0.1
-      bubu-ui: workspace:^1.0.0
+      bubu-ui: ^0.0.13
       vite: ^4.1.1
     dependencies:
       '@bubu-ui/components': link:../packages/components
-      bubu-ui: link:../packages/bubu-ui
+      '@bubu-ui/hook': link:../packages/hook
+      '@bubu-ui/utils': link:../packages/utils
+      bubu-ui: 0.0.13
     devDependencies:
       '@vitejs/plugin-vue': 4.0.0_vite@4.1.1
       '@vitejs/plugin-vue-jsx': 3.0.1_vite@4.1.1
@@ -1490,6 +1494,14 @@ packages:
   /@bcoe/v8-coverage/0.2.3:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
     dev: true
+
+  /@bubu-ui/hook/1.0.2:
+    resolution: {integrity: sha512-j+nLS8BY/yPbfzleQ5rYnfYBM3BwcxqOorFOZurxFyT6ikMMbsH3qVRlK3DZRYmRDFIW+mUeUOBF9250gqzzTg==}
+    dev: false
+
+  /@bubu-ui/utils/1.0.2:
+    resolution: {integrity: sha512-BmlceGHLEuGxpKlRMo7R6FkF/Pa7KhvhH5ipuyw5iun0F4kB/Buu5dZzZXe26TpKabGToSfIeuuk3w9cYo4Gpg==}
+    dev: false
 
   /@csstools/css-parser-algorithms/2.0.1_5vzy4lghjvuzkedkkk4tqwjftm:
     resolution: {integrity: sha512-B9/8PmOtU6nBiibJg0glnNktQDZ3rZnGn/7UmDfrm2vMtrdlXO3p7ErE95N0up80IRk9YEtB5jyj/TmQ1WH3dw==}
@@ -3739,6 +3751,13 @@ packages:
       node-releases: 2.0.10
       update-browserslist-db: 1.0.10_browserslist@4.21.5
     dev: true
+
+  /bubu-ui/0.0.13:
+    resolution: {integrity: sha512-PaHn8TyFAfrTLmi/oIWHGSJeJsKmcHQd4MHuYQFI/EPj5jSou9JwXkX3HyxJ57Etrx1qJOJfxeF9nbm0W8eW9w==}
+    dependencies:
+      '@bubu-ui/hook': 1.0.2
+      '@bubu-ui/utils': 1.0.2
+    dev: false
 
   /buffer-alloc-unsafe/1.1.0:
     resolution: {integrity: sha512-TEM2iMIEQdJ2yjPJoSIsldnleVaAk1oW3DBVUykyOLsEsFmEc9kn+SFFPz+gl54KQNxlDnAwCXosOS9Okx2xAg==}

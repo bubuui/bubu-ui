@@ -25,6 +25,14 @@ export const buildStyle = () => {
     .pipe(dest(`${pkgPath}/bubu-ui/es/packages/components/src`));
 };
 
+export const buildFullStyle = () => {
+  return src(`${componentPath}/**.scss`)
+    .pipe(sass())
+    .pipe(autoprefixer())
+    .pipe(dest(`${pkgPath}/bubu-ui/lib/`))
+    .pipe(dest(`${pkgPath}/bubu-ui/es/`));
+};
+
 const createPackage = () => {
   let dependencies: any = [];
   Object.keys(pck.dependencies).forEach((key) =>
@@ -75,6 +83,7 @@ export default series(
   async () => removeDist(),
   parallel(
     async () => buildStyle(),
+    async () => buildFullStyle(),
     async () => buildComponent(),
     async () => createPackage()
   )
