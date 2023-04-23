@@ -21,8 +21,8 @@ export const buildStyle = () => {
   return src(`${componentPath}/src/**/style/**.scss`)
     .pipe(sass())
     .pipe(autoprefixer())
-    .pipe(dest(`${pkgPath}/bubu-ui/lib/src`))
-    .pipe(dest(`${pkgPath}/bubu-ui/es/src`));
+    .pipe(dest(`${pkgPath}/bubu-ui/lib/packages/components/src`))
+    .pipe(dest(`${pkgPath}/bubu-ui/es/packages/components/src`));
 };
 
 const createPackage = () => {
