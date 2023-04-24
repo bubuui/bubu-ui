@@ -16,6 +16,6 @@
   },
   "dependencies": {
     "@bubu-ui/components": "workspace:^1.0.0",
-    "bubu-ui": "^0.0.13"
+    "bubu-ui": "^0.0.14"
   }
 }

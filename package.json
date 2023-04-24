@@ -3,7 +3,6 @@
   "version": "0.0.13",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "build:bubu": "gulp -f packages/components/script/build/index.ts & pnpm run --filter ./packages/utils build",
     "publish:bubu": "gulp -f packages/components/script/publish/index.ts",
@@ -13,12 +12,23 @@
     "docs:deploy": "pnpm run --filter site docs:deploy",
     "dev": "pnpm run --filter ./play dev",
     "lint:script": "eslint --ext .js,.jsx,.vue,.ts,.tsx --fix --quiet ./",
-    "lint:style": "stylelint --fix \"packages/components/src/**/*.{css,less}\""
+    "lint:style": "stylelint --fix \"packages/components/src/**/*.{css,less}\"",
+    "install:husky": "husky install",
+    "commit": "git add . && git-cz",
+    "changelog": "conventional-changelog -p -i CHANGELOG.md -s"
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@commitlint/cli": "^17.6.1",
+    "@commitlint/config-conventional": "^17.6.1",
+    "@commitlint/cz-commitlint": "^17.5.0",
     "@types/fs-extra": "^11.0.1",
     "@types/gulp": "^4.0.10",
     "@types/gulp-autoprefixer": "^0.0.33",
@@ -36,6 +46,10 @@
     "@vueuse/core": "^10.0.2",
     "async-validator": "^4.2.5",
     "c8": "^7.13.0",
+    "commitizen": "^4.3.0",
+    "conventional-changelog-cli": "^2.2.2",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-customizable": "^7.0.0",
     "eslint": "^8.35.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
@@ -46,7 +60,9 @@
     "gulp-less": "^5.0.0",
     "gulp-sass": "^5.1.0",
     "happy-dom": "^8.9.0",
+    "husky": "^8.0.3",
     "less": "^4.1.3",
+    "lint-staged": "^13.2.1",
     "postcss-html": "^1.5.0",
     "prettier": "^2.8.4",
     "release-it": "^15.6.0",
@@ -69,5 +85,8 @@
   },
   "dependencies": {
     "lodash": "^4.17.21"
+  },
+  "lint-staged": {
+    "*.{js,css,vue,jsx,ts,md,tsx}": "prettier --write --ignore-unknown"
   }
 }
