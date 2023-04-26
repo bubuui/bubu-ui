@@ -18,7 +18,9 @@
     ],
     "release-it": {
       "plugins": {
-        "@release-it-plugins/workspaces": true
+        "@release-it-plugins/workspaces": {
+          "workspaces": ["../../packages/**"]
+        }
       }
     },
     "keywords": ["vue3", "组件库", "tsx", "UI"],
