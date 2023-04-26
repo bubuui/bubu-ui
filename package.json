@@ -89,15 +89,5 @@
   },
   "lint-staged": {
     "*.{js,css,vue,jsx,ts,md,tsx}": "prettier --write --ignore-unknown"
-  },
-  "release-it": {
-    "plugins": {
-      "@release-it-plugins/workspaces": {
-        "workspaces": [
-          "packages/**"
-        ]
-      }
-    },
-    "npm": false
   }
 }
