@@ -16,6 +16,11 @@
     "sideEffects": [
       "**/*.css"
     ],
+    "release-it": {
+      "plugins": {
+        "@release-it-plugins/workspaces": true
+      }
+    },
     "keywords": ["vue3", "组件库", "tsx", "UI"],
     "license": "ISC",
     "types": "lib/packages/components/index.d.ts",
