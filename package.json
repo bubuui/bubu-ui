@@ -1,6 +1,6 @@
 {
   "name": "bubu-ui",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -89,5 +89,15 @@
   },
   "lint-staged": {
     "*.{js,css,vue,jsx,ts,md,tsx}": "prettier --write --ignore-unknown"
+  },
+  "release-it": {
+    "plugins": {
+      "@release-it-plugins/workspaces": {
+        "workspaces": [
+          "packages/*"
+        ]
+      }
+    },
+    "npm": false
   }
 }

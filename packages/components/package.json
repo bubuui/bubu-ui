@@ -8,12 +8,6 @@
     "test": "vitest",
     "coverage": "vitest run --coverage"
   },
-  "release-it": {
-    "plugins": {
-      "@release-it-plugins/workspaces": true
-    },
-    "npm": false
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
