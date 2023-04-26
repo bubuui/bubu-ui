@@ -36,9 +36,7 @@ export const buildFullStyle = () => {
 const createPackage = () => {
   let dependencies: any = [];
   Object.keys(pck.dependencies).forEach((key) =>
-    dependencies.push(
-      `"${key}": "${pck.dependencies[key].replace('workspace:', '')}"`
-    )
+    dependencies.push(`"${key}": "${pck.dependencies[key]}"`)
   );
   const fileStr = `{
     "name": "bubu-ui",
