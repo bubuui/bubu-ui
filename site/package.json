@@ -15,14 +15,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@bubu-ui/components": "workspace:^1.0.0",
+    "@bubu-ui/components": "workspace:^1.0.1",
     "@vitejs/plugin-vue-jsx": "^3.0.1",
     "vite-plugin-vue-type-imports": "^0.2.4",
     "vitepress": "1.0.0-alpha.36",
     "vue": "^3.2.36"
   },
   "dependencies": {
-    "bubu-ui": "workspace:^1.0.0",
+    "bubu-ui": "workspace:^0.0.13",
     "vite": "^4.3.1"
   }
 }
