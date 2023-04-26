@@ -27,16 +27,6 @@
   "bugs": {
     "url": "https://github.com/bubuui/bubu-ui"
   },
-  "release-it": {
-    "plugins": {
-      "@release-it-plugins/workspaces": {
-        "workspaces": [
-          "/packages/**"
-        ]
-      }
-    },
-    "npm": false
-  },
   "dependencies": {
     "@bubu-ui/hook": "workspace:*",
     "@bubu-ui/utils": "workspace:*"
