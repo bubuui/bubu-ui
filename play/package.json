@@ -15,7 +15,7 @@
     "vite": "^4.1.1"
   },
   "dependencies": {
-    "@bubu-ui/components": "workspace:^1.0.1",
-    "bubu-ui": "workspace:^0.0.13"
+    "@bubu-ui/components": "workspace:*",
+    "bubu-ui": "workspace:*"
   }
 }
