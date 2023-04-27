@@ -12,6 +12,6 @@
   "license": "MIT",
   "scripts": {
     "build": "vite build",
-    "release": "release-it"
+    "publish": "release-it"
   }
 }

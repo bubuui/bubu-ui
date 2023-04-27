@@ -6,7 +6,10 @@
   "scripts": {
     "build:bubu": "gulp -f packages/components/script/build/index.ts & pnpm run --filter ./packages/utils build",
     "publish:bubu": "gulp -f packages/components/script/publish/index.ts",
-    "publish:bubuutils": "gulp -f packages/utils/publish/index.ts",
+    "build:hook": "pnpm run --filter @bubu-ui/hook build",
+    "publish:hook": "pnpm run --filter @bubu-ui/hook publish",
+    "build:utils": "pnpm run --filter @bubu-ui/utils build",
+    "publish:utils": "pnpm run --filter @bubu-ui/utils publish",
     "docs:dev": "pnpm run --filter site docs:dev",
     "docs:build": "pnpm run --filter site docs:build",
     "docs:deploy": "pnpm run --filter site docs:deploy",
@@ -15,9 +18,7 @@
     "lint:style": "stylelint --fix \"packages/components/src/**/*.{css,less}\"",
     "install:husky": "husky install",
     "commit": "git add . && git-cz",
-    "changelog": "conventional-changelog -p -i CHANGELOG.md -s",
-    "changeset": "changeset",
-    "packages-version": "changeset version"
+    "changelog": "conventional-changelog -p -i CHANGELOG.md -s"
   },
   "config": {
     "commitizen": {
@@ -28,7 +29,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@changesets/cli": "^2.26.1",
     "@commitlint/cli": "^17.6.1",
     "@commitlint/config-conventional": "^17.6.1",
     "@commitlint/cz-commitlint": "^17.5.0",

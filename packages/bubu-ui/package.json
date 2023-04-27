@@ -22,7 +22,5 @@
     "bugs": {
       "url": "https://github.com/bubuui/bubu-ui"
     },
-    "dependencies": {
-      "@bubu-ui/hook": "workspace:*","@bubu-ui/utils": "workspace:*"
-    }
+    "dependencies": {"@bubu-ui/hook":"1.0.2","@bubu-ui/utils":"1.0.2"}
   }

@@ -34,10 +34,7 @@ export const buildFullStyle = () => {
 };
 
 const createPackage = () => {
-  let dependencies: any = [];
-  Object.keys(pck.dependencies).forEach((key) =>
-    dependencies.push(`"${key}": "${pck.dependencies[key]}"`)
-  );
+  const dependencies = findVersion();
   const fileStr = `{
     "name": "bubu-ui",
     "version": "${version}",
@@ -62,15 +59,34 @@ const createPackage = () => {
     "bugs": {
       "url": "https://github.com/bubuui/bubu-ui"
     },
-    "dependencies": {
-      ${dependencies.join(',')}
-    }
+    "dependencies": ${JSON.stringify(dependencies)}
   }`;
   fse.outputFile(
     resolve(__dirname, '../../../bubu-ui/package.json'),
     fileStr,
     'utf-8'
   );
+};
+
+const findVersion = () => {
+  const packagePath = resolve(__dirname, '../../../../packages');
+  const pckKeys = Object.keys(pck.dependencies);
+  let dependencies = {};
+  fse
+    .readdirSync(packagePath)
+    .filter((name) => {
+      const componentDir = resolve(packagePath, name);
+      const isDir = fse.lstatSync(componentDir).isDirectory();
+      return isDir && fse.readdirSync(componentDir).includes('package.json');
+    })
+    .forEach((name) => {
+      const file = require(resolve(packagePath, `${name}/package.json`));
+      const obj = pckKeys.find((key) => key === file.name);
+      if (obj) {
+        dependencies[file.name] = file.version;
+      }
+    });
+  return dependencies;
 };
 
 //打包组件
