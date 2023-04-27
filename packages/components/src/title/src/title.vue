@@ -10,7 +10,7 @@
 
 <script lang="ts">
 export default {
-  name: 'BuTitle',
+  name: 'BuTitle'
 };
 </script>
 
@@ -20,16 +20,18 @@ import type { TitleProps } from './title-type';
 const prefix = 'bu-title';
 // 这种写法，test中会报ts异常，类型不兼容
 // https://github.com/vuejs/core/issues/4294
-// const props = withDefaults(defineProps<TitleProps>(), {
-//   sub: false,
-//   border: false,
-//   type: 'primary',
-// });
-
-interface Props extends TitleProps {}
+const { sub, border, type } = withDefaults(defineProps<TitleProps>(), {
+  sub: false,
+  border: false,
+  type: 'primary'
+});
 
 // 实验特性，解构
-const { sub = false, border = false, type = 'primary' } = defineProps<Props>();
+// const {
+//   sub = false,
+//   border = false,
+//   type = 'primary'
+// } = defineProps<TitleProps>();
 
 const classes = computed(() => {
   let cl = [prefix, `${prefix}--${type}`];

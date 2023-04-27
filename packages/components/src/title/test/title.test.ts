@@ -1,14 +1,13 @@
 import { describe, it, expect } from 'vitest';
 import Title from '../src/title.vue';
-import Button from '../../button/src/button';
 import { mount } from '@vue/test-utils';
 
 describe('title component test', () => {
   it('title is work', () => {
     const wrapper = mount(Title, {
       slots: {
-        default: 'this is title',
-      },
+        default: 'this is title'
+      }
     });
     expect(wrapper.text()).toEqual('this is title');
     expect(wrapper.classes()).toContain('bu-title');
@@ -17,22 +16,22 @@ describe('title component test', () => {
   it('sub is work', () => {
     const wrapper = mount(Title, {
       props: {
-        sub: true,
+        sub: true
       },
       slots: {
-        default: 'this is title',
-      },
+        default: 'this is title'
+      }
     });
     expect(wrapper.classes()).toContain('bu-title--sub');
   });
   it('type is work', () => {
     const wrapper = mount(Title, {
       props: {
-        type: 'success',
+        type: 'success'
       },
       slots: {
-        default: 'this is title',
-      },
+        default: 'this is title'
+      }
     });
     expect(wrapper.classes()).toContain('bu-title--success');
   });
@@ -40,11 +39,11 @@ describe('title component test', () => {
   it('border is work', () => {
     const wrapper = mount(Title, {
       props: {
-        border: true,
+        border: true
       },
       slots: {
-        default: 'this is title',
-      },
+        default: 'this is title'
+      }
     });
     expect(wrapper.classes()).toContain('bu-title--border');
   });
@@ -53,8 +52,8 @@ describe('title component test', () => {
     const wrapper = mount(Title, {
       slots: {
         default: 'title',
-        right: `right`,
-      },
+        right: `right`
+      }
     });
     expect(wrapper.text()).toContain('right');
   });
