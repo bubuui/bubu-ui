@@ -1,0 +1,24 @@
+.bu-checkbox {
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  white-space: nowrap;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+.bu-checkbox--input {
+  white-space: nowrap;
+  cursor: pointer;
+  outline: none;
+  display: inline-flex;
+  position: relative;
+  margin-right: var(--bu-heckbox-marign, 15px);
+}
+.bu-checkbox--input.checked {
+  color: #2d8cf0;
+}
+.bu-checkbox--input:hover {
+  color: #2d8cf0;
+}

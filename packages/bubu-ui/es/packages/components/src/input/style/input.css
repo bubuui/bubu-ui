@@ -1,0 +1,111 @@
+.bu-input {
+  width: 100%;
+  box-sizing: border-box;
+  display: inline-flex;
+  vertical-align: middle;
+}
+.bu-input .bu-input--wrapper {
+  display: inline-flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 1px var(--bu-input-border-color, var(--bu-line, #dcdee2)) inset;
+  background-color: var(--bu-input-bg-color, #ffffff);
+  border-radius: var(--bu-input-border-radius, 4px);
+  padding: var(--bu-input-padding-y, 0px) var(--bu-input-padding-x, 10px);
+}
+.bu-input .bu-input--wrapper .bu-input--inner {
+  width: 100%;
+}
+.bu-input .bu-input--wrapper .bu-input--default {
+  height: 32px;
+  line-height: 32px;
+}
+.bu-input .bu-input--wrapper .bu-input--small {
+  height: 24px;
+  line-height: 24px;
+}
+.bu-input .bu-input--wrapper .bu-input--large {
+  height: 40px;
+  line-height: 40px;
+}
+.bu-input .bu-input--wrapper .bu-input--prefix, .bu-input .bu-input--wrapper .bu-input--suffix {
+  display: inline-flex;
+  white-space: nowrap;
+  flex-shrink: 0;
+  flex-wrap: nowrap;
+  height: 100%;
+  text-align: center;
+  align-items: center;
+  color: var(--bu-line, #dcdee2);
+  transition: all 0.3s;
+  pointer-events: none;
+}
+.bu-input .bu-input--wrapper .bu-input--prefix .bu-input--prefix-inner, .bu-input .bu-input--wrapper .bu-input--suffix .bu-input--prefix-inner, .bu-input .bu-input--wrapper .bu-input--suffix .bu-input--suffix-inner {
+  pointer-events: all;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+}
+.bu-input .bu-input--wrapper .bu-input--suffix .bu-input--suffix-inner {
+  margin-right: 0px;
+  margin-left: 8px;
+}
+.bu-input .bu-input--wrapper .bu-input--clear {
+  cursor: pointer;
+}
+.bu-input.is-disabled {
+  cursor: not-allowed;
+}
+.bu-input.is-disabled .bu-input--wrapper {
+  background-color: var(--bu-disabled-bg-color, #f5f7fa);
+}
+.bu-input.is-disabled .bu-input--inner {
+  cursor: not-allowed;
+}
+.bu-input.bu-input-group {
+  display: inline-flex;
+  width: 100%;
+  align-items: stretch;
+}
+.bu-input.bu-input-group.bu-input-group--prepend .bu-input--wrapper {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+.bu-input.bu-input-group.bu-input-group--append .bu-input--wrapper {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.bu-input.bu-input-group .group--prepend {
+  border-radius: var(--bu-input-border-radius, 4px);
+  background-color: var(--bu-input-group-background-color, #f5f7fa);
+  color: var(--bu-input-group-color, #999);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  padding: 0 20px;
+  white-space: nowrap;
+  border-right: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  box-shadow: 1px 0 0 0 var(--bu-input-border-color, var(--bu-line, #dcdee2)) inset, 0 1px 0 0 var(--bu-input-border-color, var(--bu-line, #dcdee2)) inset, 0 -1px 0 0 var(--bu-input-border-color, var(--bu-line, #dcdee2)) inset;
+}
+.bu-input.bu-input-group .group--append {
+  border-radius: var(--bu-input-border-radius, 4px);
+  background-color: var(--bu-input-group-background-color, #f5f7fa);
+  color: var(--bu-input-group-color, #999);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  padding: 0 20px;
+  white-space: nowrap;
+  border-left: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  box-shadow: 0 1px 0 0 var(--bu-input-border-color, var(--bu-line, #dcdee2)) inset, 0 -1px 0 0 var(--bu-input-border-color, var(--bu-line, #dcdee2)) inset, -1px 0 0 0 var(--bu-input-border-color, var(--bu-line, #dcdee2)) inset;
+}

@@ -1,0 +1,25 @@
+.bu-split {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.bu-split-left-pane, .bu-split-right-pane, .bu-split-top-pane, .bu-split-bottom-pane {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px;
+}
+.bu-split-trigger {
+  position: absolute;
+  width: 6px;
+  background-color: #f0f0f0;
+  height: 100%;
+  cursor: col-resize;
+  z-index: 10;
+}
+.bu-split-trigger.bu-split-trigger--vertical {
+  height: 6px;
+  width: 100%;
+}
