@@ -1,7 +1,7 @@
 import type { LoadingOptions, LoadingOptionsResolved } from './loading-type';
 import { isString } from '@vue/shared';
 import { nextTick, h, render, ref, type VNode, isRef } from 'vue';
-import { BuIcon } from '../../icon';
+import { BuIcon } from '@bubu-ui/components/icon';
 import LoadingComponent from './loading.vue';
 interface LoadingInstance {
   close: () => void;
@@ -28,7 +28,7 @@ export const Loading = function (
       text: resolved.text,
       fullscreen: resolved.fullscreen,
       customClass: resolved.customClass,
-      visible: visible,
+      visible: visible
     },
     {
       spinner: resolved.spinner
@@ -40,7 +40,7 @@ export const Loading = function (
                   ''
                 )
               : resolved.spinner
-        : null,
+        : null
     }
   );
 
@@ -61,7 +61,7 @@ export const Loading = function (
         fullscreenInstance = undefined;
       }
     },
-    vnode,
+    vnode
   };
   if (resolved.fullscreen) {
     fullscreenInstance = instance;
@@ -88,6 +88,6 @@ const resolveOptions = (options: LoadingOptions): LoadingOptionsResolved => {
     lock: options.lock ?? false,
     customClass: options.customClass || '',
     visible: options.visible ?? true,
-    target,
+    target
   };
 };

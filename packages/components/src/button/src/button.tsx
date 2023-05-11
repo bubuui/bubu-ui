@@ -1,5 +1,6 @@
 import { computed, defineComponent, toRefs } from 'vue';
 import { buttonProps, type ButtonProps } from './button-type';
+import { BuIcon } from '@bubu-ui/components/icon';
 export default defineComponent({
   name: 'BuButton',
   props: buttonProps,
@@ -35,7 +36,7 @@ export default defineComponent({
         {...attrs}
       >
         {loading.value && (
-          <bu-icon class="bu-load-loop" name="loading" size="18"></bu-icon>
+          <BuIcon class="bu-load-loop" name="loading" size="18"></BuIcon>
         )}
         {defaultSlot}
       </Component>

@@ -30,7 +30,8 @@ export default {
 };
 </script>
 <script setup lang="ts">
-import { BuIcon } from '../../icon';
+// import { BuIcon } from '../../icon';
+import { BuIcon } from '@bubu-ui/components/icon';
 import type { Fragment } from 'vue';
 import '../style/checkbox.scss';
 const emit = defineEmits<{

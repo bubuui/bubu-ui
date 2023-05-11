@@ -20,7 +20,7 @@
     "lint:style": "stylelint --fix \"packages/components/src/**/*.{css,less}\"",
     "install:husky": "husky install",
     "commit": "git add . && git-cz",
-    "changelog": "conventional-changelog -p -i CHANGELOG.md -s"
+    "changelog": "conventional-changelog -p  angular -i CHANGELOG.md -s"
   },
   "config": {
     "commitizen": {

@@ -1,5 +1,6 @@
 /// <reference types="vitest" />
 import { defineConfig } from 'vite';
+import { fileURLToPath, URL } from 'node:url';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import dts from 'vite-plugin-dts';
@@ -8,6 +9,11 @@ import DefineOptions from 'unplugin-vue-define-options/vite';
 export default defineConfig({
   test: {
     environment: 'happy-dom'
+  },
+  resolve: {
+    alias: {
+      '@bubu-ui/components': fileURLToPath(new URL('./src', import.meta.url))
+    }
   },
   build: {
     //压缩

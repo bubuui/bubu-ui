@@ -32,13 +32,13 @@
 
 <script lang="ts">
 export default {
-  name: 'BuMessage',
+  name: 'BuMessage'
 };
 </script>
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue';
 import { messageProps } from './message-type';
-import { BuIcon } from '../../icon/index';
+import { BuIcon } from '@bubu-ui/components/icon';
 import { getLastOffset, getOffsetOrSpace } from './instance';
 import { useResizeObserver, useTimeoutFn } from '@vueuse/core';
 const visible = ref(false);
@@ -82,6 +82,6 @@ useResizeObserver(messageRef, () => {
 defineExpose({
   close,
   visible,
-  bottom,
+  bottom
 });
 </script>

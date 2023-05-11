@@ -40,18 +40,18 @@
 </template>
 
 <script lang="ts">
-import { BuIcon } from '../../icon';
+import { BuIcon } from '@bubu-ui/components/icon';
 import {
   ref,
   computed,
   type CSSProperties,
   defineComponent,
-  onMounted,
+  onMounted
 } from 'vue';
 import {
   type NotificationProps,
   notificationProps,
-  notificationEmits,
+  notificationEmits
 } from './notification';
 import { useTimeoutFn } from '@vueuse/core';
 export default defineComponent({
@@ -59,7 +59,7 @@ export default defineComponent({
   emits: notificationEmits,
   props: notificationProps,
   components: {
-    BuIcon,
+    BuIcon
   },
   setup(props: NotificationProps) {
     const visible = ref(false);
@@ -76,7 +76,7 @@ export default defineComponent({
     const positionStyle = computed<CSSProperties>(() => {
       return {
         [verticalProperty.value]: `${props.offset}px`,
-        zIndex: props.zIndex,
+        zIndex: props.zIndex
       };
     });
 
@@ -109,8 +109,8 @@ export default defineComponent({
 
       close,
       startTimer,
-      clearTimer,
+      clearTimer
     };
-  },
+  }
 });
 </script>

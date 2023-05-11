@@ -2,7 +2,7 @@ import { defineComponent, inject, ref, toRefs } from 'vue';
 import type { TreeUtils } from '../hook/use-tree-type';
 import { treeNodeProps, type TreeNodeProps } from './tree-node-type';
 // import { BuCheckbox } from '../../../checkbox';
-import { BuCheckbox } from '../../../checkbox';
+import { BuCheckbox } from '@bubu-ui/components/checkbox';
 // 节点高度
 const NODE_HEIGHT = 32;
 
