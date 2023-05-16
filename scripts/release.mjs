@@ -147,7 +147,7 @@ async function checkGitStatus() {
   if (!fse.existsSync(gitDir)) {
     // 实现git初始化
     await git.init();
-    log.success('完成git初始化');
+    log.info('完成git初始化');
   }
   const status = await git.status();
   if (status.conflicted.length > 0) {
@@ -170,7 +170,7 @@ async function checkGitStatus() {
     await execa('git', ['commit', '-m', `build: v${selectVersion}`], {
       stdio: 'inherit'
     });
-    log.success('本地代码提交成功');
+    log.info('本地代码提交成功');
   }
 
   console.log('status', status);
