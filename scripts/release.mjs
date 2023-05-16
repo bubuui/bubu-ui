@@ -167,13 +167,15 @@ async function checkGitStatus() {
     await git.add(status.deleted);
     await git.add(status.modified);
     await git.add(status.renamed.map((item) => item.to));
-    await execa('git', ['commit', '-m', `build: v${selectVersion}`], {
-      stdio: 'inherit'
-    });
+    await execa(
+      'git',
+      ['commit', '-m', `build: ${selectPkgName} v${selectVersion}`],
+      {
+        stdio: 'inherit'
+      }
+    );
     log.info('本地代码提交成功');
   }
-
-  console.log('status', status);
 }
 
 async function checkNeedPush() {
@@ -187,12 +189,14 @@ async function checkNeedPush() {
   ]);
   if (answer.select) {
     log.info('开始推送github');
-    await execa('git', ['tag', `v${selectVersion}`], {
-      stdio: 'inherit'
-    });
-    await execa('git', ['push', 'origin', `refs/tags/v${selectVersion}`], {
-      stdio: 'inherit'
-    });
+    if (selectName === 'bubu-ui') {
+      await execa('git', ['tag', `v${selectVersion}`], {
+        stdio: 'inherit'
+      });
+      await execa('git', ['push', 'origin', `refs/tags/v${selectVersion}`], {
+        stdio: 'inherit'
+      });
+    }
     await execa('git', ['push'], {
       stdio: 'inherit'
     });
