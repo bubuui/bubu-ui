@@ -22,7 +22,7 @@
 		"vue": "^3.2.36"
 	},
 	"dependencies": {
-		"bubu-ui": "0.0.17",
+		"bubu-ui": "0.0.16",
 		"vite": "^4.3.1",
 		"@bubu-ui/components": "workspace:*",
 		"@vitejs/plugin-vue-jsx": "^3.0.1",

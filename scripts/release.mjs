@@ -200,19 +200,19 @@ async function checkNeedPush() {
 }
 
 async function main() {
-  // await choosePublishPackages();
-  // await execa('pnpm', ['run', 'changelog'], {
-  //   stdio: 'inherit'
-  // });
+  await choosePublishPackages();
+  await execa('pnpm', ['run', 'changelog'], {
+    stdio: 'inherit'
+  });
   await checkGitStatus();
-  // await checkNeedPush();
-  // await execa(
-  //   'npm',
-  //   ['run', 'publish', '--new-version', selectVersion, '--access', 'public'],
-  //   {
-  //     stdio: 'pipe'
-  //   }
-  // );
+  await checkNeedPush();
+  await execa(
+    'npm',
+    ['run', 'publish', '--new-version', selectVersion, '--access', 'public'],
+    {
+      stdio: 'pipe'
+    }
+  );
 }
 
 main();
