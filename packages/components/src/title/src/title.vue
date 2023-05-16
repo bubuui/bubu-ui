@@ -16,7 +16,7 @@ export default {
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import type { TitleProps } from './title-type';
+// import type { TitleProps } from './title-type';
 const prefix = 'bu-title';
 // 这种写法，test中会报ts异常，类型不兼容
 // https://github.com/vuejs/core/issues/4294

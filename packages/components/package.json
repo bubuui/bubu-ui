@@ -1,21 +1,22 @@
 {
-  "name": "@bubu-ui/components",
-  "version": "1.0.1",
-  "description": "",
-  "main": "./index.ts",
-  "scripts": {
-    "build": "vite build",
-    "test": "vitest",
-    "coverage": "vitest run --coverage"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@bubu-ui/hook": "workspace:*",
-    "@bubu-ui/utils": "workspace:*"
-  },
-  "devDependencies": {
-    "@vitest/coverage-c8": "^0.29.2"
-  }
+	"name": "@bubu-ui/components",
+	"version": "1.0.0",
+	"description": "",
+	"main": "./index.ts",
+	"scripts": {
+		"build": "vite build",
+		"test": "vitest",
+		"coverage": "vitest run --coverage"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@bubu-ui/hook": "1.0.2",
+		"@bubu-ui/utils": "workspace:*",
+		"@vitest/coverage-c8": "^0.29.2"
+	},
+	"devDependencies": {
+		"@vitest/coverage-c8": "^0.29.2"
+	}
 }

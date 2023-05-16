@@ -1,21 +1,24 @@
 {
-  "name": "play",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "dev": "vite"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@vitejs/plugin-vue": "^4.0.0",
-    "@vitejs/plugin-vue-jsx": "^3.0.1",
-    "vite": "^4.1.1"
-  },
-  "dependencies": {
-    "@bubu-ui/components": "workspace:*",
-    "bubu-ui": "workspace:*"
-  }
+	"name": "play",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"dev": "vite"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@vitejs/plugin-vue": "^4.0.0",
+		"@vitejs/plugin-vue-jsx": "^3.0.1",
+		"vite": "^4.1.1"
+	},
+	"dependencies": {
+		"@bubu-ui/components": "workspace:*",
+		"bubu-ui": "0.0.17",
+		"@vitejs/plugin-vue": "^4.0.0",
+		"@vitejs/plugin-vue-jsx": "^3.0.1",
+		"vite": "^4.1.1"
+	}
 }

@@ -4,4 +4,8 @@
     <bu-button @click="open(0)">open</bu-button>
   </div>
 </template>
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const open = (val?: number) => {
+  console.log('test', val);
+};
+</script>

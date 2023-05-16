@@ -5,8 +5,19 @@ import VueTypeImports from 'vite-plugin-vue-type-imports';
 export default defineConfig({
   plugins: [vueJsx(), VueTypeImports()],
   resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('../../packages/components', import.meta.url)),
-    },
+    alias: [
+      {
+        find: /@bubu-ui\/components$/,
+        replacement: fileURLToPath(
+          new URL('../../packages/components', import.meta.url)
+        ),
+      },
+      {
+        find: /@bubu-ui\/components\/*/,
+        replacement: fileURLToPath(
+          new URL('../../packages/components/src/', import.meta.url)
+        ),
+      },
+    ],
   },
 });
