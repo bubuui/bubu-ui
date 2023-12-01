@@ -1,57 +1,47 @@
+import type { PropType as __PropType } from 'vue';
 import type { Ref } from 'vue';
 import type { MaybeRef } from '@vueuse/core';
-declare const _default: __VLS_WithTemplateSlots<
-  import('vue').DefineComponent<
-    __VLS_TypePropsToRuntimeProps<{
-      backgroundColor: MaybeRef<string>;
-      text: MaybeRef<string>;
-      fullscreen: boolean;
-      customClass: MaybeRef<string>;
-      visible: Ref<boolean>;
-    }>,
-    {},
-    unknown,
-    {},
-    {},
-    import('vue').ComponentOptionsMixin,
-    import('vue').ComponentOptionsMixin,
-    {},
-    string,
-    import('vue').VNodeProps &
-      import('vue').AllowedComponentProps &
-      import('vue').ComponentCustomProps,
-    Readonly<
-      import('vue').ExtractPropTypes<
-        __VLS_TypePropsToRuntimeProps<{
-          backgroundColor: MaybeRef<string>;
-          text: MaybeRef<string>;
-          fullscreen: boolean;
-          customClass: MaybeRef<string>;
-          visible: Ref<boolean>;
-        }>
-      >
-    >,
-    {},
-    {}
-  >,
-  {
-    spinner?(_: {}): any;
-  }
->;
-export default _default;
-type __VLS_NonUndefinedable<T> = T extends undefined ? never : T;
-type __VLS_TypePropsToRuntimeProps<T> = {
-  [K in keyof T]-?: {} extends Pick<T, K>
-    ? {
-        type: import('vue').PropType<__VLS_NonUndefinedable<T[K]>>;
-      }
-    : {
-        type: import('vue').PropType<T[K]>;
+declare const _sfc_main: import("vue").DefineComponent<{
+    backgroundColor: {
+        type: __PropType<MaybeRef<string>>;
         required: true;
-      };
-};
-type __VLS_WithTemplateSlots<T, S> = T & {
-  new (): {
-    $slots: S;
-  };
-};
+    };
+    text: {
+        type: __PropType<MaybeRef<string>>;
+        required: true;
+    };
+    fullscreen: {
+        type: __PropType<boolean>;
+        required: true;
+    };
+    customClass: {
+        type: __PropType<MaybeRef<string>>;
+        required: true;
+    };
+    visible: {
+        type: __PropType<Ref<boolean>>;
+        required: true;
+    };
+}, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+    backgroundColor: {
+        type: __PropType<MaybeRef<string>>;
+        required: true;
+    };
+    text: {
+        type: __PropType<MaybeRef<string>>;
+        required: true;
+    };
+    fullscreen: {
+        type: __PropType<boolean>;
+        required: true;
+    };
+    customClass: {
+        type: __PropType<MaybeRef<string>>;
+        required: true;
+    };
+    visible: {
+        type: __PropType<Ref<boolean>>;
+        required: true;
+    };
+}>>, {}, {}>;
+export default _sfc_main;

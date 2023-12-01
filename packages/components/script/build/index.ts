@@ -60,7 +60,7 @@ const createPackage = () => {
       "url": "https://github.com/bubuui/bubu-ui"
     },
     "peerDependencies": {
-      "vue": "^3.3.3"
+      "vue": "^3.3.9"
     },
     "dependencies": ${JSON.stringify(dependencies)}
   }`;

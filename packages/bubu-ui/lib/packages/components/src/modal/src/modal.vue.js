@@ -1,14 +1,1 @@
-'use strict';
-Object.defineProperties(exports, {
-  __esModule: { value: !0 },
-  [Symbol.toStringTag]: { value: 'Module' }
-});
-const e = require('vue'),
-  t = e.defineComponent({
-    name: 'BuModal',
-    __name: 'modal',
-    setup(o) {
-      return (n, r) => (e.openBlock(), e.createElementBlock('div'));
-    }
-  });
-exports.default = t;
+"use strict";const e=require("vue"),n=e.defineComponent({name:"BuModal",__name:"modal",setup(t){return(o,c)=>(e.openBlock(),e.createElementBlock("div"))}});module.exports=n;

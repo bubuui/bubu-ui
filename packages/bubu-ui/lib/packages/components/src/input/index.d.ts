@@ -1,168 +1,55 @@
-export declare const BuInput: import('@bubu-ui/utils').SFCWithInstall<
-  {
-    new (...args: any[]): import('vue').CreateComponentPublicInstance<
-      Readonly<
-        import('vue').ExtractPropTypes<{
-          modelValue: {
-            type: import('vue').PropType<string>;
-          };
-          disabled: {
-            type: import('vue').PropType<boolean>;
-          };
-          clearable: {
-            type: import('vue').PropType<boolean>;
-          };
-          size: {
-            type: import('vue').PropType<'small' | 'large'>;
-          };
-          prefixIcon: {
-            type: import('vue').PropType<string>;
-          };
-          suffixIcon: {
-            type: import('vue').PropType<string>;
-          };
-        }>
-      > & {
-        onFocus?: ((value: FocusEvent) => any) | undefined;
-        'onUpdate:model-value'?: ((value: string) => any) | undefined;
-      },
-      {},
-      unknown,
-      {},
-      {},
-      import('vue').ComponentOptionsMixin,
-      import('vue').ComponentOptionsMixin,
-      {
-        'update:model-value': (value: string) => void;
-        focus: (value: FocusEvent) => void;
-      },
-      import('vue').VNodeProps &
-        import('vue').AllowedComponentProps &
-        import('vue').ComponentCustomProps &
-        Readonly<
-          import('vue').ExtractPropTypes<{
-            modelValue: {
-              type: import('vue').PropType<string>;
-            };
-            disabled: {
-              type: import('vue').PropType<boolean>;
-            };
-            clearable: {
-              type: import('vue').PropType<boolean>;
-            };
-            size: {
-              type: import('vue').PropType<'small' | 'large'>;
-            };
-            prefixIcon: {
-              type: import('vue').PropType<string>;
-            };
-            suffixIcon: {
-              type: import('vue').PropType<string>;
-            };
-          }>
-        > & {
-          onFocus?: ((value: FocusEvent) => any) | undefined;
-          'onUpdate:model-value'?: ((value: string) => any) | undefined;
-        },
-      {},
-      true,
-      {},
-      {},
-      {
-        P: {};
-        B: {};
-        D: {};
-        C: {};
-        M: {};
-        Defaults: {};
-      },
-      Readonly<
-        import('vue').ExtractPropTypes<{
-          modelValue: {
-            type: import('vue').PropType<string>;
-          };
-          disabled: {
-            type: import('vue').PropType<boolean>;
-          };
-          clearable: {
-            type: import('vue').PropType<boolean>;
-          };
-          size: {
-            type: import('vue').PropType<'small' | 'large'>;
-          };
-          prefixIcon: {
-            type: import('vue').PropType<string>;
-          };
-          suffixIcon: {
-            type: import('vue').PropType<string>;
-          };
-        }>
-      > & {
-        onFocus?: ((value: FocusEvent) => any) | undefined;
-        'onUpdate:model-value'?: ((value: string) => any) | undefined;
-      },
-      {},
-      {},
-      {},
-      {},
-      {}
-    >;
-    __isFragment?: undefined;
-    __isTeleport?: undefined;
-    __isSuspense?: undefined;
-  } & import('vue').ComponentOptionsBase<
-    Readonly<
-      import('vue').ExtractPropTypes<{
-        modelValue: {
-          type: import('vue').PropType<string>;
-        };
-        disabled: {
-          type: import('vue').PropType<boolean>;
-        };
-        clearable: {
-          type: import('vue').PropType<boolean>;
-        };
-        size: {
-          type: import('vue').PropType<'small' | 'large'>;
-        };
-        prefixIcon: {
-          type: import('vue').PropType<string>;
-        };
-        suffixIcon: {
-          type: import('vue').PropType<string>;
-        };
-      }>
-    > & {
-      onFocus?: ((value: FocusEvent) => any) | undefined;
-      'onUpdate:model-value'?: ((value: string) => any) | undefined;
-    },
-    {},
-    unknown,
-    {},
-    {},
-    import('vue').ComponentOptionsMixin,
-    import('vue').ComponentOptionsMixin,
-    {
-      'update:model-value': (value: string) => void;
-      focus: (value: FocusEvent) => void;
-    },
-    string,
-    {},
-    {},
-    string,
-    {}
-  > &
-    import('vue').VNodeProps &
-    import('vue').AllowedComponentProps &
-    import('vue').ComponentCustomProps &
-    (new () => {
-      $slots: {
-        prepend?(_: {}): any;
-        prefix?(_: {}): any;
-        suffix?(_: {}): any;
-        append?(_: {}): any;
-      };
-    })
-> &
-  Record<string, any>;
+export declare const BuInput: import("@bubu-ui/utils").SFCWithInstall<import("vue").DefineComponent<{
+    modelValue: {
+        type: import("vue").PropType<string | undefined>;
+        required: false;
+    };
+    disabled: {
+        type: import("vue").PropType<boolean | undefined>;
+        required: false;
+    };
+    clearable: {
+        type: import("vue").PropType<boolean | undefined>;
+        required: false;
+    };
+    size: {
+        type: import("vue").PropType<("small" | "large") | undefined>;
+        required: false;
+    };
+    prefixIcon: {
+        type: import("vue").PropType<string | undefined>;
+        required: false;
+    };
+    suffixIcon: {
+        type: import("vue").PropType<string | undefined>;
+        required: false;
+    };
+}, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("focus" | "update:model-value")[], "focus" | "update:model-value", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+    modelValue: {
+        type: import("vue").PropType<string | undefined>;
+        required: false;
+    };
+    disabled: {
+        type: import("vue").PropType<boolean | undefined>;
+        required: false;
+    };
+    clearable: {
+        type: import("vue").PropType<boolean | undefined>;
+        required: false;
+    };
+    size: {
+        type: import("vue").PropType<("small" | "large") | undefined>;
+        required: false;
+    };
+    prefixIcon: {
+        type: import("vue").PropType<string | undefined>;
+        required: false;
+    };
+    suffixIcon: {
+        type: import("vue").PropType<string | undefined>;
+        required: false;
+    };
+}>> & {
+    onFocus?: ((...args: any[]) => any) | undefined;
+    "onUpdate:model-value"?: ((...args: any[]) => any) | undefined;
+}, {}, {}>> & Record<string, any>;
 export default BuInput;

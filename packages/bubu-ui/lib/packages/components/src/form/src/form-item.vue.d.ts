@@ -1,75 +1,28 @@
-type FormItemProps = {
-  label?: string;
-  prop?: string;
-};
-declare const _default: __VLS_WithTemplateSlots<
-  import('vue').DefineComponent<
-    __VLS_WithDefaults<
-      __VLS_TypePropsToRuntimeProps<FormItemProps>,
-      {
-        label: string;
-        prop: string;
-      }
-    >,
-    {},
-    unknown,
-    {},
-    {},
-    import('vue').ComponentOptionsMixin,
-    import('vue').ComponentOptionsMixin,
-    {},
-    string,
-    import('vue').VNodeProps &
-      import('vue').AllowedComponentProps &
-      import('vue').ComponentCustomProps,
-    Readonly<
-      import('vue').ExtractPropTypes<
-        __VLS_WithDefaults<
-          __VLS_TypePropsToRuntimeProps<FormItemProps>,
-          {
-            label: string;
-            prop: string;
-          }
-        >
-      >
-    >,
-    {
-      label: string;
-      prop: string;
-    },
-    {}
-  >,
-  {
-    label?(_: {}): any;
-    default?(_: {}): any;
-  }
->;
-export default _default;
-type __VLS_NonUndefinedable<T> = T extends undefined ? never : T;
-type __VLS_TypePropsToRuntimeProps<T> = {
-  [K in keyof T]-?: {} extends Pick<T, K>
-    ? {
-        type: import('vue').PropType<__VLS_NonUndefinedable<T[K]>>;
-      }
-    : {
-        type: import('vue').PropType<T[K]>;
-        required: true;
-      };
-};
-type __VLS_WithDefaults<P, D> = {
-  [K in keyof Pick<P, keyof P>]: K extends keyof D
-    ? __VLS_Prettify<
-        P[K] & {
-          default: D[K];
-        }
-      >
-    : P[K];
-};
-type __VLS_Prettify<T> = {
-  [K in keyof T]: T[K];
-} & {};
-type __VLS_WithTemplateSlots<T, S> = T & {
-  new (): {
-    $slots: S;
-  };
-};
+import type { PropType as __PropType } from 'vue';
+declare const _sfc_main: import("vue").DefineComponent<{
+    label: {
+        type: __PropType<string | undefined>;
+        required: false;
+        default: string;
+    };
+    prop: {
+        type: __PropType<string | undefined>;
+        required: false;
+        default: string;
+    };
+}, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+    label: {
+        type: __PropType<string | undefined>;
+        required: false;
+        default: string;
+    };
+    prop: {
+        type: __PropType<string | undefined>;
+        required: false;
+        default: string;
+    };
+}>>, {
+    label: string | undefined;
+    prop: string | undefined;
+}, {}>;
+export default _sfc_main;

@@ -1,49 +1,21 @@
-declare const _default: __VLS_WithTemplateSlots<
-  import('vue').DefineComponent<
-    __VLS_TypePropsToRuntimeProps<{
-      offset?: number | undefined;
-      span?: number | undefined;
-    }>,
-    {},
-    unknown,
-    {},
-    {},
-    import('vue').ComponentOptionsMixin,
-    import('vue').ComponentOptionsMixin,
-    {},
-    string,
-    import('vue').VNodeProps &
-      import('vue').AllowedComponentProps &
-      import('vue').ComponentCustomProps,
-    Readonly<
-      import('vue').ExtractPropTypes<
-        __VLS_TypePropsToRuntimeProps<{
-          offset?: number | undefined;
-          span?: number | undefined;
-        }>
-      >
-    >,
-    {},
-    {}
-  >,
-  {
-    default?(_: {}): any;
-  }
->;
-export default _default;
-type __VLS_NonUndefinedable<T> = T extends undefined ? never : T;
-type __VLS_TypePropsToRuntimeProps<T> = {
-  [K in keyof T]-?: {} extends Pick<T, K>
-    ? {
-        type: import('vue').PropType<__VLS_NonUndefinedable<T[K]>>;
-      }
-    : {
-        type: import('vue').PropType<T[K]>;
-        required: true;
-      };
-};
-type __VLS_WithTemplateSlots<T, S> = T & {
-  new (): {
-    $slots: S;
-  };
-};
+import type { PropType as __PropType } from 'vue';
+declare const _sfc_main: import("vue").DefineComponent<{
+    offset: {
+        type: __PropType<number | undefined>;
+        required: false;
+    };
+    span: {
+        type: __PropType<number | undefined>;
+        required: false;
+    };
+}, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+    offset: {
+        type: __PropType<number | undefined>;
+        required: false;
+    };
+    span: {
+        type: __PropType<number | undefined>;
+        required: false;
+    };
+}>>, {}, {}>;
+export default _sfc_main;

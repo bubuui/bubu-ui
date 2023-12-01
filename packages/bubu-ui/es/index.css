@@ -12,8 +12,8 @@
   margin: 0;
   transition: 0.1s;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   vertical-align: middle;
   border-width: 0;
   padding: 9px 16px;
@@ -35,8 +35,7 @@
   margin-right: 4px;
 }
 
-.bu-btn--circle,
-.bu-btn--circle-icon {
+.bu-btn--circle, .bu-btn--circle-icon {
   border-radius: var(--bu-button-height, 32px);
   height: var(--bu-button-height, 32px);
 }
@@ -59,14 +58,12 @@
   background: #51a0f3;
   border-color: #5da6f3;
 }
-.bu-btn--primary:focus,
-.bu-btn--primary.focus {
+.bu-btn--primary:focus, .bu-btn--primary.focus {
   color: #ffffff;
   background: #51a0f3;
   border-color: #5da6f3;
 }
-.bu-btn--primary:disabled,
-.bu-btn--primary.disabled {
+.bu-btn--primary:disabled, .bu-btn--primary.disabled {
   color: #ffffff;
   background: #2d8cf0;
   border-color: #2d8cf0;
@@ -82,14 +79,12 @@
   background: #1de07e;
   border-color: #27e384;
 }
-.bu-btn--success:focus,
-.bu-btn--success.focus {
+.bu-btn--success:focus, .bu-btn--success.focus {
   color: #ffffff;
   background: #1de07e;
   border-color: #27e384;
 }
-.bu-btn--success:disabled,
-.bu-btn--success.disabled {
+.bu-btn--success:disabled, .bu-btn--success.disabled {
   color: #ffffff;
   background: #19be6b;
   border-color: #19be6b;
@@ -105,14 +100,12 @@
   background: #52c4f7;
   border-color: #5ec8f7;
 }
-.bu-btn--info:focus,
-.bu-btn--info.focus {
+.bu-btn--info:focus, .bu-btn--info.focus {
   color: #ffffff;
   background: #52c4f7;
   border-color: #5ec8f7;
 }
-.bu-btn--info:disabled,
-.bu-btn--info.disabled {
+.bu-btn--info:disabled, .bu-btn--info.disabled {
   color: #ffffff;
   background: #2db7f5;
   border-color: #2db7f5;
@@ -128,14 +121,12 @@
   background: #f05d38;
   border-color: #f16743;
 }
-.bu-btn--error:focus,
-.bu-btn--error.focus {
+.bu-btn--error:focus, .bu-btn--error.focus {
   color: #ffffff;
   background: #f05d38;
   border-color: #f16743;
 }
-.bu-btn--error:disabled,
-.bu-btn--error.disabled {
+.bu-btn--error:disabled, .bu-btn--error.disabled {
   color: #ffffff;
   background: #ed4014;
   border-color: #ed4014;
@@ -151,14 +142,12 @@
   background: #ffa826;
   border-color: #ffad33;
 }
-.bu-btn--warning:focus,
-.bu-btn--warning.focus {
+.bu-btn--warning:focus, .bu-btn--warning.focus {
   color: #ffffff;
   background: #ffa826;
   border-color: #ffad33;
 }
-.bu-btn--warning:disabled,
-.bu-btn--warning.disabled {
+.bu-btn--warning:disabled, .bu-btn--warning.disabled {
   color: #ffffff;
   background: #ff9900;
   border-color: #ff9900;
@@ -232,10 +221,7 @@
 }
 
 .bu-title--border {
-  border-bottom: var(
-    --bu-title-border,
-    1px solid var(--bu-border-color-lighter, var(--bu-line, #dcdee2))
-  );
+  border-bottom: var(--bu-title-border, 1px solid var(--bu-border-color-lighter, var(--bu-line, #dcdee2)));
 }
 
 .bu-input {
@@ -249,8 +235,7 @@
   flex-grow: 1;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 0 1px var(--bu-input-border-color, var(--bu-line, #dcdee2))
-    inset;
+  box-shadow: 0 0 0 1px var(--bu-input-border-color, var(--bu-line, #dcdee2)) inset;
   background-color: var(--bu-input-bg-color, #ffffff);
   border-radius: var(--bu-input-border-radius, 4px);
   padding: var(--bu-input-padding-y, 0px) var(--bu-input-padding-x, 10px);
@@ -270,8 +255,7 @@
   height: 40px;
   line-height: 40px;
 }
-.bu-input .bu-input--wrapper .bu-input--prefix,
-.bu-input .bu-input--wrapper .bu-input--suffix {
+.bu-input .bu-input--wrapper .bu-input--prefix, .bu-input .bu-input--wrapper .bu-input--suffix {
   display: inline-flex;
   white-space: nowrap;
   flex-shrink: 0;
@@ -283,9 +267,7 @@
   transition: all 0.3s;
   pointer-events: none;
 }
-.bu-input .bu-input--wrapper .bu-input--prefix .bu-input--prefix-inner,
-.bu-input .bu-input--wrapper .bu-input--suffix .bu-input--prefix-inner,
-.bu-input .bu-input--wrapper .bu-input--suffix .bu-input--suffix-inner {
+.bu-input .bu-input--wrapper .bu-input--prefix .bu-input--prefix-inner, .bu-input .bu-input--wrapper .bu-input--suffix .bu-input--prefix-inner, .bu-input .bu-input--wrapper .bu-input--suffix .bu-input--suffix-inner {
   pointer-events: all;
   display: inline-flex;
   align-items: center;
@@ -335,10 +317,7 @@
   border-right: 0;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-  box-shadow:
-    1px 0 0 0 var(--bu-input-border-color, var(--bu-line, #dcdee2)) inset,
-    0 1px 0 0 var(--bu-input-border-color, var(--bu-line, #dcdee2)) inset,
-    0 -1px 0 0 var(--bu-input-border-color, var(--bu-line, #dcdee2)) inset;
+  box-shadow: 1px 0 0 0 var(--bu-input-border-color, var(--bu-line, #dcdee2)) inset, 0 1px 0 0 var(--bu-input-border-color, var(--bu-line, #dcdee2)) inset, 0 -1px 0 0 var(--bu-input-border-color, var(--bu-line, #dcdee2)) inset;
 }
 .bu-input.bu-input-group .group--append {
   border-radius: var(--bu-input-border-radius, 4px);
@@ -354,10 +333,7 @@
   border-left: 0;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  box-shadow:
-    0 1px 0 0 var(--bu-input-border-color, var(--bu-line, #dcdee2)) inset,
-    0 -1px 0 0 var(--bu-input-border-color, var(--bu-line, #dcdee2)) inset,
-    -1px 0 0 0 var(--bu-input-border-color, var(--bu-line, #dcdee2)) inset;
+  box-shadow: 0 1px 0 0 var(--bu-input-border-color, var(--bu-line, #dcdee2)) inset, 0 -1px 0 0 var(--bu-input-border-color, var(--bu-line, #dcdee2)) inset, -1px 0 0 0 var(--bu-input-border-color, var(--bu-line, #dcdee2)) inset;
 }
 
 .icon-svg {
@@ -423,7 +399,7 @@
   box-shadow: 0 0 0 1px #f56c6c inset;
 }
 .bu-form .bu-form-item.is-required .bu-form-item-label::before {
-  content: '*';
+  content: "*";
   color: #f56c6c;
   margin-right: 4px;
 }
@@ -624,8 +600,8 @@
   align-items: center;
   white-space: nowrap;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   cursor: pointer;
 }
 .bu-checkbox--input {
@@ -648,10 +624,7 @@
   width: 100%;
   height: 100%;
 }
-.bu-split-left-pane,
-.bu-split-right-pane,
-.bu-split-top-pane,
-.bu-split-bottom-pane {
+.bu-split-left-pane, .bu-split-right-pane, .bu-split-top-pane, .bu-split-bottom-pane {
   position: absolute;
   left: 0;
   top: 0;
@@ -737,10 +710,7 @@
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
-  transition:
-    opacity 0.3s,
-    transform 0.4s,
-    top 0.4s;
+  transition: opacity 0.3s, transform 0.4s, top 0.4s;
   padding: var(--bu-message-padding, 10px 19px);
   display: flex;
   border-radius: 4px;

@@ -9,8 +9,7 @@
   flex-grow: 1;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 0 1px var(--bu-input-border-color, var(--bu-line, #dcdee2))
-    inset;
+  box-shadow: 0 0 0 1px var(--bu-input-border-color, var(--bu-line, #dcdee2)) inset;
   background-color: var(--bu-input-bg-color, #ffffff);
   border-radius: var(--bu-input-border-radius, 4px);
   padding: var(--bu-input-padding-y, 0px) var(--bu-input-padding-x, 10px);
@@ -30,8 +29,7 @@
   height: 40px;
   line-height: 40px;
 }
-.bu-input .bu-input--wrapper .bu-input--prefix,
-.bu-input .bu-input--wrapper .bu-input--suffix {
+.bu-input .bu-input--wrapper .bu-input--prefix, .bu-input .bu-input--wrapper .bu-input--suffix {
   display: inline-flex;
   white-space: nowrap;
   flex-shrink: 0;
@@ -43,9 +41,7 @@
   transition: all 0.3s;
   pointer-events: none;
 }
-.bu-input .bu-input--wrapper .bu-input--prefix .bu-input--prefix-inner,
-.bu-input .bu-input--wrapper .bu-input--suffix .bu-input--prefix-inner,
-.bu-input .bu-input--wrapper .bu-input--suffix .bu-input--suffix-inner {
+.bu-input .bu-input--wrapper .bu-input--prefix .bu-input--prefix-inner, .bu-input .bu-input--wrapper .bu-input--suffix .bu-input--prefix-inner, .bu-input .bu-input--wrapper .bu-input--suffix .bu-input--suffix-inner {
   pointer-events: all;
   display: inline-flex;
   align-items: center;
@@ -95,10 +91,7 @@
   border-right: 0;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-  box-shadow:
-    1px 0 0 0 var(--bu-input-border-color, var(--bu-line, #dcdee2)) inset,
-    0 1px 0 0 var(--bu-input-border-color, var(--bu-line, #dcdee2)) inset,
-    0 -1px 0 0 var(--bu-input-border-color, var(--bu-line, #dcdee2)) inset;
+  box-shadow: 1px 0 0 0 var(--bu-input-border-color, var(--bu-line, #dcdee2)) inset, 0 1px 0 0 var(--bu-input-border-color, var(--bu-line, #dcdee2)) inset, 0 -1px 0 0 var(--bu-input-border-color, var(--bu-line, #dcdee2)) inset;
 }
 .bu-input.bu-input-group .group--append {
   border-radius: var(--bu-input-border-radius, 4px);
@@ -114,8 +107,5 @@
   border-left: 0;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  box-shadow:
-    0 1px 0 0 var(--bu-input-border-color, var(--bu-line, #dcdee2)) inset,
-    0 -1px 0 0 var(--bu-input-border-color, var(--bu-line, #dcdee2)) inset,
-    -1px 0 0 0 var(--bu-input-border-color, var(--bu-line, #dcdee2)) inset;
+  box-shadow: 0 1px 0 0 var(--bu-input-border-color, var(--bu-line, #dcdee2)) inset, 0 -1px 0 0 var(--bu-input-border-color, var(--bu-line, #dcdee2)) inset, -1px 0 0 0 var(--bu-input-border-color, var(--bu-line, #dcdee2)) inset;
 }

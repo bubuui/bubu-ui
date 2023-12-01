@@ -6,10 +6,7 @@
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
-  transition:
-    opacity 0.3s,
-    transform 0.4s,
-    top 0.4s;
+  transition: opacity 0.3s, transform 0.4s, top 0.4s;
   padding: var(--bu-message-padding, 10px 19px);
   display: flex;
   border-radius: 4px;

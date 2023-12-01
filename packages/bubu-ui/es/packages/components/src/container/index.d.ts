@@ -1,695 +1,109 @@
-export declare const BuContainer: import('@bubu-ui/utils').SFCWithInstall<
-  {
-    new (...args: any[]): import('vue').CreateComponentPublicInstance<
-      Readonly<
-        import('vue').ExtractPropTypes<{
-          direction: {
-            type: import('vue').PropType<string>;
-          };
-        }>
-      >,
-      {},
-      unknown,
-      {},
-      {},
-      import('vue').ComponentOptionsMixin,
-      import('vue').ComponentOptionsMixin,
-      {},
-      import('vue').VNodeProps &
-        import('vue').AllowedComponentProps &
-        import('vue').ComponentCustomProps &
-        Readonly<
-          import('vue').ExtractPropTypes<{
-            direction: {
-              type: import('vue').PropType<string>;
-            };
-          }>
-        >,
-      {},
-      true,
-      {},
-      {},
-      {
-        P: {};
-        B: {};
-        D: {};
-        C: {};
-        M: {};
-        Defaults: {};
-      },
-      Readonly<
-        import('vue').ExtractPropTypes<{
-          direction: {
-            type: import('vue').PropType<string>;
-          };
-        }>
-      >,
-      {},
-      {},
-      {},
-      {},
-      {}
-    >;
-    __isFragment?: undefined;
-    __isTeleport?: undefined;
-    __isSuspense?: undefined;
-  } & import('vue').ComponentOptionsBase<
-    Readonly<
-      import('vue').ExtractPropTypes<{
-        direction: {
-          type: import('vue').PropType<string>;
-        };
-      }>
-    >,
-    {},
-    unknown,
-    {},
-    {},
-    import('vue').ComponentOptionsMixin,
-    import('vue').ComponentOptionsMixin,
-    {},
-    string,
-    {},
-    {},
-    string,
-    {}
-  > &
-    import('vue').VNodeProps &
-    import('vue').AllowedComponentProps &
-    import('vue').ComponentCustomProps &
-    (new () => {
-      $slots: {
-        default?(_: {}): any;
-      };
-    })
-> & {
-  Aside: {
-    new (...args: any[]): import('vue').CreateComponentPublicInstance<
-      Readonly<
-        import('vue').ExtractPropTypes<{
-          width: {
-            type: import('vue').PropType<string>;
-            required: true;
-            default: string;
-          };
-        }>
-      >,
-      {},
-      unknown,
-      {},
-      {},
-      import('vue').ComponentOptionsMixin,
-      import('vue').ComponentOptionsMixin,
-      {},
-      import('vue').VNodeProps &
-        import('vue').AllowedComponentProps &
-        import('vue').ComponentCustomProps &
-        Readonly<
-          import('vue').ExtractPropTypes<{
-            width: {
-              type: import('vue').PropType<string>;
-              required: true;
-              default: string;
-            };
-          }>
-        >,
-      {
-        width: string;
-      },
-      true,
-      {},
-      {},
-      {
-        P: {};
-        B: {};
-        D: {};
-        C: {};
-        M: {};
-        Defaults: {};
-      },
-      Readonly<
-        import('vue').ExtractPropTypes<{
-          width: {
-            type: import('vue').PropType<string>;
-            required: true;
-            default: string;
-          };
-        }>
-      >,
-      {},
-      {},
-      {},
-      {},
-      {
-        width: string;
-      }
-    >;
-    __isFragment?: undefined;
-    __isTeleport?: undefined;
-    __isSuspense?: undefined;
-  } & import('vue').ComponentOptionsBase<
-    Readonly<
-      import('vue').ExtractPropTypes<{
+export declare const BuContainer: import("@bubu-ui/utils").SFCWithInstall<import("vue").DefineComponent<{
+    direction: {
+        type: import("vue").PropType<string | undefined>;
+        required: false;
+    };
+}, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+    direction: {
+        type: import("vue").PropType<string | undefined>;
+        required: false;
+    };
+}>>, {}, {}>> & {
+    Aside: import("vue").DefineComponent<{
         width: {
-          type: import('vue').PropType<string>;
-          required: true;
-          default: string;
+            type: import("vue").PropType<string>;
+            required: true;
+            default: string;
         };
-      }>
-    >,
-    {},
-    unknown,
-    {},
-    {},
-    import('vue').ComponentOptionsMixin,
-    import('vue').ComponentOptionsMixin,
-    {},
-    string,
-    {
-      width: string;
-    },
-    {},
-    string,
-    {}
-  > &
-    import('vue').VNodeProps &
-    import('vue').AllowedComponentProps &
-    import('vue').ComponentCustomProps &
-    (new () => {
-      $slots: {
-        default?(_: {}): any;
-      };
-    });
-  Footer: {
-    new (...args: any[]): import('vue').CreateComponentPublicInstance<
-      Readonly<
-        import('vue').ExtractPropTypes<{
-          height: {
-            type: import('vue').PropType<string>;
+    }, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+        width: {
+            type: import("vue").PropType<string>;
+            required: true;
             default: string;
-          };
-        }>
-      >,
-      {},
-      unknown,
-      {},
-      {},
-      import('vue').ComponentOptionsMixin,
-      import('vue').ComponentOptionsMixin,
-      {},
-      import('vue').VNodeProps &
-        import('vue').AllowedComponentProps &
-        import('vue').ComponentCustomProps &
-        Readonly<
-          import('vue').ExtractPropTypes<{
-            height: {
-              type: import('vue').PropType<string>;
-              default: string;
-            };
-          }>
-        >,
-      {
-        height: string;
-      },
-      true,
-      {},
-      {},
-      {
-        P: {};
-        B: {};
-        D: {};
-        C: {};
-        M: {};
-        Defaults: {};
-      },
-      Readonly<
-        import('vue').ExtractPropTypes<{
-          height: {
-            type: import('vue').PropType<string>;
-            default: string;
-          };
-        }>
-      >,
-      {},
-      {},
-      {},
-      {},
-      {
-        height: string;
-      }
-    >;
-    __isFragment?: undefined;
-    __isTeleport?: undefined;
-    __isSuspense?: undefined;
-  } & import('vue').ComponentOptionsBase<
-    Readonly<
-      import('vue').ExtractPropTypes<{
+        };
+    }>>, {
+        width: string;
+    }, {}>;
+    Footer: import("vue").DefineComponent<{
         height: {
-          type: import('vue').PropType<string>;
-          default: string;
+            type: import("vue").PropType<string | undefined>;
+            required: false;
+            default: string;
         };
-      }>
-    >,
-    {},
-    unknown,
-    {},
-    {},
-    import('vue').ComponentOptionsMixin,
-    import('vue').ComponentOptionsMixin,
-    {},
-    string,
-    {
-      height: string;
-    },
-    {},
-    string,
-    {}
-  > &
-    import('vue').VNodeProps &
-    import('vue').AllowedComponentProps &
-    import('vue').ComponentCustomProps &
-    (new () => {
-      $slots: {
-        default?(_: {}): any;
-      };
-    });
-  Header: {
-    new (...args: any[]): import('vue').CreateComponentPublicInstance<
-      Readonly<
-        import('vue').ExtractPropTypes<{
-          height: {
-            type: import('vue').PropType<string>;
-            default: string;
-          };
-        }>
-      >,
-      {},
-      unknown,
-      {},
-      {},
-      import('vue').ComponentOptionsMixin,
-      import('vue').ComponentOptionsMixin,
-      {},
-      import('vue').VNodeProps &
-        import('vue').AllowedComponentProps &
-        import('vue').ComponentCustomProps &
-        Readonly<
-          import('vue').ExtractPropTypes<{
-            height: {
-              type: import('vue').PropType<string>;
-              default: string;
-            };
-          }>
-        >,
-      {
-        height: string;
-      },
-      true,
-      {},
-      {},
-      {
-        P: {};
-        B: {};
-        D: {};
-        C: {};
-        M: {};
-        Defaults: {};
-      },
-      Readonly<
-        import('vue').ExtractPropTypes<{
-          height: {
-            type: import('vue').PropType<string>;
-            default: string;
-          };
-        }>
-      >,
-      {},
-      {},
-      {},
-      {},
-      {
-        height: string;
-      }
-    >;
-    __isFragment?: undefined;
-    __isTeleport?: undefined;
-    __isSuspense?: undefined;
-  } & import('vue').ComponentOptionsBase<
-    Readonly<
-      import('vue').ExtractPropTypes<{
+    }, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
         height: {
-          type: import('vue').PropType<string>;
-          default: string;
+            type: import("vue").PropType<string | undefined>;
+            required: false;
+            default: string;
         };
-      }>
-    >,
-    {},
-    unknown,
-    {},
-    {},
-    import('vue').ComponentOptionsMixin,
-    import('vue').ComponentOptionsMixin,
-    {},
-    string,
-    {
-      height: string;
-    },
-    {},
-    string,
-    {}
-  > &
-    import('vue').VNodeProps &
-    import('vue').AllowedComponentProps &
-    import('vue').ComponentCustomProps &
-    (new () => {
-      $slots: {
-        default?(_: {}): any;
-      };
-    });
-  Main: import('vue').DefineComponent<
-    {},
-    {},
-    {},
-    {},
-    {},
-    import('vue').ComponentOptionsMixin,
-    import('vue').ComponentOptionsMixin,
-    {},
-    string,
-    import('vue').VNodeProps &
-      import('vue').AllowedComponentProps &
-      import('vue').ComponentCustomProps,
-    Readonly<import('vue').ExtractPropTypes<{}>>,
-    {},
-    {}
-  >;
+    }>>, {
+        height: string | undefined;
+    }, {}>;
+    Header: import("vue").DefineComponent<{
+        height: {
+            type: import("vue").PropType<string | undefined>;
+            required: false;
+            default: string;
+        };
+    }, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+        height: {
+            type: import("vue").PropType<string | undefined>;
+            required: false;
+            default: string;
+        };
+    }>>, {
+        height: string | undefined;
+    }, {}>;
+    Main: {
+        name: string;
+    };
 };
 export default BuContainer;
-export declare const BuAside: import('@bubu-ui/utils').SFCWithInstall<
-  {
-    new (...args: any[]): import('vue').CreateComponentPublicInstance<
-      Readonly<
-        import('vue').ExtractPropTypes<{
-          width: {
-            type: import('vue').PropType<string>;
-            required: true;
-            default: string;
-          };
-        }>
-      >,
-      {},
-      unknown,
-      {},
-      {},
-      import('vue').ComponentOptionsMixin,
-      import('vue').ComponentOptionsMixin,
-      {},
-      import('vue').VNodeProps &
-        import('vue').AllowedComponentProps &
-        import('vue').ComponentCustomProps &
-        Readonly<
-          import('vue').ExtractPropTypes<{
-            width: {
-              type: import('vue').PropType<string>;
-              required: true;
-              default: string;
-            };
-          }>
-        >,
-      {
-        width: string;
-      },
-      true,
-      {},
-      {},
-      {
-        P: {};
-        B: {};
-        D: {};
-        C: {};
-        M: {};
-        Defaults: {};
-      },
-      Readonly<
-        import('vue').ExtractPropTypes<{
-          width: {
-            type: import('vue').PropType<string>;
-            required: true;
-            default: string;
-          };
-        }>
-      >,
-      {},
-      {},
-      {},
-      {},
-      {
-        width: string;
-      }
-    >;
-    __isFragment?: undefined;
-    __isTeleport?: undefined;
-    __isSuspense?: undefined;
-  } & import('vue').ComponentOptionsBase<
-    Readonly<
-      import('vue').ExtractPropTypes<{
-        width: {
-          type: import('vue').PropType<string>;
-          required: true;
-          default: string;
-        };
-      }>
-    >,
-    {},
-    unknown,
-    {},
-    {},
-    import('vue').ComponentOptionsMixin,
-    import('vue').ComponentOptionsMixin,
-    {},
-    string,
-    {
-      width: string;
-    },
-    {},
-    string,
-    {}
-  > &
-    import('vue').VNodeProps &
-    import('vue').AllowedComponentProps &
-    import('vue').ComponentCustomProps &
-    (new () => {
-      $slots: {
-        default?(_: {}): any;
-      };
-    })
->;
-export declare const BuFooter: import('@bubu-ui/utils').SFCWithInstall<
-  {
-    new (...args: any[]): import('vue').CreateComponentPublicInstance<
-      Readonly<
-        import('vue').ExtractPropTypes<{
-          height: {
-            type: import('vue').PropType<string>;
-            default: string;
-          };
-        }>
-      >,
-      {},
-      unknown,
-      {},
-      {},
-      import('vue').ComponentOptionsMixin,
-      import('vue').ComponentOptionsMixin,
-      {},
-      import('vue').VNodeProps &
-        import('vue').AllowedComponentProps &
-        import('vue').ComponentCustomProps &
-        Readonly<
-          import('vue').ExtractPropTypes<{
-            height: {
-              type: import('vue').PropType<string>;
-              default: string;
-            };
-          }>
-        >,
-      {
-        height: string;
-      },
-      true,
-      {},
-      {},
-      {
-        P: {};
-        B: {};
-        D: {};
-        C: {};
-        M: {};
-        Defaults: {};
-      },
-      Readonly<
-        import('vue').ExtractPropTypes<{
-          height: {
-            type: import('vue').PropType<string>;
-            default: string;
-          };
-        }>
-      >,
-      {},
-      {},
-      {},
-      {},
-      {
-        height: string;
-      }
-    >;
-    __isFragment?: undefined;
-    __isTeleport?: undefined;
-    __isSuspense?: undefined;
-  } & import('vue').ComponentOptionsBase<
-    Readonly<
-      import('vue').ExtractPropTypes<{
-        height: {
-          type: import('vue').PropType<string>;
-          default: string;
-        };
-      }>
-    >,
-    {},
-    unknown,
-    {},
-    {},
-    import('vue').ComponentOptionsMixin,
-    import('vue').ComponentOptionsMixin,
-    {},
-    string,
-    {
-      height: string;
-    },
-    {},
-    string,
-    {}
-  > &
-    import('vue').VNodeProps &
-    import('vue').AllowedComponentProps &
-    import('vue').ComponentCustomProps &
-    (new () => {
-      $slots: {
-        default?(_: {}): any;
-      };
-    })
->;
-export declare const BuHeader: import('@bubu-ui/utils').SFCWithInstall<
-  {
-    new (...args: any[]): import('vue').CreateComponentPublicInstance<
-      Readonly<
-        import('vue').ExtractPropTypes<{
-          height: {
-            type: import('vue').PropType<string>;
-            default: string;
-          };
-        }>
-      >,
-      {},
-      unknown,
-      {},
-      {},
-      import('vue').ComponentOptionsMixin,
-      import('vue').ComponentOptionsMixin,
-      {},
-      import('vue').VNodeProps &
-        import('vue').AllowedComponentProps &
-        import('vue').ComponentCustomProps &
-        Readonly<
-          import('vue').ExtractPropTypes<{
-            height: {
-              type: import('vue').PropType<string>;
-              default: string;
-            };
-          }>
-        >,
-      {
-        height: string;
-      },
-      true,
-      {},
-      {},
-      {
-        P: {};
-        B: {};
-        D: {};
-        C: {};
-        M: {};
-        Defaults: {};
-      },
-      Readonly<
-        import('vue').ExtractPropTypes<{
-          height: {
-            type: import('vue').PropType<string>;
-            default: string;
-          };
-        }>
-      >,
-      {},
-      {},
-      {},
-      {},
-      {
-        height: string;
-      }
-    >;
-    __isFragment?: undefined;
-    __isTeleport?: undefined;
-    __isSuspense?: undefined;
-  } & import('vue').ComponentOptionsBase<
-    Readonly<
-      import('vue').ExtractPropTypes<{
-        height: {
-          type: import('vue').PropType<string>;
-          default: string;
-        };
-      }>
-    >,
-    {},
-    unknown,
-    {},
-    {},
-    import('vue').ComponentOptionsMixin,
-    import('vue').ComponentOptionsMixin,
-    {},
-    string,
-    {
-      height: string;
-    },
-    {},
-    string,
-    {}
-  > &
-    import('vue').VNodeProps &
-    import('vue').AllowedComponentProps &
-    import('vue').ComponentCustomProps &
-    (new () => {
-      $slots: {
-        default?(_: {}): any;
-      };
-    })
->;
-export declare const BuMain: import('@bubu-ui/utils').SFCWithInstall<
-  import('vue').DefineComponent<
-    {},
-    {},
-    {},
-    {},
-    {},
-    import('vue').ComponentOptionsMixin,
-    import('vue').ComponentOptionsMixin,
-    {},
-    string,
-    import('vue').VNodeProps &
-      import('vue').AllowedComponentProps &
-      import('vue').ComponentCustomProps,
-    Readonly<import('vue').ExtractPropTypes<{}>>,
-    {},
-    {}
-  >
->;
+export declare const BuAside: import("@bubu-ui/utils").SFCWithInstall<import("vue").DefineComponent<{
+    width: {
+        type: import("vue").PropType<string>;
+        required: true;
+        default: string;
+    };
+}, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+    width: {
+        type: import("vue").PropType<string>;
+        required: true;
+        default: string;
+    };
+}>>, {
+    width: string;
+}, {}>>;
+export declare const BuFooter: import("@bubu-ui/utils").SFCWithInstall<import("vue").DefineComponent<{
+    height: {
+        type: import("vue").PropType<string | undefined>;
+        required: false;
+        default: string;
+    };
+}, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+    height: {
+        type: import("vue").PropType<string | undefined>;
+        required: false;
+        default: string;
+    };
+}>>, {
+    height: string | undefined;
+}, {}>>;
+export declare const BuHeader: import("@bubu-ui/utils").SFCWithInstall<import("vue").DefineComponent<{
+    height: {
+        type: import("vue").PropType<string | undefined>;
+        required: false;
+        default: string;
+    };
+}, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+    height: {
+        type: import("vue").PropType<string | undefined>;
+        required: false;
+        default: string;
+    };
+}>>, {
+    height: string | undefined;
+}, {}>>;
+export declare const BuMain: import("@bubu-ui/utils").SFCWithInstall<{
+    name: string;
+}>;

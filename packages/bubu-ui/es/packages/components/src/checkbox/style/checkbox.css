@@ -4,8 +4,8 @@
   align-items: center;
   white-space: nowrap;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   cursor: pointer;
 }
 .bu-checkbox--input {

@@ -3,10 +3,7 @@
   width: 100%;
   height: 100%;
 }
-.bu-split-left-pane,
-.bu-split-right-pane,
-.bu-split-top-pane,
-.bu-split-bottom-pane {
+.bu-split-left-pane, .bu-split-right-pane, .bu-split-top-pane, .bu-split-bottom-pane {
   position: absolute;
   left: 0;
   top: 0;

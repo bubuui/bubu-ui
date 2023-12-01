@@ -1,7 +1,1 @@
-'use strict';
-Object.defineProperties(exports, {
-  __esModule: { value: !0 },
-  [Symbol.toStringTag]: { value: 'Module' }
-});
-const e = require('./form-item.vue.js');
-exports.default = e.default;
+"use strict";const e=require("./form-item.vue.js");module.exports=e;

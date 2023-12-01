@@ -12,8 +12,8 @@
   margin: 0;
   transition: 0.1s;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   vertical-align: middle;
   border-width: 0;
   padding: 9px 16px;
@@ -35,8 +35,7 @@
   margin-right: 4px;
 }
 
-.bu-btn--circle,
-.bu-btn--circle-icon {
+.bu-btn--circle, .bu-btn--circle-icon {
   border-radius: var(--bu-button-height, 32px);
   height: var(--bu-button-height, 32px);
 }
@@ -59,14 +58,12 @@
   background: #51a0f3;
   border-color: #5da6f3;
 }
-.bu-btn--primary:focus,
-.bu-btn--primary.focus {
+.bu-btn--primary:focus, .bu-btn--primary.focus {
   color: #ffffff;
   background: #51a0f3;
   border-color: #5da6f3;
 }
-.bu-btn--primary:disabled,
-.bu-btn--primary.disabled {
+.bu-btn--primary:disabled, .bu-btn--primary.disabled {
   color: #ffffff;
   background: #2d8cf0;
   border-color: #2d8cf0;
@@ -82,14 +79,12 @@
   background: #1de07e;
   border-color: #27e384;
 }
-.bu-btn--success:focus,
-.bu-btn--success.focus {
+.bu-btn--success:focus, .bu-btn--success.focus {
   color: #ffffff;
   background: #1de07e;
   border-color: #27e384;
 }
-.bu-btn--success:disabled,
-.bu-btn--success.disabled {
+.bu-btn--success:disabled, .bu-btn--success.disabled {
   color: #ffffff;
   background: #19be6b;
   border-color: #19be6b;
@@ -105,14 +100,12 @@
   background: #52c4f7;
   border-color: #5ec8f7;
 }
-.bu-btn--info:focus,
-.bu-btn--info.focus {
+.bu-btn--info:focus, .bu-btn--info.focus {
   color: #ffffff;
   background: #52c4f7;
   border-color: #5ec8f7;
 }
-.bu-btn--info:disabled,
-.bu-btn--info.disabled {
+.bu-btn--info:disabled, .bu-btn--info.disabled {
   color: #ffffff;
   background: #2db7f5;
   border-color: #2db7f5;
@@ -128,14 +121,12 @@
   background: #f05d38;
   border-color: #f16743;
 }
-.bu-btn--error:focus,
-.bu-btn--error.focus {
+.bu-btn--error:focus, .bu-btn--error.focus {
   color: #ffffff;
   background: #f05d38;
   border-color: #f16743;
 }
-.bu-btn--error:disabled,
-.bu-btn--error.disabled {
+.bu-btn--error:disabled, .bu-btn--error.disabled {
   color: #ffffff;
   background: #ed4014;
   border-color: #ed4014;
@@ -151,14 +142,12 @@
   background: #ffa826;
   border-color: #ffad33;
 }
-.bu-btn--warning:focus,
-.bu-btn--warning.focus {
+.bu-btn--warning:focus, .bu-btn--warning.focus {
   color: #ffffff;
   background: #ffa826;
   border-color: #ffad33;
 }
-.bu-btn--warning:disabled,
-.bu-btn--warning.disabled {
+.bu-btn--warning:disabled, .bu-btn--warning.disabled {
   color: #ffffff;
   background: #ff9900;
   border-color: #ff9900;

@@ -35,8 +35,5 @@
 }
 
 .bu-title--border {
-  border-bottom: var(
-    --bu-title-border,
-    1px solid var(--bu-border-color-lighter, var(--bu-line, #dcdee2))
-  );
+  border-bottom: var(--bu-title-border, 1px solid var(--bu-border-color-lighter, var(--bu-line, #dcdee2)));
 }

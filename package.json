@@ -1,6 +1,6 @@
 {
   "name": "bubu-ui",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "description": "",
   "main": "index.js",
   "type": "module",
@@ -32,6 +32,7 @@
     "@types/gulp": "^4.0.17",
     "@types/gulp-autoprefixer": "^0.0.37",
     "@types/gulp-sass": "^5.0.4",
+    "@types/lodash": "^4.14.202",
     "@types/node": "^20.10.1",
     "@vitejs/plugin-vue": "^4.5.0",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
@@ -64,7 +65,7 @@
     "sucrase": "3.29.0",
     "typescript": "^5.3.2",
     "vite": "^5.0.4",
-    "vite-plugin-dts": "^3.6.4",
+    "vite-plugin-dts": "^2.3.0",
     "vite-plugin-vue-type-imports": "^0.2.5",
     "vitest": "^0.34.6",
     "vue": "^3.3.9"

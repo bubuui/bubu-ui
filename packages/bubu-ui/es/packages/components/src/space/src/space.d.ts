@@ -1,68 +1,50 @@
-declare const _default: import('vue').DefineComponent<
-  {
+declare const _default: import("vue").DefineComponent<{
     size: {
-      type: import('vue').PropType<string | number>;
-      default: string;
+        type: import("vue").PropType<string | number>;
+        default: string;
     };
     direction: {
-      type: import('vue').PropType<'vertical' | 'horizontal'>;
-      default: string;
+        type: import("vue").PropType<"horizontal" | "vertical">;
+        default: string;
     };
     alignment: {
-      type: import('vue').PropType<string>;
-      default: string;
+        type: import("vue").PropType<string>;
+        default: string;
     };
     wrap: {
-      type: import('vue').PropType<boolean>;
-      default: boolean;
+        type: import("vue").PropType<boolean>;
+        default: boolean;
     };
     fill: {
-      type: import('vue').PropType<boolean>;
-      default: boolean;
+        type: import("vue").PropType<boolean>;
+        default: boolean;
     };
-  },
-  () => JSX.Element | null,
-  unknown,
-  {},
-  {},
-  import('vue').ComponentOptionsMixin,
-  import('vue').ComponentOptionsMixin,
-  {},
-  string,
-  import('vue').VNodeProps &
-    import('vue').AllowedComponentProps &
-    import('vue').ComponentCustomProps,
-  Readonly<
-    import('vue').ExtractPropTypes<{
-      size: {
-        type: import('vue').PropType<string | number>;
+}, () => JSX.Element | null, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+    size: {
+        type: import("vue").PropType<string | number>;
         default: string;
-      };
-      direction: {
-        type: import('vue').PropType<'vertical' | 'horizontal'>;
+    };
+    direction: {
+        type: import("vue").PropType<"horizontal" | "vertical">;
         default: string;
-      };
-      alignment: {
-        type: import('vue').PropType<string>;
+    };
+    alignment: {
+        type: import("vue").PropType<string>;
         default: string;
-      };
-      wrap: {
-        type: import('vue').PropType<boolean>;
+    };
+    wrap: {
+        type: import("vue").PropType<boolean>;
         default: boolean;
-      };
-      fill: {
-        type: import('vue').PropType<boolean>;
+    };
+    fill: {
+        type: import("vue").PropType<boolean>;
         default: boolean;
-      };
-    }>
-  >,
-  {
+    };
+}>>, {
     fill: boolean;
     size: string | number;
-    direction: 'vertical' | 'horizontal';
+    direction: "horizontal" | "vertical";
     alignment: string;
     wrap: boolean;
-  },
-  {}
->;
+}, {}>;
 export default _default;

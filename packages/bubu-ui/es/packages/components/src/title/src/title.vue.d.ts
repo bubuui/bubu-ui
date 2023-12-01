@@ -1,49 +1,30 @@
+import type { PropType as __PropType } from 'vue';
 type ITitleType = 'primary' | 'success' | 'warning' | 'error' | 'info';
-interface TitleProps {
-  sub?: boolean;
-  border?: boolean;
-  type?: ITitleType;
-}
-declare const _default: __VLS_WithTemplateSlots<
-  import('vue').DefineComponent<
-    __VLS_TypePropsToRuntimeProps<TitleProps>,
-    {},
-    unknown,
-    {},
-    {},
-    import('vue').ComponentOptionsMixin,
-    import('vue').ComponentOptionsMixin,
-    {},
-    string,
-    import('vue').VNodeProps &
-      import('vue').AllowedComponentProps &
-      import('vue').ComponentCustomProps,
-    Readonly<
-      import('vue').ExtractPropTypes<__VLS_TypePropsToRuntimeProps<TitleProps>>
-    >,
-    {},
-    {}
-  >,
-  {
-    default?(_: {}): any;
-    left?(_: {}): any;
-    right?(_: {}): any;
-  }
->;
-export default _default;
-type __VLS_NonUndefinedable<T> = T extends undefined ? never : T;
-type __VLS_TypePropsToRuntimeProps<T> = {
-  [K in keyof T]-?: {} extends Pick<T, K>
-    ? {
-        type: import('vue').PropType<__VLS_NonUndefinedable<T[K]>>;
-      }
-    : {
-        type: import('vue').PropType<T[K]>;
-        required: true;
-      };
-};
-type __VLS_WithTemplateSlots<T, S> = T & {
-  new (): {
-    $slots: S;
-  };
-};
+declare const _sfc_main: import("vue").DefineComponent<{
+    sub: {
+        type: __PropType<boolean | undefined>;
+        required: false;
+    };
+    border: {
+        type: __PropType<boolean | undefined>;
+        required: false;
+    };
+    type: {
+        type: __PropType<ITitleType | undefined>;
+        required: false;
+    };
+}, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+    sub: {
+        type: __PropType<boolean | undefined>;
+        required: false;
+    };
+    border: {
+        type: __PropType<boolean | undefined>;
+        required: false;
+    };
+    type: {
+        type: __PropType<ITitleType | undefined>;
+        required: false;
+    };
+}>>, {}, {}>;
+export default _sfc_main;

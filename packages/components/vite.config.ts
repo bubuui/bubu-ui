@@ -35,7 +35,7 @@ export default defineConfig({
           entryFileNames: '[name].mjs',
           //让打包目录和我们目录对应
           preserveModules: true,
-          exports: 'named',
+          exports: 'auto',
           //配置打包根目录
           dir: '../bubu-ui/es'
         },
@@ -46,14 +46,14 @@ export default defineConfig({
           entryFileNames: '[name].js',
           //让打包目录和我们目录对应
           preserveModules: true,
-          exports: 'named',
+          exports: 'auto',
           //配置打包根目录
           dir: '../bubu-ui/lib'
         }
       ]
     },
     lib: {
-      entry: './index.ts',
+      entry: 'index.ts',
       name: 'bubu-ui'
     }
   },
@@ -62,12 +62,13 @@ export default defineConfig({
     vueJsx(),
     dts({
       entryRoot: './src',
-      outDir: [
+      outputDir: [
         '../bubu-ui/es/packages/components/src',
         '../bubu-ui/lib/packages/components/src'
       ],
       //指定使用的tsconfig.json为我们整个项目根目录下,如果不配置,你也可以在components下新建tsconfig.json
-      tsconfigPath: '../../tsconfig.json'
+      tsConfigFilePath: '../../tsconfig.json',
+      copyDtsFiles: true
     }),
     // DefineOptions(),
     {

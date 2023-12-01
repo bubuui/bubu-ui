@@ -13,7 +13,7 @@
   box-shadow: 0 0 0 1px #f56c6c inset;
 }
 .bu-form .bu-form-item.is-required .bu-form-item-label::before {
-  content: '*';
+  content: "*";
   color: #f56c6c;
   margin-right: 4px;
 }
