@@ -1,0 +1,32 @@
+.m-b-10 {
+  margin-bottom: 10px;
+}
+
+.common-layout {
+  .bu-header,
+  .bu-footer,
+  .bu-main,
+  .bu-aside {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .bu-header,
+  .bu-footer {
+    background-color: #c6e2ff;
+    text-align: center;
+  }
+
+  .bu-aside {
+    background-color: #ecf5ff;
+    text-align: center;
+  }
+
+  .bu-main {
+    background-color: #d9ecff;
+    text-align: center;
+
+    height: 150px;
+  }
+}

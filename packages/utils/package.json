@@ -1,0 +1,20 @@
+{
+  "name": "@bubu-ui/utils",
+  "version": "1.0.4",
+  "main": "./dist/lib/index.js",
+  "module": "./dist/es/index.js",
+  "description": "",
+  "keywords": [],
+  "files": [
+    "dist"
+  ],
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "build": "vite build",
+    "publish": "release-it"
+  },
+  "dependencies": {
+    "@vue/shared": "^3.3.9"
+  }
+}

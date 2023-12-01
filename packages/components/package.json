@@ -1,0 +1,20 @@
+{
+  "name": "@bubu-ui/components",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "build": "vite build",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@bubu-ui/hook": "workspace:1.0.0",
+    "@bubu-ui/utils": "workspace:1.0.0",
+    "@vueuse/core": "^10.6.1",
+    "async-validator": "^4.2.5"
+  }
+}

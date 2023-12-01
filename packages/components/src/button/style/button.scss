@@ -1,0 +1,102 @@
+@use 'sass:map';
+@use '../../../styles/var' as *;
+
+@import '../../../styles/commom';
+@import './button-mixins.scss';
+
+@mixin button-base {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-appearance: none;
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  transition: 0.1s;
+  user-select: none;
+  vertical-align: middle;
+  border-width: 0;
+  & + & {
+    margin-left: 12px;
+  }
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: $disabled-opacity;
+    box-shadow: none;
+    > * {
+      pointer-events: none;
+    }
+  }
+}
+
+.bu-btn {
+  // 基础样式
+  @include button-base;
+  @include button-size(
+    map.get($button-padding-y, 'default'),
+    map.get($button-padding-x, 'default'),
+    map.get($button-font-size, 'default'),
+    map.get($border-radius, 'base')
+  );
+  > .bu-icon {
+    margin-right: 4px;
+  }
+}
+
+.bu-btn--circle {
+  border-radius: $button-height;
+  height: $button-height;
+}
+
+.bu-btn--block {
+  width: 100%;
+}
+
+.bu-btn--circle-icon {
+  @extend .bu-btn--circle;
+  width: $button-height;
+}
+
+@each $type in (primary, success, info, error, warning) {
+  .bu-btn--#{$type} {
+    @include button-style(
+      map.get($colors, '#{$type}', 'base'),
+      map.get($colors, '#{$type}', 'base'),
+      $color-white
+    );
+  }
+}
+
+@each $size in (small, large) {
+  .bu-btn--#{$size} {
+    @include button-size(
+      map.get($button-padding-y, '#{$size}'),
+      map.get($button-padding-x, '#{$size}'),
+      map.get($button-font-size, 'default'),
+      map.get($border-radius, 'base')
+    );
+  }
+}
+
+.bu-btn--default {
+  background-color: $color-white;
+  border: 1px solid $color-line;
+  border-radius: map.get($border-radius, 'base');
+  &:hover {
+    color: $color-primary;
+    border-color: $color-primary;
+  }
+}
+
+.bu-btn--link {
+  border-width: 0;
+  padding: 0;
+  color: $color-primary !important;
+  &:hover {
+    color: lighten($color-primary, 7.5%) !important;
+  }
+}

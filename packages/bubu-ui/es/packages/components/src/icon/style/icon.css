@@ -1,0 +1,47 @@
+.icon-svg {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  overflow: hidden;
+}
+
+.icon.icon-primary,
+.bu-icon.icon-primary {
+  color: #2d8cf0;
+}
+.icon.icon-primary use,
+.bu-icon.icon-primary use {
+  fill: #2d8cf0 !important;
+}
+.icon.icon-success,
+.bu-icon.icon-success {
+  color: #19be6b;
+}
+.icon.icon-success use,
+.bu-icon.icon-success use {
+  fill: #19be6b !important;
+}
+.icon.icon-info,
+.bu-icon.icon-info {
+  color: #2db7f5;
+}
+.icon.icon-info use,
+.bu-icon.icon-info use {
+  fill: #2db7f5 !important;
+}
+.icon.icon-error,
+.bu-icon.icon-error {
+  color: #ed4014;
+}
+.icon.icon-error use,
+.bu-icon.icon-error use {
+  fill: #ed4014 !important;
+}
+.icon.icon-warning,
+.bu-icon.icon-warning {
+  color: #ff9900;
+}
+.icon.icon-warning use,
+.bu-icon.icon-warning use {
+  fill: #ff9900 !important;
+}

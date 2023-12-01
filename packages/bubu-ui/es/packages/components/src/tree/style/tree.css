@@ -1,0 +1,28 @@
+.bu-tree .bu-tree--node {
+  position: relative;
+}
+.bu-tree .bu-tree--node:hover {
+  background-color: var(--color-bg-info, #f5f7fa);
+}
+.bu-tree .bu-tree--node .bu-tree--node-vline {
+  position: absolute;
+  width: 1px;
+  background-color: var(--bu-line, #dcdee2);
+}
+.bu-tree .bu-tree--node-content {
+  display: flex;
+  align-items: center;
+}
+.bu-tree .bu-tree--node-content .bu-tree--checkbox {
+  position: relative;
+}
+.bu-tree .bu-tree--node--drop-prev {
+  border-top: 2px solid #2d8cf0;
+}
+.bu-tree .bu-tree--node--drop-next {
+  border-bottom: 2px solid #2d8cf0;
+}
+.bu-tree .bu-tree--node--drop-inner {
+  background-color: #2d8cf0;
+  color: #fff;
+}

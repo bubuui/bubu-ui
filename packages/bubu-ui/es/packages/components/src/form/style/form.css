@@ -1,0 +1,74 @@
+.bu-form {
+  font-size: var(--bu-font-size-base, 14px);
+}
+.bu-form .bu-form-item {
+  display: flex;
+  margin-bottom: var(--bu-form-item-spacing, 18px);
+  align-items: center;
+}
+.bu-form .bu-form-item.is-error {
+  margin-bottom: calc(var(--bu-form-item-spacing, 18px) + 8px);
+}
+.bu-form .bu-form-item.is-error .bu-input--wrapper {
+  box-shadow: 0 0 0 1px #f56c6c inset;
+}
+.bu-form .bu-form-item.is-required .bu-form-item-label::before {
+  content: '*';
+  color: #f56c6c;
+  margin-right: 4px;
+}
+.bu-form.bu-form--right .bu-form-item-label {
+  vertical-align: middle;
+  box-sizing: border-box;
+  text-align: right;
+  padding: 0 12px 0 0;
+  display: inline-flex;
+  align-items: flex-start;
+  flex: 0 0 auto;
+  box-sizing: border-box;
+  width: auto;
+  text-align: type;
+}
+.bu-form.bu-form--left .bu-form-item-label {
+  vertical-align: middle;
+  box-sizing: border-box;
+  text-align: right;
+  padding: 0 12px 0 0;
+  display: inline-flex;
+  align-items: flex-start;
+  flex: 0 0 auto;
+  box-sizing: border-box;
+  width: auto;
+  text-align: type;
+}
+.bu-form.bu-form--top .bu-form-item {
+  display: block;
+}
+.bu-form.bu-form--top .bu-form-item-label {
+  vertical-align: middle;
+  box-sizing: border-box;
+  text-align: right;
+  padding: 0 12px 0 0;
+  display: inline-flex;
+  align-items: flex-start;
+  flex: 0 0 auto;
+  box-sizing: border-box;
+  width: auto;
+  text-align: left;
+  display: block;
+  margin-bottom: 8px;
+}
+.bu-form .bu-form-item--content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex: 1;
+  position: relative;
+}
+.bu-form .bu-form-item--content .bu-form-item--error {
+  color: #f56c6c;
+  font-size: 12px;
+  position: absolute;
+  left: 0;
+  top: 100%;
+}

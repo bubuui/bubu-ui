@@ -1,0 +1,35 @@
+@use 'sass:map';
+@use '../../../styles/var' as *;
+
+@import '../../../styles/commom';
+.bu-message {
+  width: fit-content;
+  max-width: calc(100% - 32px);
+  box-sizing: border-box;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 0.3s, transform 0.4s, top 0.4s;
+  padding: $message-padding;
+  display: flex;
+  border-radius: map.get($border-radius, 'base');
+  border-width: map.get($border-width, 'base');
+  border-color: #f4f4f5;
+  align-items: center;
+  border-style: solid;
+  &.is-close {
+    &--content {
+      margin-right: 31px;
+    }
+  }
+  &--info {
+    background-color: #f4f4f5;
+  }
+  &--close {
+    position: absolute;
+    top: 50%;
+    right: 19px;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,35 @@
+@use 'sass:map';
+@use '../../../styles/var' as *;
+
+@import '../../../styles/commom';
+
+.bu-tree {
+  .bu-tree--node {
+    position: relative;
+    &:hover {
+      background-color: $color-bg-info;
+    };
+    .bu-tree--node-vline {
+      position: absolute;
+      width: 1px;
+      background-color: $color-line;
+    }
+    &-content {
+      display: flex;
+      align-items: center;
+      .bu-tree--checkbox {
+        position: relative;
+      }
+    }
+    &--drop-prev {
+      border-top: 2px solid $color-primary;
+    }
+    &--drop-next {
+      border-bottom: 2px solid $color-primary;
+    }
+    &--drop-inner {
+      background-color: $color-primary;
+      color: #fff;
+    }
+  }
+}

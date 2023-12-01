@@ -1,0 +1,118 @@
+@use 'sass:map';
+@use '../../../styles/var' as *;
+
+@import '../../../styles/commom';
+
+@mixin group {
+  border-radius: map.get($input, 'border-radius');
+  background-color: var(--bu-input-group-background-color, #f5f7fa);
+  color: var(--bu-input-group-color, #999);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  padding: 0 20px;
+  white-space: nowrap;
+}
+
+.bu-input {
+  width: 100%;
+  box-sizing: border-box;
+  display: inline-flex;
+  vertical-align: middle;
+  .bu-input--wrapper {
+    display: inline-flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 0 1px map.get($input, 'border-color') inset;
+    background-color: map.get($input, 'bg-color');
+    border-radius: map.get($input, 'border-radius');
+    padding: map.get($input, padding-y) map.get($input, padding-x);
+
+    .bu-input--inner {
+      width: 100%;
+    }
+    @each $type in (default, small, large) {
+      .bu-input--#{$type} {
+        height: map.get($common-component-size, $type);
+        line-height: map.get($common-component-size, $type);
+      }
+    }
+    .bu-input--prefix {
+      display: inline-flex;
+      white-space: nowrap;
+      flex-shrink: 0;
+      flex-wrap: nowrap;
+      height: 100%;
+      text-align: center;
+      align-items: center;
+      color: $color-line;
+      transition: all 0.3s;
+      pointer-events: none;
+      .bu-input--prefix-inner {
+        pointer-events: all;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 8px;
+      }
+    }
+    .bu-input--suffix {
+      @extend .bu-input--prefix;
+      .bu-input--suffix-inner {
+        @extend .bu-input--prefix-inner;
+        margin-right: 0px;
+        margin-left: 8px;
+      }
+    }
+    .bu-input--clear {
+      cursor: pointer;
+    }
+  }
+  &.is-disabled {
+    cursor: not-allowed;
+    .bu-input--wrapper {
+      background-color: $diabled-color;
+    }
+    .bu-input--inner {
+      cursor: not-allowed;
+    }
+  }
+  &.bu-input-group {
+    display: inline-flex;
+    width: 100%;
+    align-items: stretch;
+    &.bu-input-group--prepend {
+      .bu-input--wrapper {
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+      }
+    }
+    &.bu-input-group--append {
+      .bu-input--wrapper {
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+      }
+    }
+    .group--prepend {
+      @include group;
+      border-right: 0;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      box-shadow: 1px 0 0 0 map.get($input, 'border-color') inset,
+        0 1px 0 0 map.get($input, 'border-color') inset,
+        0 -1px 0 0 map.get($input, 'border-color') inset;
+    }
+    .group--append {
+      @include group;
+      border-left: 0;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      box-shadow: 0 1px 0 0 map.get($input, 'border-color') inset,
+        0 -1px 0 0 map.get($input, 'border-color') inset,
+        -1px 0 0 0 map.get($input, 'border-color') inset;
+    }
+  }
+}
