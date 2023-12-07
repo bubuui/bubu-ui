@@ -1,4 +1,5 @@
-## 重新走一遍搭建的逻辑
+## 使用方式
 
-<!-- eslint + prettier + commitlint -->
-<!-- md 文档调整，直接发布 -->
+参考文档地址 https://bubu-ui.yeshaojun.com/guide/quickStart.html
+
+如bug请在Issues上提交，看到后会及时回复
