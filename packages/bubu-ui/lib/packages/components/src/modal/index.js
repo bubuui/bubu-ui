@@ -1,1 +1,1 @@
-"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const t=require("./src/modal.vue.js"),u=require("@bubu-ui/utils"),e=u.withInstall(t);exports.BuModal=e;exports.default=e;
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const u=require("./src/modal.vue_vue_type_script_setup_true_lang.js"),t=require("@bubu-ui/utils"),e=t.withInstall(u);exports.BuModal=e;exports.default=e;

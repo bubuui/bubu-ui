@@ -1,13 +1,14 @@
 {
   "name": "@bubu-ui/utils",
   "version": "1.0.4",
-  "main": "./dist/lib/index.js",
-  "module": "./dist/es/index.js",
+  "main": "index.ts",
+  "module": "index.ts",
   "description": "",
   "keywords": [],
   "files": [
     "dist"
   ],
+  "types": "dist/index.d.ts",
   "author": "",
   "license": "MIT",
   "scripts": {

@@ -3,7 +3,6 @@ const e = {
     type: Object,
     required: !0
   },
-  // 是否显示参考线
   lineable: {
     type: Boolean,
     default: !1

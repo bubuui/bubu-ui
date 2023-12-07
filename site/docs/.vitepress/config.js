@@ -74,6 +74,10 @@ function sidebarComponent() {
           text: 'Form组件',
           link: '/components/form',
         },
+        {
+          text: 'richTextArea组件',
+          link: '/components/richTextArea',
+        },
       ],
     },
     {
@@ -82,6 +86,10 @@ function sidebarComponent() {
         {
           text: 'Tree组件',
           link: '/components/tree',
+        },
+        {
+          text: '图片预览',
+          link: '/components/imgpreview',
         },
       ],
     },

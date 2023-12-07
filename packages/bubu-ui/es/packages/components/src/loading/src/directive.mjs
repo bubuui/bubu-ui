@@ -1,31 +1,32 @@
-import { ref as f } from "vue";
-import { isObject as i, hyphenate as m, isString as p } from "../../../../../node_modules/.pnpm/@vue_shared@3.3.9/node_modules/@vue/shared/dist/shared.esm-bundler.mjs";
-import { Loading as v } from "./service.mjs";
-const u = (e, o) => {
-  const t = o.instance, r = (s) => i(o.value) ? o.value[s] : void 0, d = (s) => {
-    const a = p(s) && (t == null ? void 0 : t[s]) || s;
-    return a && f(a);
-  }, c = (s) => d(e.getAttribute(`bu-loading-${m(s)}`)), l = r("fullscreen") ?? o.modifiers.fullscreen, n = {
+import { ref as v } from "vue";
+import { isObject as g, hyphenate as L, isString as x } from "../../../../../node_modules/.pnpm/@vue_shared@3.3.9/node_modules/@vue/shared/dist/shared.esm-bundler.mjs";
+import { Loading as B } from "./service.mjs";
+const m = (e, o) => {
+  var u, d, f, i;
+  const t = o.instance, r = (s) => g(o.value) ? o.value[s] : void 0, p = (s) => {
+    const a = x(s) && (t == null ? void 0 : t[s]) || s;
+    return a && v(a);
+  }, c = (s) => p(e.getAttribute(`bu-loading-${L(s)}`)), l = (u = r("fullscreen")) != null ? u : o.modifiers.fullscreen, n = {
     text: c("text"),
     spinner: c("spinner"),
     background: c("background"),
     customClass: c("customClass"),
     fullscreen: l,
-    target: r("target") ?? (l ? void 0 : e),
-    body: r("body") ?? o.modifiers.body,
-    lock: r("lock") ?? o.modifiers.lock
+    target: (d = r("target")) != null ? d : l ? void 0 : e,
+    body: (f = r("body")) != null ? f : o.modifiers.body,
+    lock: (i = r("lock")) != null ? i : o.modifiers.lock
   };
   e.BuLoading = {
     options: n,
-    instance: v(n)
+    instance: B(n)
   };
-}, B = {
+}, C = {
   mounted(e, o) {
-    console.log("binding", o), o.value && u(e, o);
+    console.log("binding", o), o.value && m(e, o);
   },
   updated(e, o) {
     const t = e.BuLoading;
-    o.oldValue !== o.value && (o.value && !o.oldValue ? u(e, o) : t == null || t.instance.close());
+    o.oldValue !== o.value && (o.value && !o.oldValue ? m(e, o) : t == null || t.instance.close());
   },
   unmounted(e) {
     var o;
@@ -33,5 +34,5 @@ const u = (e, o) => {
   }
 };
 export {
-  B as vLoading
+  C as vLoading
 };

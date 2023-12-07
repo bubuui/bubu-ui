@@ -1,1 +1,1 @@
-"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const t=require("./src/icon.vue.js"),u=require("@bubu-ui/utils");require("./style/icon.css");const e=u.withInstall(t);exports.BuIcon=e;exports.default=e;
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const u=require("./src/icon.vue_vue_type_script_setup_true_lang.js"),t=require("@bubu-ui/utils");require("./style/icon.css");const e=t.withInstall(u);exports.BuIcon=e;exports.default=e;

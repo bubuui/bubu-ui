@@ -1,7 +1,7 @@
 import { isFunction as d } from "../../../../../node_modules/.pnpm/@vue_shared@3.3.9/node_modules/@vue/shared/dist/shared.esm-bundler.mjs";
 import { render as m, createVNode as i, isVNode as u } from "vue";
 import { instances as c } from "./instance.mjs";
-import f from "./message.vue.mjs";
+import f from "./message.vue_vue_type_script_setup_true_lang.mjs";
 let g = 1;
 const y = (e) => {
   const s = h(e);

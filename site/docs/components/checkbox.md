@@ -6,13 +6,13 @@
 
 ```vue
 <template>
-  <bu-checkbox v-model="val" label="A"></bu-checkbox>
+  <bu-checkbox v-model="val" copy label="A"></bu-checkbox>
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
 export default defineComponent({
   setup() {
-    const val = ref(false);
+    const val = ref('12312');
     return {
       val,
     };

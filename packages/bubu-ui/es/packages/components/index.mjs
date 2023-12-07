@@ -1,6 +1,6 @@
 import * as o from "./src/index.mjs";
-import "./styles/iconfont/iconfont.css.mjs";
 import "./styles/iconfont/iconfont.mjs";
+import "./styles/iconfont/iconfont2.mjs";
 import { BuButton as f } from "./src/button/index.mjs";
 import { BuCheckbox as x } from "./src/checkbox/index.mjs";
 import { BuIcon as a } from "./src/icon/index.mjs";

@@ -1,5 +1,5 @@
 import { isVNode as a, createVNode as v, render as u } from "vue";
-import y from "./notification.vue.mjs";
+import y from "./notification.mjs";
 const m = 16;
 let x = 1;
 const p = {
@@ -27,7 +27,6 @@ const p = {
   }, s = v(
     y,
     f,
-    // 允许是一个插槽
     a(f.message) ? {
       default: () => f.message
     } : null

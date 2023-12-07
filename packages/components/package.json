@@ -14,7 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "@bubu-ui/hook": "workspace:*",
-    "@bubu-ui/utils": "workspace:*",
+    "@bubu-ui/utils": "workspace:1.0.4",
     "@vueuse/core": "^10.6.1",
     "async-validator": "^4.2.5"
   }

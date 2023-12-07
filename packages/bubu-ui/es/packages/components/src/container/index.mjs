@@ -1,8 +1,8 @@
-import n from "./src/container.vue.mjs";
-import t from "./src/aside.vue.mjs";
-import r from "./src/footer.vue.mjs";
-import i from "./src/header.vue.mjs";
-import m from "./src/main.vue.mjs";
+import n from "./src/container.vue_vue_type_script_setup_true_lang.mjs";
+import t from "./src/aside.vue_vue_type_script_setup_true_lang.mjs";
+import r from "./src/footer.vue_vue_type_script_setup_true_lang.mjs";
+import i from "./src/header.vue_vue_type_script_setup_true_lang.mjs";
+import m from "./src/main.mjs";
 import "./style/container.css";
 import { withInstall as s, withNoopInstall as o } from "@bubu-ui/utils";
 const d = s(n, {
