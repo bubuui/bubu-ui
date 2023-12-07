@@ -276,8 +276,8 @@ export default defineComponent({
         const full = document.exitFullscreen;
         if (full) {
           full.call(document);
-        } else if (window.ActiveXObject) {
-          const ws = new window.ActiveXObject('WScript.Shell');
+        } else if ((window as any).ActiveXObject) {
+          const ws = new (window as any).ActiveXObject('WScript.Shell');
           ws && ws.SendKeys('F11');
         }
       }
@@ -303,8 +303,8 @@ export default defineComponent({
         const full = document.exitFullscreen;
         if (full) {
           full.call(document);
-        } else if (window.ActiveXObject) {
-          const ws = new window.ActiveXObject('WScript.Shell');
+        } else if ((window as any).ActiveXObject) {
+          const ws = new (window as any).ActiveXObject('WScript.Shell');
           ws && ws.SendKeys('F11');
         }
       }

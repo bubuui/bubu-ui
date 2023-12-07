@@ -1,8 +1,8 @@
 {
 	"name": "@bubu-ui/utils",
-	"version": "1.0.5",
-	"main": "index.ts",
-	"module": "utils/utils.mjs",
+	"version": "1.0.7",
+	"main": "dist/utils.mjs",
+	"module": "dist/utils.mjs",
 	"description": "",
 	"keywords": [],
 	"files": [
@@ -12,8 +12,7 @@
 	"author": "",
 	"license": "MIT",
 	"scripts": {
-		"build": "vite build",
-		"publish": "release-it"
+		"build": "vite build"
 	},
 	"dependencies": {
 		"@vue/shared": "^3.3.9"

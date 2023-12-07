@@ -1,14 +1,14 @@
 {
 	"name": "@bubu-ui/hook",
-	"version": "1.0.6",
+	"version": "1.0.8",
 	"description": "",
-	"main": "index.ts",
+	"main": "/dist/hook.mjs",
 	"module": "/dist/hook.mjs",
 	"scripts": {
-		"build": "vite build",
-		"publish": "release-it"
+		"build": "vite build"
 	},
 	"types": "dist/index.d.ts",
+	"files": ["dist"],
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
