@@ -1,21 +1,21 @@
 {
-  "name": "@bubu-ui/utils",
-  "version": "1.0.4",
-  "main": "index.ts",
-  "module": "index.ts",
-  "description": "",
-  "keywords": [],
-  "files": [
-    "dist"
-  ],
-  "types": "dist/index.d.ts",
-  "author": "",
-  "license": "MIT",
-  "scripts": {
-    "build": "vite build",
-    "publish": "release-it"
-  },
-  "dependencies": {
-    "@vue/shared": "^3.3.9"
-  }
+	"name": "@bubu-ui/utils",
+	"version": "1.0.5",
+	"main": "index.ts",
+	"module": "utils/utils.mjs",
+	"description": "",
+	"keywords": [],
+	"files": [
+		"dist"
+	],
+	"types": "dist/index.d.ts",
+	"author": "",
+	"license": "MIT",
+	"scripts": {
+		"build": "vite build",
+		"publish": "release-it"
+	},
+	"dependencies": {
+		"@vue/shared": "^3.3.9"
+	}
 }

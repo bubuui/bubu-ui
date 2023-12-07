@@ -1,17 +1,18 @@
 {
-  "name": "@bubu-ui/hook",
-  "version": "1.0.4",
-  "description": "",
-  "main": "index.ts",
-  "module": "index.ts",
-  "scripts": {
-    "build": "vite build",
-    "publish": "release-it"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "lodash": "^4.17.21"
-  }
+	"name": "@bubu-ui/hook",
+	"version": "1.0.6",
+	"description": "",
+	"main": "index.ts",
+	"module": "/dist/hook.mjs",
+	"scripts": {
+		"build": "vite build",
+		"publish": "release-it"
+	},
+	"types": "dist/index.d.ts",
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"lodash": "^4.17.21"
+	}
 }

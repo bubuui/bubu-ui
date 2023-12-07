@@ -1,21 +1,21 @@
 {
-  "name": "@bubu-ui/components",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.ts",
-  "types": "./index.ts",
-  "scripts": {
-    "build": "vite build",
-    "test": "vitest",
-    "coverage": "vitest run --coverage"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@bubu-ui/hook": "workspace:*",
-    "@bubu-ui/utils": "workspace:1.0.4",
-    "@vueuse/core": "^10.6.1",
-    "async-validator": "^4.2.5"
-  }
+	"name": "@bubu-ui/components",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.ts",
+	"types": "./index.ts",
+	"scripts": {
+		"build": "vite build",
+		"test": "vitest",
+		"coverage": "vitest run --coverage"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@bubu-ui/hook": "1.0.6",
+		"@bubu-ui/utils": "1.0.5",
+		"@vueuse/core": "^10.6.1",
+		"async-validator": "^4.2.5"
+	}
 }

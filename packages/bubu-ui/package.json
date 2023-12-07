@@ -1,29 +1,37 @@
 {
-    "name": "bubu-ui",
-    "version": "1.0.8",
-    "main": "lib/packages/components/index.js",
-    "module": "es/packages/components/index.mjs",
-    "author": "yeshaojun",
-    "description": "基于vue3开源组件库",
-    "files": [
-      "es",
-      "lib"
-    ],
-    "repository": {
-      "type": "git",
-      "url": "https://github.com/bubuui/bubu-ui"
-    },
-    "sideEffects": [
-      "**/*.css"
-    ],
-    "keywords": ["vue3", "组件库", "tsx", "UI"],
-    "license": "ISC",
-    "types": "lib/packages/components/index.d.ts",
-    "bugs": {
-      "url": "https://github.com/bubuui/bubu-ui"
-    },
-    "peerDependencies": {
-      "vue": "^3.3.9"
-    },
-    "dependencies": {"@bubu-ui/hook":"1.0.4","@bubu-ui/utils":"1.0.4"}
-  }
+	"name": "bubu-ui",
+	"version": "1.0.8",
+	"main": "lib/packages/components/index.js",
+	"module": "es/packages/components/index.mjs",
+	"author": "yeshaojun",
+	"description": "基于vue3开源组件库",
+	"files": [
+		"es",
+		"lib"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/bubuui/bubu-ui"
+	},
+	"sideEffects": [
+		"**/*.css"
+	],
+	"keywords": [
+		"vue3",
+		"组件库",
+		"tsx",
+		"UI"
+	],
+	"license": "ISC",
+	"types": "lib/packages/components/index.d.ts",
+	"bugs": {
+		"url": "https://github.com/bubuui/bubu-ui"
+	},
+	"peerDependencies": {
+		"vue": "^3.3.9"
+	},
+	"dependencies": {
+		"@bubu-ui/hook": "1.0.6",
+		"@bubu-ui/utils": "1.0.5"
+	}
+}

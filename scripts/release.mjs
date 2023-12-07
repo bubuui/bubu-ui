@@ -210,9 +210,9 @@ async function checkNeedPush() {
 
 async function main() {
   await choosePublishPackages();
-  await execa('pnpm', ['run', 'changelog'], {
-    stdio: 'inherit'
-  });
+  // await execa('pnpm', ['run', 'changelog'], {
+  //   stdio: 'inherit'
+  // });
   await checkGitStatus();
   await checkNeedPush();
   await execa(
