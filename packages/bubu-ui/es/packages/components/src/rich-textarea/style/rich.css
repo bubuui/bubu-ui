@@ -1,0 +1,20 @@
+.bu-rich-img-wrapper-active {
+  display: block;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.bu-rich-enlarged {
+  max-width: 100% !important;
+  max-height: 100% !important;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}

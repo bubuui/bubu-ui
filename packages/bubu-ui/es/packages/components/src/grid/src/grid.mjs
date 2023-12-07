@@ -1,5 +1,5 @@
-import { defineComponent as m, toRefs as y, renderSlot as x, createVNode as G, h as g } from "vue";
-const v = /* @__PURE__ */ m({
+import { defineComponent as i, toRefs as m, renderSlot as y, createVNode as x, h as G } from "vue";
+const h = /* @__PURE__ */ i({
   name: "BuGrid",
   props: {
     cols: {
@@ -14,40 +14,39 @@ const v = /* @__PURE__ */ m({
       default: 15
     }
   },
-  setup(s, {
-    slots: d
+  setup(o, {
+    slots: s
   }) {
     const {
-      cols: u,
-      xGap: f,
-      yGap: c
-    } = y(s);
+      cols: d,
+      xGap: u,
+      yGap: f
+    } = m(o);
     let r = 1;
     return () => {
-      var t;
-      const p = x(d, "default", {
+      const p = y(s, "default", {
         key: 0
       }, () => []);
-      return ((t = p.children) != null ? t : []).length === 0 ? null : G("div", {
+      return (p.children ?? []).length === 0 ? null : x("div", {
         style: {
-          "grid-template-columns": `repeat(${u.value}, minmax(0px, 1fr))`,
-          gap: `${c.value}px ${f.value}px`,
+          "grid-template-columns": `repeat(${d.value}, minmax(0px, 1fr))`,
+          gap: `${f.value}px ${u.value}px`,
           display: "grid"
         }
       }, [p.children && p.children.map((e) => {
-        var l, a, o;
-        let n = {};
-        e && e.type.name === "BuGridItem" && (r += ((l = e.props) == null ? void 0 : l.offset) || 0, n = {
+        var n, l, a;
+        let t = {};
+        e && e.type.name === "BuGridItem" && (r += ((n = e.props) == null ? void 0 : n.offset) || 0, t = {
           style: {
-            "grid-column": `${r} / span ${((a = e.props) == null ? void 0 : a.span) || 1}`
+            "grid-column": `${r} / span ${((l = e.props) == null ? void 0 : l.span) || 1}`
           }
         });
-        const i = g(e, n);
-        return r += ((o = e.props) == null ? void 0 : o.span) || 1, i;
+        const c = G(e, t);
+        return r += ((a = e.props) == null ? void 0 : a.span) || 1, c;
       })]);
     };
   }
 });
 export {
-  v as default
+  h as default
 };

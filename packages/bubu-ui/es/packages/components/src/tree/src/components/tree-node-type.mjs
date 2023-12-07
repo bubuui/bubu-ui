@@ -5,6 +5,7 @@ const t = {
     type: Object,
     required: !0
   },
+  // just for jsx
   onClick: {
     type: [Function, Array]
   }

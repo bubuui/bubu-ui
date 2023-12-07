@@ -21,7 +21,7 @@ const I = /* @__PURE__ */ C({
       loading: r
     } = g(e), o = "bu-btn", f = n.value ? `${o}--${n.value}` : "", m = a.value ? `${o}--${a.value}` : "", p = B(() => [o, `${o}--${t.value}`, `${m}`, `${f}`, {
       [`${o}--block`]: i.value
-    }]), v = l.default ? l.default() : "\u6309\u94AE", b = t.value === "link" ? "a" : "button", $ = (k) => {
+    }]), v = l.default ? l.default() : "按钮", b = t.value === "link" ? "a" : "button", $ = (k) => {
       e.loading || e.disabled || c("click", k);
     };
     return () => s(b, h({

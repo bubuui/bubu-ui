@@ -1,1 +1,11 @@
-"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});require("./style/notification.css");const i=require("./src/notify.js"),e=require("@bubu-ui/utils"),t=e.withInstallFunction(i,"$notify");exports.BuNotification=t;exports.default=t;
+'use strict';
+Object.defineProperties(exports, {
+  __esModule: { value: !0 },
+  [Symbol.toStringTag]: { value: 'Module' }
+});
+require('./style/notification.css');
+const e = require('./src/notify.js'),
+  i = require('@bubu-ui/utils'),
+  t = i.withInstallFunction(e, '$notify');
+exports.BuNotification = t;
+exports.default = t;

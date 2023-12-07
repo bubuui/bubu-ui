@@ -1,1 +1,23 @@
-"use strict";const u=require("vue"),l=require("../utils.js"),p=require("./use-core.js"),q=require("./use-toggle.js"),j=require("./use-check.js"),h=require("./use-dragdrop.js"),L=require("./use-lazy-load.js");function y(o,t,r){const n=u.unref(o),e=u.ref(l.generateInnerTree(n)),s=p.useCore(e),c=[q.useToggle,j.useCheck],a=L.useLazyLoad(e,s,r),d=h.useDragdrop(t.dragdrop,e,s);return{...c.reduce((g,i)=>({...g,...i(e,s,r,a)}),{}),...s,...d,treeData:e}}module.exports=y;
+'use strict';
+const u = require('vue'),
+  l = require('../utils.js'),
+  p = require('./use-core.js'),
+  q = require('./use-toggle.js'),
+  L = require('./use-check.js'),
+  h = require('./use-dragdrop.js'),
+  C = require('./use-lazy-load.js');
+function D(n, o, s) {
+  const t = u.unref(n),
+    e = u.ref(l.generateInnerTree(t)),
+    r = p.useCore(e),
+    c = [q.useToggle, L.useCheck],
+    a = C.useLazyLoad(e, r, s),
+    i = h.useDragdrop(o.dragdrop, e, r);
+  return {
+    ...c.reduce((d, g) => ({ ...d, ...g(e, r, s, a) }), {}),
+    ...r,
+    ...i,
+    treeData: e
+  };
+}
+module.exports = D;

@@ -14,3 +14,5 @@ export * from './split';
 export * from './title';
 export * from './tree';
 export * from './virtual-list';
+export * from './img-preview';
+export * from './rich-textarea';

@@ -1,1 +1,44 @@
-"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const n=require("./button/index.js"),t=require("./checkbox/index.js"),r=require("./icon/index.js"),e=require("./container/index.js"),i=require("./form/index.js"),u=require("./grid/index.js"),o=require("./input/index.js"),d=require("./loading/index.js"),s=require("./message/index.js"),B=require("./modal/index.js"),x=require("./notification/index.js"),c=require("./space/index.js"),a=require("./split/index.js"),l=require("./title/index.js"),j=require("./tree/index.js"),q=require("./virtual-list/index.js");exports.BuButton=n.BuButton;exports.BuCheckbox=t.BuCheckbox;exports.BuIcon=r.BuIcon;exports.BuAside=e.BuAside;exports.BuContainer=e.BuContainer;exports.BuFooter=e.BuFooter;exports.BuHeader=e.BuHeader;exports.BuMain=e.BuMain;exports.BuForm=i.BuForm;exports.BuFormItem=i.BuFormItem;exports.BuGrid=u.BuGrid;exports.BuGridItem=u.BuGridItem;exports.BuInput=o.BuInput;exports.BuLoading=d.BuLoading;exports.BuMessage=s.BuMessage;exports.BuModal=B.BuModal;exports.BuNotification=x.BuNotification;exports.BuSpace=c.BuSpace;exports.BuSplit=a.BuSplit;exports.BuTitle=l.BuTitle;exports.BuTree=j.BuTree;exports.BuVirtualList=q.BuVirtualList;
+'use strict';
+Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+const r = require('./button/index.js'),
+  n = require('./checkbox/index.js'),
+  t = require('./icon/index.js'),
+  e = require('./container/index.js'),
+  u = require('./form/index.js'),
+  i = require('./grid/index.js'),
+  B = require('./input/index.js'),
+  o = require('./loading/index.js'),
+  d = require('./message/index.js'),
+  c = require('./modal/index.js'),
+  s = require('./notification/index.js'),
+  a = require('./space/index.js'),
+  x = require('./split/index.js'),
+  q = require('./title/index.js'),
+  $ = require('./tree/index.js'),
+  l = require('./virtual-list/index.js'),
+  m = require('./img-preview/index.js'),
+  I = require('./rich-textarea/index.js');
+exports.BuButton = r.BuButton;
+exports.BuCheckbox = n.BuCheckbox;
+exports.BuIcon = t.BuIcon;
+exports.BuAside = e.BuAside;
+exports.BuContainer = e.BuContainer;
+exports.BuFooter = e.BuFooter;
+exports.BuHeader = e.BuHeader;
+exports.BuMain = e.BuMain;
+exports.BuForm = u.BuForm;
+exports.BuFormItem = u.BuFormItem;
+exports.BuGrid = i.BuGrid;
+exports.BuGridItem = i.BuGridItem;
+exports.BuInput = B.BuInput;
+exports.BuLoading = o.BuLoading;
+exports.BuMessage = d.BuMessage;
+exports.BuModal = c.BuModal;
+exports.BuNotification = s.BuNotification;
+exports.BuSpace = a.BuSpace;
+exports.BuSplit = x.BuSplit;
+exports.BuTitle = q.BuTitle;
+exports.BuTree = $.BuTree;
+exports.BuVirtualList = l.BuVirtualList;
+exports.BuImgPreview = m.BuImgPreview;
+exports.BuRichTextArea = I.BuRichTextArea;

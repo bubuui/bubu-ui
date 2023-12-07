@@ -1,1 +1,39 @@
-"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const i=require("vue");function c(d){const n=i.computed(()=>{let e=[];const u=[];for(const t of d.value)e.map(r=>r.id).includes(t.id)||(t.expanded!==!0&&(e=s(t)),u.push(t));return u}),s=(e,u=!0)=>{const t=[],r=d.value.findIndex(l=>l.id===e.id);for(let l=r+1;l<d.value.length&&e.level<d.value[l].level;l++)(u||e.level===d.value[l].level-1)&&t.push(d.value[l]);return t},o=(e,u=[])=>{const t=s(e,!1);return u.push(...t),t.forEach(r=>{r.expanded&&o(r,u)}),u};return{expendedTree:n,getChildren:s,getParent:e=>d.value.find(u=>u.id===e.parentId),getChildrenExpanded:o,getIndex:e=>e?d.value.findIndex(u=>u.id===e.id):-1,getNode:e=>d.value.find(u=>u.id===e.id)}}exports.useCore=c;
+'use strict';
+Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+const c = require('vue');
+function i(u) {
+  const s = c.computed(() => {
+      let e = [];
+      const t = [];
+      for (const d of u.value)
+        e.map((r) => r.id).includes(d.id) ||
+          (d.expanded !== !0 && (e = n(d)), t.push(d));
+      return t;
+    }),
+    n = (e, t = !0) => {
+      const d = [],
+        r = u.value.findIndex((l) => l.id === e.id);
+      for (let l = r + 1; l < u.value.length && e.level < u.value[l].level; l++)
+        (t || e.level === u.value[l].level - 1) && d.push(u.value[l]);
+      return d;
+    },
+    o = (e, t = []) => {
+      const d = n(e, !1);
+      return (
+        t.push(...d),
+        d.forEach((r) => {
+          r.expanded && o(r, t);
+        }),
+        t
+      );
+    };
+  return {
+    expendedTree: s,
+    getChildren: n,
+    getParent: (e) => u.value.find((t) => t.id === e.parentId),
+    getChildrenExpanded: o,
+    getIndex: (e) => (e ? u.value.findIndex((t) => t.id === e.id) : -1),
+    getNode: (e) => u.value.find((t) => t.id === e.id)
+  };
+}
+exports.useCore = i;
