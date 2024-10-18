@@ -45,11 +45,9 @@ function b(t, l, n) {
       return ((c = i.component) == null ? void 0 : c.props.id) === t;
     }
   );
-  if (o === -1)
-    return;
+  if (o === -1) return;
   const { vm: r } = e[o];
-  if (!r)
-    return;
+  if (!r) return;
   n == null || n(r);
   const d = r.el.offsetHeight, f = l.split("-")[0];
   e.splice(o, 1);

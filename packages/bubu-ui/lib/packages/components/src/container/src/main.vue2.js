@@ -1,3 +1,1 @@
-'use strict';
-const s = { name: 'BuMain' };
-module.exports = s;
+"use strict";const s={name:"BuMain"};module.exports=s;

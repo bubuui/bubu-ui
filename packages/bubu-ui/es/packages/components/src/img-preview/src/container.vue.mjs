@@ -1,103 +1,118 @@
-import v from "./container.vue2.mjs";
-import { resolveComponent as u, openBlock as t, createElementBlock as i, createElementVNode as e, renderSlot as w, toDisplayString as k, createCommentVNode as a, withDirectives as d, vShow as l, normalizeStyle as m, createVNode as y, withCtx as p, Fragment as C, renderList as D, createBlock as b, withModifiers as g, pushScopeId as S, popScopeId as j } from "vue";
+import y from "./container.vue2.mjs";
+import { resolveComponent as l, openBlock as r, createElementBlock as t, createElementVNode as n, renderSlot as C, toDisplayString as b, createCommentVNode as i, createVNode as u, withDirectives as a, vShow as d, normalizeStyle as m, withCtx as f, Fragment as D, renderList as z, createBlock as $, withModifiers as p } from "vue";
 import "./container.vue3.mjs";
-import F from "../../../../../_virtual/_plugin-vue_export-helper.mjs";
-const r = (o) => (S("data-v-cf1226f6"), o = o(), j(), o), T = { class: "ysj-image-container" }, $ = { class: "ysj-image-container-header" }, R = { key: 0 }, z = {
+import j from "../../../../../_virtual/_plugin-vue_export-helper.mjs";
+const F = { class: "ysj-image-container" }, T = { class: "ysj-image-container-header" }, h = { key: 0 }, R = {
   key: 1,
   class: "ysj-image-opt"
-}, E = /* @__PURE__ */ r(() => /* @__PURE__ */ e("svg", { class: "iconpark-icon" }, [
-  /* @__PURE__ */ e("use", { href: "#zoom-in" })
-], -1)), I = [
-  E
-], M = /* @__PURE__ */ r(() => /* @__PURE__ */ e("svg", { class: "iconpark-icon" }, [
-  /* @__PURE__ */ e("use", { href: "#zoom-out" })
-], -1)), B = [
-  M
-], L = /* @__PURE__ */ r(() => /* @__PURE__ */ e("svg", { class: "iconpark-icon" }, [
-  /* @__PURE__ */ e("use", { href: "#download-four" })
-], -1)), N = [
-  L
-], V = /* @__PURE__ */ r(() => /* @__PURE__ */ e("svg", { class: "iconpark-icon" }, [
-  /* @__PURE__ */ e("use", { href: "#full-screen" })
-], -1)), A = [
-  V
-], q = /* @__PURE__ */ r(() => /* @__PURE__ */ e("svg", { class: "iconpark-icon" }, [
-  /* @__PURE__ */ e("use", { href: "#close" })
-], -1)), G = [
-  q
-], H = { class: "loading-wrapper" }, J = { class: "loading-wrapper" }, K = { key: 1 }, O = ["src"], P = /* @__PURE__ */ r(() => /* @__PURE__ */ e("svg", { class: "iconpark-icon" }, [
-  /* @__PURE__ */ e("use", { href: "#left" })
-], -1)), Q = [
-  P
-], U = /* @__PURE__ */ r(() => /* @__PURE__ */ e("svg", { class: "iconpark-icon" }, [
-  /* @__PURE__ */ e("use", { href: "#right" })
-], -1)), W = [
-  U
-];
-function X(o, s, Y, Z, _, x) {
-  const f = u("swipe-item"), c = u("swipe");
-  return t(), i("div", T, [
-    e("div", $, [
-      w(o.$slots, "default", {}, void 0, !0),
-      o.config.header ? a("", !0) : (t(), i("div", R, k(o.dataConfig.current + "/" + o.dataConfig.urls.length), 1)),
-      !o.config.header && o.browserRedirect === "Desktop" ? (t(), i("div", z, [
-        e("button", {
-          onClick: s[0] || (s[0] = (n) => o.zoom("big"))
-        }, I),
-        e("button", {
-          onClick: s[1] || (s[1] = (n) => o.zoom("small"))
-        }, B),
-        e("button", {
-          onClick: s[2] || (s[2] = (...n) => o.dwonload && o.dwonload(...n))
-        }, N),
-        e("button", {
-          onClick: s[3] || (s[3] = (...n) => o.getFull && o.getFull(...n))
-        }, A),
-        e("button", {
-          onClick: s[4] || (s[4] = (...n) => o.close && o.close(...n))
-        }, G)
-      ])) : a("", !0)
+}, S = { class: "loading-wrapper" }, B = { class: "loading-wrapper" }, E = { key: 1 }, I = ["src"];
+function M(o, e, L, N, V, A) {
+  const g = l("BuIcon"), v = l("swipe-item"), k = l("swipe");
+  return r(), t("div", F, [
+    n("div", T, [
+      C(o.$slots, "default", {}, void 0, !0),
+      o.config.header ? i("", !0) : (r(), t("div", h, b(o.dataConfig.current + "/" + o.dataConfig.urls.length), 1)),
+      !o.config.header && o.browserRedirect === "Desktop" ? (r(), t("div", R, [
+        n("button", {
+          onClick: e[0] || (e[0] = (s) => o.rotate("right"))
+        }, [
+          u(g, {
+            name: "youxuanzhuan",
+            size: 30,
+            style: { color: "#fff" }
+          })
+        ]),
+        n("button", {
+          onClick: e[1] || (e[1] = (s) => o.rotate("left"))
+        }, [
+          u(g, {
+            name: "zuoxuanzhuan",
+            size: 30,
+            style: { color: "#fff" }
+          })
+        ]),
+        n("button", {
+          onClick: e[2] || (e[2] = (s) => o.zoom("big"))
+        }, e[12] || (e[12] = [
+          n("svg", { class: "iconpark-icon" }, [
+            n("use", { href: "#zoom-in" })
+          ], -1)
+        ])),
+        n("button", {
+          onClick: e[3] || (e[3] = (s) => o.zoom("small"))
+        }, e[13] || (e[13] = [
+          n("svg", { class: "iconpark-icon" }, [
+            n("use", { href: "#zoom-out" })
+          ], -1)
+        ])),
+        n("button", {
+          onClick: e[4] || (e[4] = (...s) => o.dwonload && o.dwonload(...s))
+        }, e[14] || (e[14] = [
+          n("svg", { class: "iconpark-icon" }, [
+            n("use", { href: "#download-four" })
+          ], -1)
+        ])),
+        n("button", {
+          onClick: e[5] || (e[5] = (...s) => o.getFull && o.getFull(...s))
+        }, e[15] || (e[15] = [
+          n("svg", { class: "iconpark-icon" }, [
+            n("use", { href: "#full-screen" })
+          ], -1)
+        ])),
+        n("button", {
+          onClick: e[6] || (e[6] = (...s) => o.close && o.close(...s))
+        }, e[16] || (e[16] = [
+          n("svg", { class: "iconpark-icon" }, [
+            n("use", { href: "#close" })
+          ], -1)
+        ]))
+      ])) : i("", !0)
     ]),
-    o.browserRedirect === "Desktop" ? (t(), i("div", {
+    o.browserRedirect === "Desktop" ? (r(), t("div", {
       key: 0,
       class: "ysj-image-container-content",
-      onMousedown: s[5] || (s[5] = (...n) => o.mousedown && o.mousedown(...n)),
-      onMousemove: s[6] || (s[6] = (...n) => o.mousemove && o.mousemove(...n)),
-      onMouseup: s[7] || (s[7] = (...n) => o.mouseup && o.mouseup(...n))
+      onMousedown: e[7] || (e[7] = (...s) => o.mousedown && o.mousedown(...s)),
+      onMousemove: e[8] || (e[8] = (...s) => o.mousemove && o.mousemove(...s)),
+      onMouseup: e[9] || (e[9] = (...s) => o.mouseup && o.mouseup(...s))
     }, [
-      d(e("span", H, "图片加载中", 512), [
-        [l, o.loading]
+      a(n("span", S, "图片加载中", 512), [
+        [d, o.loading]
       ]),
-      d(e("span", J, "图片加载失败", 512), [
-        [l, o.error]
+      a(n("span", B, "图片加载失败", 512), [
+        [d, o.error]
       ]),
-      d(e("img", {
-        ref: "imgDom",
-        alt: "",
-        style: m(o.imgTransform)
-      }, null, 4), [
-        [l, !o.loading]
-      ])
-    ], 32)) : (t(), i("div", K, [
-      y(c, {
+      n("div", {
+        style: m({ transform: `rotate(${o.rotation}deg)` }),
+        class: "ysj-img-rotate"
+      }, [
+        a(n("img", {
+          ref: "imgDom",
+          alt: "",
+          style: m(o.imgTransform)
+        }, null, 4), [
+          [d, !o.loading]
+        ])
+      ], 4)
+    ], 32)) : (r(), t("div", E, [
+      u(k, {
         class: "ysj-my-swipe",
         active: o.dataConfig.current - 1,
         onChange: o.changeSwipe
       }, {
-        default: p(() => [
-          (t(!0), i(C, null, D(o.config.urls, (n, h) => (t(), b(f, {
-            key: n,
+        default: f(() => [
+          (r(!0), t(D, null, z(o.config.urls, (s, w) => (r(), $(v, {
+            key: s,
             onTouchstart: o.touchstart,
             onTouchmove: o.touchmove,
             onTouchend: o.touchend
           }, {
-            default: p(() => [
-              e("img", {
-                src: n,
-                style: m(h === o.dataConfig.current - 1 ? o.imgStyle : {}),
+            default: f(() => [
+              n("img", {
+                src: s,
+                style: m(w === o.dataConfig.current - 1 ? o.imgStyle : {}),
                 alt: "",
                 class: "img-item"
-              }, null, 12, O)
+              }, null, 12, I)
             ]),
             _: 2
           }, 1032, ["onTouchstart", "onTouchmove", "onTouchend"]))), 128))
@@ -105,19 +120,27 @@ function X(o, s, Y, Z, _, x) {
         _: 1
       }, 8, ["active", "onChange"])
     ])),
-    o.dataConfig.current > 1 && o.browserRedirect === "Desktop" ? (t(), i("div", {
+    o.dataConfig.current > 1 && o.browserRedirect === "Desktop" ? (r(), t("div", {
       key: 2,
       class: "ysj-image-arraw-left",
-      onClick: s[8] || (s[8] = g((...n) => o.arrawLeft && o.arrawLeft(...n), ["stop"]))
-    }, Q)) : a("", !0),
-    o.dataConfig.current < o.dataConfig.urls.length && o.browserRedirect === "Desktop" ? (t(), i("div", {
+      onClick: e[10] || (e[10] = p((...s) => o.arrawLeft && o.arrawLeft(...s), ["stop"]))
+    }, e[17] || (e[17] = [
+      n("svg", { class: "iconpark-icon" }, [
+        n("use", { href: "#left" })
+      ], -1)
+    ]))) : i("", !0),
+    o.dataConfig.current < o.dataConfig.urls.length && o.browserRedirect === "Desktop" ? (r(), t("div", {
       key: 3,
       class: "ysj-image-arraw-right",
-      onClick: s[9] || (s[9] = g((...n) => o.arrawRight && o.arrawRight(...n), ["stop"]))
-    }, W)) : a("", !0)
+      onClick: e[11] || (e[11] = p((...s) => o.arrawRight && o.arrawRight(...s), ["stop"]))
+    }, e[18] || (e[18] = [
+      n("svg", { class: "iconpark-icon" }, [
+        n("use", { href: "#right" })
+      ], -1)
+    ]))) : i("", !0)
   ]);
 }
-const to = /* @__PURE__ */ F(v, [["render", X], ["__scopeId", "data-v-cf1226f6"]]);
+const K = /* @__PURE__ */ j(y, [["render", M], ["__scopeId", "data-v-86b3f863"]]);
 export {
-  to as default
+  K as default
 };

@@ -1,5 +1,5 @@
 import { ref as f } from "vue";
-import { isObject as i, hyphenate as m, isString as p } from "../../../../../node_modules/.pnpm/@vue_shared@3.3.9/node_modules/@vue/shared/dist/shared.esm-bundler.mjs";
+import { isObject as i, hyphenate as m, isString as p } from "../../../../../node_modules/.pnpm/@vue_shared@3.5.12/node_modules/@vue/shared/dist/shared.esm-bundler.mjs";
 import { Loading as v } from "./service.mjs";
 const u = (e, o) => {
   const t = o.instance, r = (s) => i(o.value) ? o.value[s] : void 0, d = (s) => {

@@ -1,4 +1,4 @@
-import { isFunction as d } from "../../../../../node_modules/.pnpm/@vue_shared@3.3.9/node_modules/@vue/shared/dist/shared.esm-bundler.mjs";
+import { isFunction as d } from "../../../../../node_modules/.pnpm/@vue_shared@3.5.12/node_modules/@vue/shared/dist/shared.esm-bundler.mjs";
 import { render as m, createVNode as i, isVNode as u } from "vue";
 import { instances as c } from "./instance.mjs";
 import f from "./message.vue.mjs";
@@ -8,8 +8,7 @@ const y = (e) => {
   return c.push(s), console.log("container", s.id), s.handler;
 }, p = (e) => {
   const s = c.indexOf(e);
-  if (s === -1)
-    return;
+  if (s === -1) return;
   c.splice(s, 1);
   const { handler: o } = e;
   o.close();

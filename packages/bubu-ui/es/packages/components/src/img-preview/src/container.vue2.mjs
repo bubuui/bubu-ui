@@ -1,16 +1,18 @@
-import { defineComponent as X, ref as l, reactive as d } from "vue";
-import { loadIcon as x } from "./icon.mjs";
-import Y from "./components/swipe/index.vue.mjs";
-import y from "./components/swipeItem/index.vue.mjs";
+import { defineComponent as x, ref as h, reactive as d } from "vue";
+import { loadIcon as Y } from "./icon.mjs";
+import y from "./components/swipe/index.vue.mjs";
+import P from "./components/swipeItem/index.vue.mjs";
 import { preventDefault as w } from "./utils.mjs";
-import { useTouch as P } from "@bubu-ui/hook";
-const r = P();
+import { BuIcon as b } from "../../icon/index.mjs";
+import { useTouch as C } from "@bubu-ui/hook";
+const l = C();
 let p, u, v, f, g, m;
-const F = X({
+const M = x({
   name: "img-preview",
   components: {
-    swipe: Y,
-    swipeItem: y
+    swipe: y,
+    swipeItem: P,
+    BuIcon: b
   },
   props: {
     config: {
@@ -23,14 +25,14 @@ const F = X({
     }
   },
   setup() {
-    const t = l(), e = l({
+    const t = h(), e = h({
       maxZoom: 3,
       current: 0,
       urls: []
-    }), s = l(!1), i = l(!1), o = d({
+    }), s = h(!1), i = h(!1), o = d({
       w: 0,
       h: 0
-    }), n = l(1), a = d({
+    }), n = h(1), a = d({
       scale: 1,
       moveX: 0,
       moveY: 0,
@@ -39,7 +41,7 @@ const F = X({
       imageRatio: 0,
       displayWidth: 0,
       displayHeight: 0
-    }), h = l(!1), c = d({
+    }), r = h(!1), c = d({
       startX: 0,
       startY: 0,
       offsetX: 0,
@@ -47,18 +49,19 @@ const F = X({
       originX: 0,
       originY: 0,
       isdown: !1
-    });
+    }), X = h(0);
     return {
       imgDom: t,
       dataConfig: e,
       loading: s,
       imgInfo: o,
-      loadIcon: x,
+      loadIcon: Y,
       error: i,
       state: a,
       zoomRate: n,
-      isHidden: h,
-      imgPosition: c
+      isHidden: r,
+      imgPosition: c,
+      rotation: X
     };
   },
   computed: {
@@ -72,8 +75,8 @@ const F = X({
         transitionDuration: o || i ? "0s" : ".3s"
       };
       if (t !== 1) {
-        const a = e / t, h = s / t;
-        n.transform = `scale(${t}, ${t}) translate(${a}px, ${h}px)`;
+        const a = e / t, r = s / t;
+        n.transform = `scale(${t}, ${t}) translate(${a}px, ${r}px)`;
       }
       return n;
     },
@@ -137,15 +140,15 @@ const F = X({
       if (this.browserRedirect === "Desktop")
         return;
       const { touches: e } = t;
-      r.start(t), this.state.moving = e.length === 1 && this.state.scale !== 1, this.state.zooming = e.length === 2, f = this.state.moveX, g = this.state.moveY, p = Date.now(), this.state.zooming && (u = this.state.scale, v = this.getDistance(t.touches));
+      l.start(t), this.state.moving = e.length === 1 && this.state.scale !== 1, this.state.zooming = e.length === 2, f = this.state.moveX, g = this.state.moveY, p = Date.now(), this.state.zooming && (u = this.state.scale, v = this.getDistance(t.touches));
     },
     touchmove(t) {
       const { touches: e } = t;
-      r.move(t), (this.state.moving || this.state.zooming) && w(t, !0);
+      l.move(t), (this.state.moving || this.state.zooming) && w(t, !0);
       const s = this.config.maxZoom || 3;
       if (this.state.moving) {
-        const { deltaX: i, deltaY: o } = r, n = i.value + f, a = o.value + g, h = Number(s / 2 * window.innerWidth), c = Number(s / 2 * window.innerHeight);
-        this.state.moveX = this.clamp(n, -h, h), this.state.moveY = this.clamp(a, -c, c);
+        const { deltaX: i, deltaY: o } = l, n = i.value + f, a = o.value + g, r = Number(s / 2 * window.innerWidth), c = Number(s / 2 * window.innerHeight);
+        this.state.moveX = this.clamp(n, -r, r), this.state.moveY = this.clamp(a, -c, c);
       }
       if (this.state.zooming && e.length === 2) {
         const i = this.getDistance(e), o = u * i / v;
@@ -174,7 +177,7 @@ const F = X({
         }
       } else
         this.checkTap();
-      w(t, e), r.reset();
+      w(t, e), l.reset();
     },
     getDistance(t) {
       return Math.sqrt(
@@ -191,7 +194,7 @@ const F = X({
       this.state.scale = 1, this.state.moveX = 0, this.state.moveY = 0;
     },
     checkTap() {
-      const { offsetX: t, offsetY: e } = r, s = Date.now() - p, i = 250, o = 5;
+      const { offsetX: t, offsetY: e } = l, s = Date.now() - p, i = 250, o = 5;
       t.value < o && e.value < o && s < i && (m ? (clearTimeout(m), m = null) : m = setTimeout(() => {
         this.close(), m = null;
       }, i));
@@ -236,6 +239,9 @@ const F = X({
     dwonload() {
       let t = this.dataConfig.urls[this.dataConfig.current - 1];
       window.open(t, "_blank");
+    },
+    rotate(t) {
+      t === "right" ? this.rotation += 90 : this.rotation -= 90;
     }
   },
   mounted() {
@@ -243,5 +249,5 @@ const F = X({
   }
 });
 export {
-  F as default
+  M as default
 };

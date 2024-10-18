@@ -78,8 +78,7 @@ function M(f, d, { getChildren: u, getParent: h }) {
     },
     onDrop: (e, r) => {
       var n;
-      if (e.preventDefault(), e.stopPropagation(), g(e.currentTarget), !t.draggingNode || !f)
-        return;
+      if (e.preventDefault(), e.stopPropagation(), g(e.currentTarget), !t.draggingNode || !f) return;
       const o = (n = e.dataTransfer) == null ? void 0 : n.getData("dragNodeId");
       if (o) {
         const i = T(r.id, o);

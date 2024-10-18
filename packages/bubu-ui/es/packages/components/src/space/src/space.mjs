@@ -1,5 +1,5 @@
 import { defineComponent as v, toRefs as d, computed as o, renderSlot as f, createVNode as h, Comment as g, h as s } from "vue";
-import { isArray as y } from "../../../../../node_modules/.pnpm/@vue_shared@3.3.9/node_modules/@vue/shared/dist/shared.esm-bundler.mjs";
+import { isArray as y } from "../../../../../node_modules/.pnpm/@vue_shared@3.5.12/node_modules/@vue/shared/dist/shared.esm-bundler.mjs";
 import { sapceProps as x } from "./space.type.mjs";
 const b = /* @__PURE__ */ v({
   name: "BuSpace",

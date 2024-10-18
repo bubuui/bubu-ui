@@ -7,8 +7,7 @@ function i(l, { getChildren: t }) {
     const e = l.value.find(
       (n) => n.id === c.parentId
     );
-    if (!e)
-      return;
+    if (!e) return;
     const d = t(e, !1), h = d.filter((n) => n.checked);
     h.length === d.length ? (e.checked = !0, e.indeterminate = !1) : (e.checked = !1, e.indeterminate = h.length !== 0), console.log("treeNode", e), s(e);
   };

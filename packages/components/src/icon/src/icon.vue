@@ -17,7 +17,7 @@
     />
     <span
       v-else
-      :class="['bu-icon', 'icon-' + name, type && `icon-${type}`, $attrs.class]"
+      :class="['bu-icon', 'icon-' + name, type && `icon-${type}`, $attrs.class, 'iconfont']"
       v-bind="$attrs"
       :style="{
         fontSize: iconSize,

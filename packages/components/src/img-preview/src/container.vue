@@ -9,6 +9,12 @@
         class="ysj-image-opt"
         v-if="!config.header && browserRedirect === 'Desktop'"
       >
+        <button @click="rotate('right')">
+          <BuIcon name="youxuanzhuan" :size="30" style="color: #fff" />
+        </button>
+        <button @click="rotate('left')">
+          <BuIcon name="zuoxuanzhuan" :size="30" style="color: #fff" />
+        </button>
         <button @click="zoom('big')">
           <svg class="iconpark-icon"><use href="#zoom-in"></use></svg>
         </button>
@@ -35,7 +41,9 @@
     >
       <span v-show="loading" class="loading-wrapper">图片加载中</span>
       <span v-show="error" class="loading-wrapper">图片加载失败</span>
-      <img ref="imgDom" v-show="!loading" alt="" :style="imgTransform" />
+      <div :style="{ transform: `rotate(${rotation}deg)` }" class="ysj-img-rotate">
+        <img ref="imgDom" v-show="!loading" alt="" :style="imgTransform" />
+      </div>
     </div>
     <div v-else>
       <swipe
@@ -88,6 +96,7 @@ import { loadIcon } from './icon';
 import swipe from './components/swipe/index.vue';
 import swipeItem from './components/swipeItem/index.vue';
 import { preventDefault } from './utils';
+import { BuIcon } from '@bubu-ui/components/icon';
 import { useTouch } from '@bubu-ui/hook';
 const touch = useTouch();
 let touchStartTime: number;
@@ -100,7 +109,8 @@ export default defineComponent({
   name: 'img-preview',
   components: {
     swipe,
-    swipeItem
+    swipeItem,
+    BuIcon
   },
   props: {
     config: {
@@ -146,6 +156,7 @@ export default defineComponent({
       originY: 0,
       isdown: false
     });
+    const rotation = ref(0)
     return {
       imgDom,
       dataConfig,
@@ -156,7 +167,8 @@ export default defineComponent({
       state,
       zoomRate,
       isHidden,
-      imgPosition
+      imgPosition,
+      rotation
     };
   },
   computed: {
@@ -518,6 +530,14 @@ export default defineComponent({
     dwonload() {
       let url1 = this.dataConfig.urls[this.dataConfig.current - 1];
       window.open(url1, '_blank');
+    },
+    rotate(type: string) {
+      if(type === 'right') {
+        this.rotation += 90
+      } else {
+        this.rotation -= 90
+      }
+      
     }
   },
   mounted() {
@@ -639,5 +659,8 @@ export default defineComponent({
 }
 .ysj-image-container-content img {
   transition: all 0.3 ease;
+}
+.ysj-img-rotate {
+  transition: transform 0.5s; 
 }
 </style>

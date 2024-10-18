@@ -1,17 +1,12 @@
-import { defineComponent as n, openBlock as s, createBlock as i, Transition as t, withCtx as a, withDirectives as r, createElementVNode as o, normalizeClass as d, normalizeStyle as c, createElementBlock as l, renderSlot as u, toDisplayString as p, vShow as g } from "vue";
-const _ = { class: "bu-loading-spinner" }, b = {
+import { defineComponent as i, openBlock as s, createBlock as a, Transition as t, withCtx as r, withDirectives as d, createElementVNode as o, normalizeClass as u, normalizeStyle as c, createElementBlock as n, renderSlot as p, toDisplayString as g, vShow as b } from "vue";
+const m = { class: "bu-loading-spinner" }, f = {
   key: 0,
   class: "bu-loading-svg bu-load-loop"
-}, m = {
+}, k = {
   key: 1,
   "aria-hidden": "true",
   class: "bu-loading-svg bu-load-loop"
-}, f = /* @__PURE__ */ o("use", {
-  "xlink:href": "#icon-loading",
-  fill: "#2d8cf0"
-}, null, -1), h = [
-  f
-], k = { class: "bu-loading-text" }, B = /* @__PURE__ */ n({
+}, v = { class: "bu-loading-text" }, _ = /* @__PURE__ */ i({
   __name: "loading",
   props: {
     backgroundColor: {},
@@ -20,21 +15,26 @@ const _ = { class: "bu-loading-spinner" }, b = {
     customClass: {},
     visible: {}
   },
-  setup(v) {
-    return (e, C) => (s(), i(t, { name: "bu-loading-fade" }, {
-      default: a(() => [
-        r(o("div", {
-          class: d(["bu-loading-mask", [e.customClass, e.fullscreen ? "is-fullscreen" : ""]]),
+  setup(h) {
+    return (e, l) => (s(), a(t, { name: "bu-loading-fade" }, {
+      default: r(() => [
+        d(o("div", {
+          class: u(["bu-loading-mask", [e.customClass, e.fullscreen ? "is-fullscreen" : ""]]),
           style: c({ backgroundColor: e.backgroundColor })
         }, [
-          o("div", _, [
-            e.$slots.spinner ? (s(), l("span", b, [
-              u(e.$slots, "spinner")
-            ])) : (s(), l("svg", m, h)),
-            o("div", k, p(e.text), 1)
+          o("div", m, [
+            e.$slots.spinner ? (s(), n("span", f, [
+              p(e.$slots, "spinner")
+            ])) : (s(), n("svg", k, l[0] || (l[0] = [
+              o("use", {
+                "xlink:href": "#icon-loading",
+                fill: "#2d8cf0"
+              }, null, -1)
+            ]))),
+            o("div", v, g(e.text), 1)
           ])
         ], 6), [
-          [g, e.visible]
+          [b, e.visible]
         ])
       ]),
       _: 3
@@ -42,5 +42,5 @@ const _ = { class: "bu-loading-spinner" }, b = {
   }
 });
 export {
-  B as default
+  _ as default
 };

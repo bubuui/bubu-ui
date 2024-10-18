@@ -1,6 +1,6 @@
 {
     "name": "bubu-ui",
-    "version": "1.0.9",
+    "version": "1.0.14",
     "main": "lib/packages/components/index.js",
     "module": "es/packages/components/index.mjs",
     "author": "yeshaojun",

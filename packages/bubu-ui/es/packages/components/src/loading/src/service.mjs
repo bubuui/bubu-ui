@@ -1,4 +1,4 @@
-import { isString as u } from "../../../../../node_modules/.pnpm/@vue_shared@3.3.9/node_modules/@vue/shared/dist/shared.esm-bundler.mjs";
+import { isString as u } from "../../../../../node_modules/.pnpm/@vue_shared@3.5.12/node_modules/@vue/shared/dist/shared.esm-bundler.mjs";
 import { ref as a, h as o, isRef as i, render as d, nextTick as m } from "vue";
 import { BuIcon as f } from "../../icon/index.mjs";
 import v from "./loading.vue.mjs";

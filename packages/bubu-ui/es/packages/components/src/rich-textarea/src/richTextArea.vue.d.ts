@@ -1,106 +1,90 @@
 import type { PropType as __PropType } from 'vue';
-declare const _sfc_main: import('vue').DefineComponent<
-  {
+declare const _sfc_main: import("vue").DefineComponent<import("vue").ExtractPropTypes<{
     disabled: {
-      type: __PropType<boolean | undefined>;
-      required: false;
-      default: boolean;
+        type: __PropType<boolean | undefined>;
+        required: false;
+        default: boolean;
     };
     placeholder: {
-      type: __PropType<string | undefined>;
-      required: false;
-      default: string;
+        type: __PropType<string | undefined>;
+        required: false;
+        default: string;
     };
     copy: {
-      type: __PropType<boolean | undefined>;
-      required: false;
-      default: boolean;
+        type: __PropType<boolean | undefined>;
+        required: false;
+        default: boolean;
     };
     modelValue: {
-      type: __PropType<string>;
-      required: true;
-    };
-    maxImgWidth: {
-      type: __PropType<string | undefined>;
-      required: false;
-      default: string;
-    };
-    maxImgHeight: {
-      type: __PropType<string | undefined>;
-      required: false;
-      default: string;
-    };
-    maxImgSize: {
-      type: __PropType<number | undefined>;
-      required: false;
-      default: number;
-    };
-    imgPrevie: {
-      type: __PropType<boolean | undefined>;
-      required: false;
-      default: boolean;
-    };
-  },
-  {},
-  unknown,
-  {},
-  {},
-  import('vue').ComponentOptionsMixin,
-  import('vue').ComponentOptionsMixin,
-  ('update:modelValue' | 'change' | 'imgUpload' | 'keyup')[],
-  'update:modelValue' | 'change' | 'imgUpload' | 'keyup',
-  import('vue').VNodeProps &
-    import('vue').AllowedComponentProps &
-    import('vue').ComponentCustomProps,
-  Readonly<
-    import('vue').ExtractPropTypes<{
-      disabled: {
-        type: __PropType<boolean | undefined>;
-        required: false;
-        default: boolean;
-      };
-      placeholder: {
-        type: __PropType<string | undefined>;
-        required: false;
-        default: string;
-      };
-      copy: {
-        type: __PropType<boolean | undefined>;
-        required: false;
-        default: boolean;
-      };
-      modelValue: {
         type: __PropType<string>;
         required: true;
-      };
-      maxImgWidth: {
+    };
+    maxImgWidth: {
         type: __PropType<string | undefined>;
         required: false;
         default: string;
-      };
-      maxImgHeight: {
+    };
+    maxImgHeight: {
         type: __PropType<string | undefined>;
         required: false;
         default: string;
-      };
-      maxImgSize: {
+    };
+    maxImgSize: {
         type: __PropType<number | undefined>;
         required: false;
         default: number;
-      };
-      imgPrevie: {
+    };
+    imgPrevie: {
         type: __PropType<boolean | undefined>;
         required: false;
         default: boolean;
-      };
-    }>
-  > & {
-    'onUpdate:modelValue'?: ((...args: any[]) => any) | undefined;
+    };
+}>, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("update:modelValue" | "change" | "imgUpload" | "keyup")[], "update:modelValue" | "change" | "imgUpload" | "keyup", import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
+    disabled: {
+        type: __PropType<boolean | undefined>;
+        required: false;
+        default: boolean;
+    };
+    placeholder: {
+        type: __PropType<string | undefined>;
+        required: false;
+        default: string;
+    };
+    copy: {
+        type: __PropType<boolean | undefined>;
+        required: false;
+        default: boolean;
+    };
+    modelValue: {
+        type: __PropType<string>;
+        required: true;
+    };
+    maxImgWidth: {
+        type: __PropType<string | undefined>;
+        required: false;
+        default: string;
+    };
+    maxImgHeight: {
+        type: __PropType<string | undefined>;
+        required: false;
+        default: string;
+    };
+    maxImgSize: {
+        type: __PropType<number | undefined>;
+        required: false;
+        default: number;
+    };
+    imgPrevie: {
+        type: __PropType<boolean | undefined>;
+        required: false;
+        default: boolean;
+    };
+}>> & Readonly<{
+    "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
     onChange?: ((...args: any[]) => any) | undefined;
     onImgUpload?: ((...args: any[]) => any) | undefined;
     onKeyup?: ((...args: any[]) => any) | undefined;
-  },
-  {
+}>, {
     disabled: boolean | undefined;
     placeholder: string | undefined;
     copy: boolean | undefined;
@@ -108,7 +92,5 @@ declare const _sfc_main: import('vue').DefineComponent<
     maxImgHeight: string | undefined;
     maxImgSize: number | undefined;
     imgPrevie: boolean | undefined;
-  },
-  {}
->;
+}, {}, {}, {}, string, import("vue").ComponentProvideOptions, true, {}, any>;
 export default _sfc_main;

@@ -1,5 +1,2 @@
-import ImgPreview from './src/img-preview';
-export declare const BuImgPreview: import('@bubu-ui/utils').SFCInstallWithContext<
-  typeof ImgPreview
->;
+export declare const BuImgPreview: any;
 export default BuImgPreview;

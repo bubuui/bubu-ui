@@ -1,5 +1,5 @@
 import { defineComponent as E, ref as m, onMounted as M, watchEffect as H, nextTick as C, openBlock as I, createElementBlock as A, mergeProps as P, withModifiers as S } from "vue";
-const B = ["disabled", "placeholder", "onKeyup"], _ = /* @__PURE__ */ E({
+const B = ["disabled", "placeholder"], _ = /* @__PURE__ */ E({
   name: "BuRichTextArea",
   __name: "richTextArea",
   props: {

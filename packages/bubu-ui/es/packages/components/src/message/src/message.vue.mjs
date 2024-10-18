@@ -2,8 +2,8 @@ import { defineComponent as B, ref as a, computed as i, onMounted as C, openBloc
 import { messageProps as D } from "./message-type.mjs";
 import { BuIcon as E } from "../../icon/index.mjs";
 import { getLastOffset as I, getOffsetOrSpace as N } from "./instance.mjs";
-import { useResizeObserver as V } from "../../../../../node_modules/.pnpm/@vueuse_core@10.6.1/node_modules/@vueuse/core/index.mjs";
-import { useTimeoutFn as _ } from "../../../../../node_modules/.pnpm/@vueuse_shared@10.6.1/node_modules/@vueuse/shared/index.mjs";
+import { useResizeObserver as V } from "../../../../../node_modules/.pnpm/@vueuse_core@10.11.1_vue@3.5.12_typescript@5.6.3_/node_modules/@vueuse/core/index.mjs";
+import { useTimeoutFn as _ } from "../../../../../node_modules/.pnpm/@vueuse_shared@10.11.1_vue@3.5.12_typescript@5.6.3_/node_modules/@vueuse/shared/index.mjs";
 const A = ["id"], F = {
   key: 0,
   class: "bu-message--content"

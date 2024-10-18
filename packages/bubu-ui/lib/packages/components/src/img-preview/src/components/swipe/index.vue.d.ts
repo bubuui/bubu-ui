@@ -1,31 +1,26 @@
-declare const _sfc_main: import('vue').DefineComponent<
-  {
+declare const _sfc_main: import("vue").DefineComponent<import("vue").ExtractPropTypes<{
     loop: {
-      type: BooleanConstructor;
-      default: boolean;
+        type: BooleanConstructor;
+        default: boolean;
     };
     active: {
-      type: NumberConstructor;
-      default: number;
+        type: NumberConstructor;
+        default: number;
     };
-  },
-  {
-    trackDom: import('vue').Ref<HTMLDivElement | undefined>;
-    startX: import('vue').Ref<number>;
-    startY: import('vue').Ref<number>;
+}>, {
+    trackDom: import("vue").Ref<HTMLDivElement | undefined, HTMLDivElement | undefined>;
+    startX: import("vue").Ref<number, number>;
+    startY: import("vue").Ref<number, number>;
     state: {
-      active: number;
-      width: number;
-      swiping: boolean;
+        active: number;
+        width: number;
+        swiping: boolean;
     };
-    deltaX: import('vue').Ref<number>;
-    deltaY: import('vue').Ref<number>;
-    offsetX: import('vue').Ref<number>;
-    offsetY: import('vue').Ref<number>;
-  },
-  unknown,
-  {},
-  {
+    deltaX: import("vue").Ref<number, number>;
+    deltaY: import("vue").Ref<number, number>;
+    offsetX: import("vue").Ref<number, number>;
+    offsetY: import("vue").Ref<number, number>;
+}, {}, {}, {
     getStyle(): void;
     touchstart(event: TouchEvent): void;
     touchmove(event: TouchEvent): void;
@@ -33,30 +28,17 @@ declare const _sfc_main: import('vue').DefineComponent<
     reset(): void;
     move(type: string): void;
     checkActive(type: string): boolean;
-  },
-  import('vue').ComponentOptionsMixin,
-  import('vue').ComponentOptionsMixin,
-  {},
-  string,
-  import('vue').VNodeProps &
-    import('vue').AllowedComponentProps &
-    import('vue').ComponentCustomProps,
-  Readonly<
-    import('vue').ExtractPropTypes<{
-      loop: {
+}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
+    loop: {
         type: BooleanConstructor;
         default: boolean;
-      };
-      active: {
+    };
+    active: {
         type: NumberConstructor;
         default: number;
-      };
-    }>
-  >,
-  {
+    };
+}>> & Readonly<{}>, {
     loop: boolean;
     active: number;
-  },
-  {}
->;
+}, {}, {}, {}, string, import("vue").ComponentProvideOptions, true, {}, any>;
 export default _sfc_main;

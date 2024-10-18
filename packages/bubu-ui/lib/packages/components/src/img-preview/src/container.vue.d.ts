@@ -1,69 +1,69 @@
 import { ImgPreviewConfigType } from './img-preview-type';
 import { PropType, CSSProperties } from 'vue';
-declare const _sfc_main: import('vue').DefineComponent<
-  {
+declare const _sfc_main: import("vue").DefineComponent<import("vue").ExtractPropTypes<{
     config: {
-      type: PropType<ImgPreviewConfigType>;
-      default(): {
-        maxZoom: number;
-      };
+        type: PropType<ImgPreviewConfigType>;
+        default(): {
+            maxZoom: number;
+        };
     };
-  },
-  {
-    imgDom: import('vue').Ref<any>;
-    dataConfig: import('vue').Ref<{
-      urls: string[];
-      current: number;
-      maxZoom?: number | undefined;
-      loop?: boolean | undefined;
-      header?:
-        | import('vue').VNode<
-            import('vue').RendererNode,
-            import('vue').RendererElement,
-            {
-              [key: string]: any;
-            }
-          >
-        | undefined;
-      success?: ((status: string) => void) | undefined;
-      fail?: ((status: string) => void) | undefined;
+}>, {
+    imgDom: import("vue").Ref<any, any>;
+    dataConfig: import("vue").Ref<{
+        urls: string[];
+        current: number;
+        maxZoom?: number | undefined;
+        loop?: boolean | undefined;
+        header?: import("vue").VNode<import("vue").RendererNode, import("vue").RendererElement, {
+            [key: string]: any;
+        }> | undefined;
+        success?: ((status: string) => void) | undefined;
+        fail?: ((status: string) => void) | undefined;
+    }, ImgPreviewConfigType | {
+        urls: string[];
+        current: number;
+        maxZoom?: number | undefined;
+        loop?: boolean | undefined;
+        header?: import("vue").VNode<import("vue").RendererNode, import("vue").RendererElement, {
+            [key: string]: any;
+        }> | undefined;
+        success?: ((status: string) => void) | undefined;
+        fail?: ((status: string) => void) | undefined;
     }>;
-    loading: import('vue').Ref<boolean>;
+    loading: import("vue").Ref<boolean, boolean>;
     imgInfo: {
-      w: number;
-      h: number;
+        w: number;
+        h: number;
     };
     loadIcon: () => void;
-    error: import('vue').Ref<boolean>;
+    error: import("vue").Ref<boolean, boolean>;
     state: {
-      scale: number;
-      moveX: number;
-      moveY: number;
-      moving: boolean;
-      zooming: boolean;
-      imageRatio: number;
-      displayWidth: number;
-      displayHeight: number;
+        scale: number;
+        moveX: number;
+        moveY: number;
+        moving: boolean;
+        zooming: boolean;
+        imageRatio: number;
+        displayWidth: number;
+        displayHeight: number;
     };
-    zoomRate: import('vue').Ref<number>;
-    isHidden: import('vue').Ref<boolean>;
+    zoomRate: import("vue").Ref<number, number>;
+    isHidden: import("vue").Ref<boolean, boolean>;
     imgPosition: {
-      startX: number;
-      startY: number;
-      offsetX: number;
-      offsetY: number;
-      originX: number;
-      originY: number;
-      isdown: boolean;
+        startX: number;
+        startY: number;
+        offsetX: number;
+        offsetY: number;
+        originX: number;
+        originY: number;
+        isdown: boolean;
     };
-  },
-  unknown,
-  {
-    browserRedirect(): 'Mobile' | 'Desktop';
+    rotation: import("vue").Ref<number, number>;
+}, {}, {
+    browserRedirect(): "Mobile" | "Desktop";
     imgStyle(): CSSProperties;
     imgTransform(): CSSProperties;
-  },
-  {
+}, {
     loadImage(): void;
     arrawRight(): void;
     arrawLeft(): void;
@@ -85,27 +85,15 @@ declare const _sfc_main: import('vue').DefineComponent<
     resetImgPositon(): void;
     init(): void;
     dwonload(): void;
-  },
-  import('vue').ComponentOptionsMixin,
-  import('vue').ComponentOptionsMixin,
-  {},
-  string,
-  import('vue').VNodeProps &
-    import('vue').AllowedComponentProps &
-    import('vue').ComponentCustomProps,
-  Readonly<
-    import('vue').ExtractPropTypes<{
-      config: {
+    rotate(type: string): void;
+}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
+    config: {
         type: PropType<ImgPreviewConfigType>;
         default(): {
-          maxZoom: number;
+            maxZoom: number;
         };
-      };
-    }>
-  >,
-  {
+    };
+}>> & Readonly<{}>, {
     config: ImgPreviewConfigType;
-  },
-  {}
->;
+}, {}, Record<string, import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions, {}, any>>, {}, string, import("vue").ComponentProvideOptions, true, {}, any>;
 export default _sfc_main;
