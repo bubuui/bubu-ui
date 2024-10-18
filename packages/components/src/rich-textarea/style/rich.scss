@@ -1,3 +1,46 @@
+.bu-rich-textarea-content {
+  border: 0;
+  outline: 0;
+  position: relative;
+  display: block;
+  resize: vertical;
+  padding: 5px 15px;
+  line-height: 1.5;
+  min-width: 200px;
+  min-height: 60px;
+  max-height: 124px;
+  height: 100%;
+  box-sizing: border-box;
+  color: var(--el-input-text-color, var(--el-text-color-regular));
+  border: 1px solid #f0f0f0;
+  margin: 10px 0;
+  border-radius: 10px;
+  box-shadow: 0 0 0 1px var(--el-input-border-color, var(--el-border-color)) inset;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  resize: none
+}
+
+.bu-rich-textarea-content:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px var(--el-input-focus-border-color) inset
+}
+
+.bu-rich-textarea-content[disabled=true] {
+  background-color: #f5f7fa;
+  cursor: not-allowed
+}
+
+.bu-rich-textarea-content[disabled=false] {
+  background-color: #fff;
+  cursor: default
+}
+
+.bu-rich-textarea-content:empty:before {
+  content: attr(placeholder);
+  color: gray
+}
+
 .bu-rich-img-wrapper-active {
   display: block;
   position: fixed;

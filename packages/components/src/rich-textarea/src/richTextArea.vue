@@ -190,7 +190,8 @@ function insertHtml(html: string) {
 defineExpose({
   setText,
   getText,
-  insertHtml
+  insertHtml,
+  textDom
 });
 </script>
 <style lang="scss" scoped>

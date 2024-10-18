@@ -97,7 +97,8 @@ const B = ["disabled", "placeholder"], _ = /* @__PURE__ */ E({
     return v({
       setText: L,
       getText: T,
-      insertHtml: k
+      insertHtml: k,
+      textDom: t
     }), (e, a) => (I(), A("div", P({ class: "bu-rich-textarea-content" }, e.$attrs, {
       ref_key: "textDom",
       ref: t,

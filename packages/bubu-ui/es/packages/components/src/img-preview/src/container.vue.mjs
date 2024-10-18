@@ -1,16 +1,15 @@
 import y from "./container.vue2.mjs";
 import { resolveComponent as l, openBlock as r, createElementBlock as t, createElementVNode as n, renderSlot as C, toDisplayString as b, createCommentVNode as i, createVNode as u, withDirectives as a, vShow as d, normalizeStyle as m, withCtx as f, Fragment as D, renderList as z, createBlock as $, withModifiers as p } from "vue";
-import "./container.vue3.mjs";
 import j from "../../../../../_virtual/_plugin-vue_export-helper.mjs";
 const F = { class: "ysj-image-container" }, T = { class: "ysj-image-container-header" }, h = { key: 0 }, R = {
   key: 1,
   class: "ysj-image-opt"
-}, S = { class: "loading-wrapper" }, B = { class: "loading-wrapper" }, E = { key: 1 }, I = ["src"];
-function M(o, e, L, N, V, A) {
+}, S = { class: "loading-wrapper" }, B = { class: "loading-wrapper" }, E = { key: 1 }, M = ["src"];
+function I(o, e, L, N, V, A) {
   const g = l("BuIcon"), v = l("swipe-item"), k = l("swipe");
   return r(), t("div", F, [
     n("div", T, [
-      C(o.$slots, "default", {}, void 0, !0),
+      C(o.$slots, "default"),
       o.config.header ? i("", !0) : (r(), t("div", h, b(o.dataConfig.current + "/" + o.dataConfig.urls.length), 1)),
       !o.config.header && o.browserRedirect === "Desktop" ? (r(), t("div", R, [
         n("button", {
@@ -112,7 +111,7 @@ function M(o, e, L, N, V, A) {
                 style: m(w === o.dataConfig.current - 1 ? o.imgStyle : {}),
                 alt: "",
                 class: "img-item"
-              }, null, 12, I)
+              }, null, 12, M)
             ]),
             _: 2
           }, 1032, ["onTouchstart", "onTouchmove", "onTouchend"]))), 128))
@@ -140,7 +139,7 @@ function M(o, e, L, N, V, A) {
     ]))) : i("", !0)
   ]);
 }
-const K = /* @__PURE__ */ j(y, [["render", M], ["__scopeId", "data-v-86b3f863"]]);
+const J = /* @__PURE__ */ j(y, [["render", I]]);
 export {
-  K as default
+  J as default
 };

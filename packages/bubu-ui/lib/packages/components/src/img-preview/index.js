@@ -1,1 +1,1 @@
-"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const t=require("./src/img-preview.js"),i=require("@bubu-ui/utils"),e=i.withInstallFunction(t,"$previewImage");exports.BuImgPreview=e;exports.default=e;
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const i=require("./src/img-preview.js"),r=require("@bubu-ui/utils");require("./style/img-preview.css");const e=r.withInstallFunction(i,"$previewImage");exports.BuImgPreview=e;exports.default=e;
