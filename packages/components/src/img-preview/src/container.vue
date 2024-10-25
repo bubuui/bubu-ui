@@ -549,6 +549,15 @@ export default defineComponent({
         this.loadImage();
       }
     }
+  },
+  watch: {
+    config() {
+      this.dataConfig = Object.assign({}, this.config);
+      this.rotation = 0
+      if (this.browserRedirect === 'Desktop') {
+        this.loadImage();
+      }
+    }
   }
 });
 </script>

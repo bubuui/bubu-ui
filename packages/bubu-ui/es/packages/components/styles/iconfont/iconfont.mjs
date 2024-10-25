@@ -7,7 +7,9 @@ window._iconfont_svg_string_3889283 = '<svg><symbol id="icon-youxuanzhuan" viewB
     if (h && !i.__iconfont__svg__cssinject__) {
       i.__iconfont__svg__cssinject__ = !0;
       try {
-        document.write("<style>.svgfont {display: inline-block;width: 1em;height: 1em;fill: currentColor;vertical-align: -0.1em;font-size:16px;}</style>");
+        document.write(
+          "<style>.svgfont {display: inline-block;width: 1em;height: 1em;fill: currentColor;vertical-align: -0.1em;font-size:16px;}</style>"
+        );
       } catch (e) {
         console && console.log(e);
       }
