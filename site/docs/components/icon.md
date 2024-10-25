@@ -59,8 +59,10 @@
 颜色可通过 color 自定义，但是绝大多时候，我们只需要跟主题颜色一致即可，所以额外提供了 type 属性
 
 :::demo
-
-<bu-icon name="search"></bu-icon>
-<bu-icon name="success"></bu-icon>
-
+```vue
+<template>
+  <bu-icon name="search"></bu-icon>
+  <bu-icon name="success"></bu-icon>
+</template>
+```
 :::

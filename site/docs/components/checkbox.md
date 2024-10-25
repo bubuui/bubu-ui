@@ -2,13 +2,13 @@
 
 ### 基础用法
 
-:::demo checkbox 基础用法
+:::demo 
 
 ```vue
 <template>
   <bu-checkbox v-model="val" copy label="A"></bu-checkbox>
 </template>
-<script lang="ts">
+<script>
 import { defineComponent, ref } from 'vue';
 export default defineComponent({
   setup() {

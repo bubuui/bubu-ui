@@ -41,7 +41,10 @@
     >
       <span v-show="loading" class="loading-wrapper">图片加载中</span>
       <span v-show="error" class="loading-wrapper">图片加载失败</span>
-      <div :style="{ transform: `rotate(${rotation}deg)` }" class="ysj-img-rotate">
+      <div
+        :style="{ transform: `rotate(${rotation}deg)` }"
+        class="ysj-img-rotate"
+      >
         <img ref="imgDom" v-show="!loading" alt="" :style="imgTransform" />
       </div>
     </div>
@@ -156,7 +159,7 @@ export default defineComponent({
       originY: 0,
       isdown: false
     });
-    const rotation = ref(0)
+    const rotation = ref(0);
     return {
       imgDom,
       dataConfig,
@@ -532,28 +535,29 @@ export default defineComponent({
       window.open(url1, '_blank');
     },
     rotate(type: string) {
-      if(type === 'right') {
-        this.rotation += 90
+      if (type === 'right') {
+        this.rotation += 90;
       } else {
-        this.rotation -= 90
+        this.rotation -= 90;
       }
-      
     }
   },
   mounted() {
-    this.loadIcon();
-    if (this.config) {
-      this.init();
-      this.dataConfig = Object.assign({}, this.config);
-      if (this.browserRedirect === 'Desktop') {
-        this.loadImage();
+    this.$nextTick(() => {
+      this.loadIcon();
+      if (this.config) {
+        this.init();
+        this.dataConfig = Object.assign({}, this.config);
+        if (this.browserRedirect === 'Desktop') {
+          this.loadImage();
+        }
       }
-    }
+    });
   },
   watch: {
     config() {
       this.dataConfig = Object.assign({}, this.config);
-      this.rotation = 0
+      this.rotation = 0;
       if (this.browserRedirect === 'Desktop') {
         this.loadImage();
       }

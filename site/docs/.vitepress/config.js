@@ -1,5 +1,8 @@
 import { defineConfig } from 'vitepress';
-import { demoBlockPlugin } from 'vitepress-theme-demoblock';
+import { demoblockPlugin, demoblockVitePlugin } from 'vitepress-theme-demoblock'
+import VueTypeImports from 'vite-plugin-vue-type-imports';
+import vueJsx from '@vitejs/plugin-vue-jsx'
+import path from 'path'
 // const pkg = require('vitepress/package.json');
 const sidebar = {
   '/guide/': sidebarGuide(),
@@ -136,6 +139,14 @@ function nav() {
 export default defineConfig({
   title: 'BuBu-UI',
   head: [['meta', { name: 'theme-color', content: '#3c8772' }]],
+  vite: {
+    plugins: [demoblockVitePlugin(), vueJsx(), VueTypeImports()],
+    resolve: {
+      alias: {
+        '@alias': path.resolve(__dirname, '../')
+      }
+    }
+  },
   themeConfig: {
     sidebar,
     nav: nav(),
@@ -150,15 +161,7 @@ export default defineConfig({
   markdown: {
     config(md) {
       // 这里可以使用markdown-it插件
-      md.use(demoBlockPlugin, {
-        scriptImports: ["import * as bubuUI from '@bubu-ui/components'"],
-        scriptReplaces: [
-          {
-            searchValue: /import ({.*}) from 'bubu-ui'/g,
-            replaceValue: (s, s1) => `const ${s1} = bubuUI`,
-          },
-        ],
-      });
+      md.use(demoblockPlugin);
     },
   },
 });

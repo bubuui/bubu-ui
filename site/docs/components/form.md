@@ -2,7 +2,7 @@
 
 ### 基础用法
 
-:::demo Form 基础用法
+:::demo
 
 ```vue
 <template>
@@ -16,7 +16,7 @@
     <bu-button type="primary" @click="submit">submit</bu-button>
   </bu-form>
 </template>
-<script lang="ts">
+<script>
 import { reactive, defineComponent, ref } from 'vue';
 export default defineComponent({
   setup() {

@@ -8,8 +8,8 @@
   <bu-button @click="open()">open</bu-button>
   <bu-button @click="open(0)">open</bu-button>
 </template>
-<script lang="ts">
-import { ref } from 'vue';
+<script>
+import { ref, defineComponent } from 'vue';
 import { BuNotification } from 'bubu-ui';
 export default defineComponent({
   setup() {
@@ -41,8 +41,8 @@ export default defineComponent({
   <bu-button @click="open('info')">info</bu-button>
   <bu-button @click="open('error')">error</bu-button>
 </template>
-<script lang="ts">
-import { ref } from 'vue';
+<script>
+import { ref, defineComponent } from 'vue';
 import { BuNotification } from 'bubu-ui';
 export default defineComponent({
   setup() {
@@ -74,9 +74,9 @@ export default defineComponent({
   <bu-button @click="open('bottom-left')">bottom-left</bu-button>
   <bu-button @click="open('bottom-right')">error</bu-button>
 </template>
-<script lang="ts">
-import { ref } from 'vue';
-import { BuNotification } from 'bubu-ui';
+<script>
+import { ref, defineComponent } from 'vue';
+import { BuNotification } from '@bubu-ui/components';
 export default defineComponent({
   setup() {
     const open = (position) => {

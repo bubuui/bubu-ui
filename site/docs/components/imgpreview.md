@@ -6,9 +6,9 @@
 <template>
   <bu-button type="primary" @click="preview">预览图片</bu-button>
 </template>
-<script lang="ts">
-import { ref } from 'vue';
-import { BuImgPreview } from 'bubu-ui';
+<script>
+import { ref, defineComponent } from 'vue';
+import { BuImgPreview } from '@bubu-ui/components';
 export default defineComponent({
   setup() {
     const preview = () => {
@@ -33,38 +33,3 @@ export default defineComponent({
 
 :::
 
-
-# 图片预览（支持移动端双指放大，缩小，移动）
-
-:::demo
-
-```vue
-<template>
-  <bu-button type="primary" @click="preview">预览图片</bu-button>
-</template>
-<script lang="ts">
-import { ref } from 'vue';
-import { BuImgPreview } from 'bubu-ui';
-export default defineComponent({
-  setup() {
-    const preview = () => {
-      BuImgPreview({
-        current: 1,
-        maxZoom: 10,
-        urls: [
-          'https://sandbox.rsvp.ai/media/resources/738754654560858112'
-        ],
-        fail: (e) => {
-          console.log('e', e);
-        },
-      });
-    };
-    return {
-      preview,
-    };
-  },
-});
-</script>
-```
-
-:::

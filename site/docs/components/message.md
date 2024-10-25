@@ -4,15 +4,14 @@
 
 ```vue
 <template>
-    <bu-button @click="open">show message</button>
+    <bu-button @click="open">show message</bu-button>
 </template>
-<script lang="ts">
-import { ref, reactive } from 'vue';
-import { BuMessage } from 'bubu-ui'
+<script>
+import { ref, reactive, defineComponent } from 'vue';
+import { BuMessage } from '@bubu-ui/components'
 export default defineComponent({
   setup() {
     const open = () => {
-      console.log('23', BuMessage)
         BuMessage({
           message: "nihaoya",
           // duration: 0

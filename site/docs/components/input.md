@@ -6,8 +6,8 @@
 <template>
   <bu-input placeholder="Please input" v-model="input" />
 </template>
-<script lang="ts">
-import { ref } from 'vue';
+<script>
+import { ref, defineComponent } from 'vue';
 export default defineComponent({
   setup() {
     const input = ref('');
@@ -43,8 +43,8 @@ export default defineComponent({
 <template>
   <bu-input disabled placeholder="Please input" v-model="input" />
 </template>
-<script lang="ts">
-import { ref } from 'vue';
+<script>
+import { ref, defineComponent } from 'vue';
 export default defineComponent({
   setup() {
     const input = ref('');
@@ -66,8 +66,8 @@ export default defineComponent({
 <template>
   <bu-input placeholder="Please input" clearable v-model="input" />
 </template>
-<script lang="ts">
-import { ref } from 'vue';
+<script >
+import { ref, defineComponent } from 'vue';
 export default defineComponent({
   setup() {
     const input = ref('');
@@ -78,52 +78,3 @@ export default defineComponent({
 });
 </script>
 ```
-
-:::
-
-### Input 带图标
-
-:::demo
-
-```vue
-<template>
-  <bu-input
-    class="m-b-10"
-    placeholder="Please input"
-    clearable
-    v-model="input"
-    prefixIcon="search"
-  ></bu-input>
-
-  <bu-input class="m-b-10" placeholder="Please input" v-model="input">
-    <template #suffix>
-      <bu-icon name="search" size="20"></bu-icon>
-    </template>
-  </bu-input>
-
-  <bu-input class="m-b-10" placeholder="Please input">
-    <template #prepend>
-      <bu-icon name="search" size="20"></bu-icon>
-    </template>
-  </bu-input>
-
-  <bu-input class="m-b-10" placeholder="Please input">
-    <template #append>
-      <bu-icon name="search" size="20"></bu-icon>
-    </template>
-  </bu-input>
-</template>
-<script lang="ts">
-import { ref } from 'vue';
-export default defineComponent({
-  setup() {
-    const input = ref('');
-    return {
-      input,
-    };
-  },
-});
-</script>
-```
-
-:::

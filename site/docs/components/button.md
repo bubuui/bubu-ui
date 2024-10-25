@@ -2,7 +2,7 @@
 
 ### 基础用法
 
-:::demo Button 基础用法
+:::demo 
 
 ```vue
 <template>
@@ -20,7 +20,7 @@
 
 ### 不同尺寸
 
-:::demo Button 不同 size
+:::demo
 
 ```vue
 <template>
@@ -34,7 +34,7 @@
 
 ### 不同形状
 
-:::demo Button 不同 shape
+:::demo
 
 ```vue
 <template>

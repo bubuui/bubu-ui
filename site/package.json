@@ -19,7 +19,8 @@
 		"@bubu-ui/components": "workspace:*",
 		"@vitejs/plugin-vue-jsx": "^3.0.1",
 		"vite-plugin-vue-type-imports": "^0.2.4",
-		"vitepress": "1.0.0-alpha.36",
+		"vitepress": "1.4.1",
+		"vitepress-theme-demoblock": "3.0.7",
 		"vue": "^3.2.36"
 	},
 	"dependencies": {
@@ -28,8 +29,6 @@
 		"bubu-ui": "workspace:*",
 		"vite": "^4.3.1",
 		"vite-plugin-vue-type-imports": "^0.2.4",
-		"vitepress": "1.0.0-alpha.36",
-		"vitepress-theme-demoblock": "2.0.2",
 		"vue": "^3.2.36"
 	}
 }

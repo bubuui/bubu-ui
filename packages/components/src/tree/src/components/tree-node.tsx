@@ -33,9 +33,11 @@ export default defineComponent({
         onDrop: (event: DragEvent) => onDrop(event, treeNode.value)
       };
     }
+    // console.log('attrs', attrs)
     return () => (
       <div
         class="bu-tree--node"
+        {...props}
         style={{
           paddingLeft: `${NODE_INDENT * (treeNode.value.level - 1)}px`,
           height: NODE_HEIGHT + 'px',

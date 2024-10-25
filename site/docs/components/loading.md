@@ -10,8 +10,8 @@
     </ul>
   </div>
 </template>
-<script lang="ts">
-import { ref, reactive } from 'vue';
+<script>
+import { ref, reactive, defineComponent } from 'vue';
 export default defineComponent({
   setup() {
     const loading = ref(true);
@@ -41,8 +41,8 @@ export default defineComponent({
   >
   <bu-button type="primary" @click="openFullScreen2">service方式</bu-button>
 </template>
-<script lang="ts">
-import { ref } from 'vue';
+<script>
+import { ref, defineComponent } from 'vue';
 import { BuLoading } from 'bubu-ui';
 export default defineComponent({
   setup() {
@@ -88,8 +88,8 @@ export default defineComponent({
     </ul>
   </div>
 </template>
-<script lang="ts">
-import { ref, reactive } from 'vue';
+<script>
+import { ref, reactive, defineComponent } from 'vue';
 export default defineComponent({
   setup() {
     const loading = ref(true);

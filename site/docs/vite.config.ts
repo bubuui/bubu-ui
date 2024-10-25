@@ -4,7 +4,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx';
 import VueTypeImports from 'vite-plugin-vue-type-imports';
 export default defineConfig({
   // @ts-ignore
-  plugins: [vueJsx(), VueTypeImports()],
+  // plugins: [vueJsx(), VueTypeImports()],
   resolve: {
     alias: [
       {

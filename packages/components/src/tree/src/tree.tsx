@@ -19,11 +19,14 @@ export default defineComponent({
     const { slots } = context;
     const treeData = useTree(data?.value as ITreeNode[], props, context);
     provide('TREE_UTILS', treeData);
+    console.log('treeData', treeData)
     const TreeNode = (treeNode: IInnerTreeNode) => (
       <BuTreeNode
         {...props}
         treeNode={treeNode}
-        onClick={() => treeData.toggleNode(treeNode)}
+        onClick={() => {
+          treeData.toggleNode(treeNode)
+        }}
       >
         {{
           content: () =>

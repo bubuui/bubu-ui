@@ -2,7 +2,7 @@
 
 ### 基础用法
 
-:::demo Title 基础用法
+:::demo
 
 ```vue
 <template>
@@ -16,7 +16,7 @@
 
 ### 插槽用法
 
-:::demo Title 插槽
+:::demo
 
 ```vue
 <template>
