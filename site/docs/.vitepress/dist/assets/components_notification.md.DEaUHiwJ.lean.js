@@ -1,0 +1,1 @@
+import{_ as t,h as o,f as e}from"./chunks/framework.CIjg4aHk.js";const _=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"components/notification.md","filePath":"components/notification.md"}'),n={name:"components/notification.md"};function a(i,c,s,r,p,f){return e(),o("div")}const d=t(n,[["render",a]]);export{_ as __pageData,d as default};

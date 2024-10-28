@@ -1,0 +1,1 @@
+import{_ as e,h as t,f as o}from"./chunks/framework.CIjg4aHk.js";const d=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"components/imgpreview.md","filePath":"components/imgpreview.md"}'),r={name:"components/imgpreview.md"};function n(a,s,i,p,c,m){return o(),t("div")}const f=e(r,[["render",n]]);export{d as __pageData,f as default};

@@ -1,10 +1,13 @@
 ### 基本用法
 
+
 :::demo
 
 ```vue
 <template>
+<ClientOnly>
     <bu-button @click="open">show message</bu-button>
+    </ClientOnly>
 </template>
 <script>
 import { ref, reactive, defineComponent } from 'vue';
@@ -27,3 +30,4 @@ export default defineComponent({
 ```
 
 :::
+

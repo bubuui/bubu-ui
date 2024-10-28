@@ -5,7 +5,7 @@ import { useComponents } from './useComponents';
 // import BuBuUI from '../../../src/bubu-ui';
 // import BuBuUI from '../../../scripts/index';
 // import '../../../src/index.scss';
-import BuBuUI from '@bubu-ui/components';
+// import BuBuUI from '@bubu-ui/components';
 
 // doc
 import './common.scss';
@@ -16,9 +16,20 @@ import './common.scss';
 
 export default {
   ...DefaultTheme,
-  enhanceApp(ctx) {
+  async enhanceApp(ctx) {
+
     DefaultTheme.enhanceApp(ctx);
     useComponents(ctx.app);
-    ctx.app.use(BuBuUI);
+    ctx.app.mixin({
+      async mounted() {
+       import("@bubu-ui/components").then(module => {
+        ctx.app.use(module.default)
+      
+        // ctx.app.component(module.BuMessage.name, module.BuMessage)
+       }).catch(err => {
+        console.log('err', err)
+       })
+      }
+    })
   },
 };
