@@ -1,16 +1,19 @@
 import y from "./container.vue2.mjs";
 import { resolveComponent as l, openBlock as r, createElementBlock as t, createElementVNode as n, renderSlot as C, toDisplayString as b, createCommentVNode as i, createVNode as u, withDirectives as a, vShow as d, normalizeStyle as m, withCtx as f, Fragment as D, renderList as z, createBlock as $, withModifiers as p } from "vue";
-import j from "../../../../../_virtual/_plugin-vue_export-helper.mjs";
-const F = { class: "ysj-image-container" }, T = { class: "ysj-image-container-header" }, h = { key: 0 }, R = {
+import h from "../../../../../_virtual/_plugin-vue_export-helper.mjs";
+const j = { class: "ysj-image-container" }, F = { class: "ysj-image-container-header" }, T = { key: 0 }, R = {
   key: 1,
   class: "ysj-image-opt"
-}, S = { class: "loading-wrapper" }, B = { class: "loading-wrapper" }, E = { key: 1 }, M = ["src"];
+}, S = { class: "loading-wrapper" }, B = { class: "loading-wrapper" }, E = {
+  key: 1,
+  style: { height: "100%" }
+}, M = ["src"];
 function I(o, e, L, N, V, A) {
   const g = l("BuIcon"), v = l("swipe-item"), k = l("swipe");
-  return r(), t("div", F, [
-    n("div", T, [
+  return r(), t("div", j, [
+    n("div", F, [
       C(o.$slots, "default"),
-      o.config.header ? i("", !0) : (r(), t("div", h, b(o.dataConfig.current + "/" + o.dataConfig.urls.length), 1)),
+      o.config.header ? i("", !0) : (r(), t("div", T, b(o.dataConfig.current + "/" + o.dataConfig.urls.length), 1)),
       !o.config.header && o.browserRedirect === "Desktop" ? (r(), t("div", R, [
         n("button", {
           onClick: e[0] || (e[0] = (s) => o.rotate("right"))
@@ -139,7 +142,7 @@ function I(o, e, L, N, V, A) {
     ]))) : i("", !0)
   ]);
 }
-const J = /* @__PURE__ */ j(y, [["render", I]]);
+const J = /* @__PURE__ */ h(y, [["render", I]]);
 export {
   J as default
 };

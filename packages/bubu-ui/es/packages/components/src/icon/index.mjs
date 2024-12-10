@@ -1,8 +1,10 @@
 import o from "./src/icon.vue.mjs";
 import { withInstall as t } from "@bubu-ui/utils";
 import "./style/icon.css";
-const a = t(o);
+import "../../styles/iconfont/iconfont.css.mjs";
+import "../../styles/iconfont/iconfont.mjs";
+const f = t(o);
 export {
-  a as BuIcon,
-  a as default
+  f as BuIcon,
+  f as default
 };

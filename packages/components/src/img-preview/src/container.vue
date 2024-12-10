@@ -48,7 +48,7 @@
         <img ref="imgDom" v-show="!loading" alt="" :style="imgTransform" />
       </div>
     </div>
-    <div v-else>
+    <div style="height: 100%;" v-else>
       <swipe
         class="ysj-my-swipe"
         :active="dataConfig.current - 1"

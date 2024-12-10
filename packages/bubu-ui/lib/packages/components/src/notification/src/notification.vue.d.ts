@@ -11,7 +11,7 @@ declare const _sfc_main: import("vue").DefineComponent<{
     position: string;
     title: string;
     zIndex: number;
-    onClose?: (() => void) | undefined;
+    onClose?: () => void;
 }, {
     visible: import("vue").Ref<boolean, boolean>;
     horizontalClass: import("vue").ComputedRef<"left" | "right">;
@@ -33,9 +33,9 @@ declare const _sfc_main: import("vue").DefineComponent<{
     position: string;
     title: string;
     zIndex: number;
-    onClose?: (() => void) | undefined;
+    onClose?: () => void;
 }> & Readonly<{
-    onDestroy?: (() => any) | undefined;
+    onDestroy?: () => any;
 }>, {
     type: string;
     offset: number;
@@ -48,5 +48,5 @@ declare const _sfc_main: import("vue").DefineComponent<{
     position: string;
     title: string;
     zIndex: number;
-}, {}, Record<string, import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions, {}, any>>, {}, string, import("vue").ComponentProvideOptions, true, {}, any>;
+}, {}, undefined, {}, string, import("vue").ComponentProvideOptions, true, {}, any>;
 export default _sfc_main;

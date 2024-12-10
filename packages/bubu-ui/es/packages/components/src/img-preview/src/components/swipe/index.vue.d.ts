@@ -8,7 +8,7 @@ declare const _sfc_main: import("vue").DefineComponent<import("vue").ExtractProp
         default: number;
     };
 }>, {
-    trackDom: import("vue").Ref<HTMLDivElement | undefined, HTMLDivElement | undefined>;
+    trackDom: import("vue").Ref<HTMLDivElement, HTMLDivElement>;
     startX: import("vue").Ref<number, number>;
     startY: import("vue").Ref<number, number>;
     state: {

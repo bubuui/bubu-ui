@@ -9,7 +9,7 @@ export type MessageContext = {
 export declare const instances: MessageContext[];
 export declare const getInstance: (id: string) => {
     current: MessageContext;
-    prev: MessageContext | undefined;
+    prev: MessageContext;
 };
 export declare const getLastOffset: (id: string) => number;
 export declare const getOffsetOrSpace: (id: string, offset: number) => number;

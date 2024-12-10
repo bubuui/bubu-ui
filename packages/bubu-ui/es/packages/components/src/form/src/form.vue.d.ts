@@ -36,6 +36,6 @@ declare const _sfc_main: import("vue").DefineComponent<import("vue").ExtractProp
         required: true;
     };
 }>> & Readonly<{
-    onSubmit?: ((...args: any[]) => any) | undefined;
+    onSubmit?: (...args: any[]) => any;
 }>, {}, {}, {}, {}, string, import("vue").ComponentProvideOptions, true, {}, any>;
 export default _sfc_main;

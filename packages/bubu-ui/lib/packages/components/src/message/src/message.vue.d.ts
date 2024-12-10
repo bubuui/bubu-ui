@@ -81,7 +81,7 @@ declare const _sfc_main: import("vue").DefineComponent<import("vue").ExtractProp
         required: boolean;
     };
 }>> & Readonly<{
-    onDestory?: ((...args: any[]) => any) | undefined;
+    onDestory?: (...args: any[]) => any;
 }>, {
     type: import("./message-type").messageTypes;
     offset: number;
@@ -90,7 +90,7 @@ declare const _sfc_main: import("vue").DefineComponent<import("vue").ExtractProp
     }> | (() => import("vue").VNode<import("vue").RendererNode, import("vue").RendererElement, {
         [key: string]: any;
     }>);
-    icon: string | import("vue").Component;
+    icon: string;
     dangerouslyUseHTMLString: boolean;
     duration: number;
     showClose: boolean;

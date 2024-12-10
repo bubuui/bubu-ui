@@ -6,16 +6,16 @@ import { BuForm as c, BuFormItem as I } from "./form/index.mjs";
 import { BuGrid as s, BuGridItem as g } from "./grid/index.mjs";
 import { BuInput as M } from "./input/index.mjs";
 import { BuLoading as h } from "./loading/index.mjs";
-import { BuMessage as C } from "./message/index.mjs";
-import { BuModal as L } from "./modal/index.mjs";
-import { BuNotification as b } from "./notification/index.mjs";
-import { BuSpace as v } from "./space/index.mjs";
-import { BuSplit as H } from "./split/index.mjs";
-import { BuTitle as P } from "./title/index.mjs";
-import { BuTree as V } from "./tree/index.mjs";
-import { BuVirtualList as q } from "./virtual-list/index.mjs";
-import { BuImgPreview as z } from "./img-preview/index.mjs";
-import { BuRichTextArea as E } from "./rich-textarea/index.mjs";
+import { BuModal as C } from "./modal/index.mjs";
+import { BuRichTextArea as L } from "./rich-textarea/index.mjs";
+import { BuSpace as b } from "./space/index.mjs";
+import { BuSplit as v } from "./split/index.mjs";
+import { BuTitle as H } from "./title/index.mjs";
+import { BuTree as P } from "./tree/index.mjs";
+import { BuVirtualList as V } from "./virtual-list/index.mjs";
+import { BuImgPreview as q } from "./img-preview/index.mjs";
+import { BuMessage as z } from "./message/index.mjs";
+import { BuNotification as E } from "./notification/index.mjs";
 export {
   x as BuAside,
   e as BuButton,
@@ -28,17 +28,17 @@ export {
   g as BuGridItem,
   a as BuHeader,
   m as BuIcon,
-  z as BuImgPreview,
+  q as BuImgPreview,
   M as BuInput,
   h as BuLoading,
   n as BuMain,
-  C as BuMessage,
-  L as BuModal,
-  b as BuNotification,
-  E as BuRichTextArea,
-  v as BuSpace,
-  H as BuSplit,
-  P as BuTitle,
-  V as BuTree,
-  q as BuVirtualList
+  z as BuMessage,
+  C as BuModal,
+  E as BuNotification,
+  L as BuRichTextArea,
+  b as BuSpace,
+  v as BuSplit,
+  H as BuTitle,
+  P as BuTree,
+  V as BuVirtualList
 };

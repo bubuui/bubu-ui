@@ -15,7 +15,7 @@ declare const _default: import("vue").DefineComponent<{
     loading: boolean;
     disabled: boolean;
 }> & Readonly<{
-    onClick?: ((evt: MouseEvent) => any) | undefined;
+    onClick?: (evt: MouseEvent) => any;
 }>, {
     type: import("./button-type").IButtonType;
     size: import("./button-type").IButtonSize;

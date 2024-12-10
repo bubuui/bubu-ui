@@ -1,4 +1,4 @@
-import { defineComponent as x, ref as h, reactive as d } from "vue";
+import { defineComponent as X, ref as h, reactive as d } from "vue";
 import { loadIcon as Y } from "./icon.mjs";
 import y from "./components/swipe/index.vue.mjs";
 import b from "./components/swipeItem/index.vue.mjs";
@@ -7,7 +7,7 @@ import { BuIcon as P } from "../../icon/index.mjs";
 import { useTouch as C } from "@bubu-ui/hook";
 const l = C();
 let p, u, v, f, g, m;
-const M = x({
+const M = X({
   name: "img-preview",
   components: {
     swipe: y,
@@ -49,7 +49,7 @@ const M = x({
       originX: 0,
       originY: 0,
       isdown: !1
-    }), X = h(0);
+    }), x = h(0);
     return {
       imgDom: t,
       dataConfig: e,
@@ -61,7 +61,7 @@ const M = x({
       zoomRate: n,
       isHidden: r,
       imgPosition: c,
-      rotation: X
+      rotation: x
     };
   },
   computed: {
@@ -245,7 +245,9 @@ const M = x({
     }
   },
   mounted() {
-    this.loadIcon(), this.config && (this.init(), this.dataConfig = Object.assign({}, this.config), this.browserRedirect === "Desktop" && this.loadImage());
+    this.$nextTick(() => {
+      this.loadIcon(), this.config && (this.init(), this.dataConfig = Object.assign({}, this.config), this.browserRedirect === "Desktop" && this.loadImage());
+    });
   },
   watch: {
     config() {

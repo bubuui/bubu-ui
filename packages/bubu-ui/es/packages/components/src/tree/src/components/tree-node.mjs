@@ -1,52 +1,53 @@
-import { defineComponent as f, toRefs as x, inject as N, createVNode as n, mergeProps as b } from "vue";
+import { defineComponent as x, toRefs as N, inject as b, createVNode as n, mergeProps as d } from "vue";
 import { treeNodeProps as E } from "./tree-node-type.mjs";
 import { BuCheckbox as k } from "../../../checkbox/index.mjs";
-const o = 32, r = 24, $ = /* @__PURE__ */ f({
+const o = 32, i = 24, $ = /* @__PURE__ */ x({
   name: "BuTreeNode",
   props: E,
-  setup(d, {
+  setup(t, {
     slots: l,
     emit: T
   }) {
     const {
       treeNode: e,
-      lineable: i,
+      lineable: u,
       checkable: p,
-      dragdrop: u
-    } = x(d), {
-      getChildrenExpanded: s,
-      toggleCheckNode: v,
-      onDragstart: g,
-      onDrop: c,
-      onDragover: m,
-      onDragend: D,
-      onDragleave: h
-    } = N("TREE_UTILS");
-    let t = {};
-    return u.value && (t = {
+      dragdrop: v
+    } = N(t), {
+      getChildrenExpanded: g,
+      toggleCheckNode: s,
+      onDragstart: c,
+      onDrop: m,
+      onDragover: D,
+      onDragend: h,
+      onDragleave: f
+    } = b("TREE_UTILS");
+    let r = {};
+    return v.value && (r = {
       draggable: !0,
-      onDragend: (a) => D(a),
-      onDragleave: (a) => h(a),
-      onDragover: (a) => m(a),
-      onDragstart: (a) => g(a, e.value),
-      onDrop: (a) => c(a, e.value)
-    }), () => n("div", {
-      class: "bu-tree--node",
+      onDragend: (a) => h(a),
+      onDragleave: (a) => f(a),
+      onDragover: (a) => D(a),
+      onDragstart: (a) => c(a, e.value),
+      onDrop: (a) => m(a, e.value)
+    }), () => n("div", d({
+      class: "bu-tree--node"
+    }, t, {
       style: {
-        paddingLeft: `${r * (e.value.level - 1)}px`,
+        paddingLeft: `${i * (e.value.level - 1)}px`,
         height: o + "px",
         lineHeight: o + "px"
       }
-    }, [!e.value.isLeaf && e.value.expanded && i.value && n("span", {
+    }), [!e.value.isLeaf && e.value.expanded && u.value && n("span", {
       class: "bu-tree--node-vline",
       style: {
-        height: `${o * s(e.value).length}px`,
-        left: `${r * (e.value.level - 1) + 12}px`,
+        height: `${o * g(e.value).length}px`,
+        left: `${i * (e.value.level - 1) + 12}px`,
         top: `${o}px`
       }
-    }, null), n("div", b({
+    }, null), n("div", d({
       class: "bu-tree--node-content"
-    }, t), [e.value.isLeaf ? n("span", {
+    }, r), [e.value.isLeaf ? n("span", {
       style: {
         display: "inline-block",
         width: "25px"
@@ -54,7 +55,7 @@ const o = 32, r = 24, $ = /* @__PURE__ */ f({
     }, null) : l.icon(), p.value && n(k, {
       modelValue: e.value.checked,
       indeterminate: e.value.indeterminate,
-      onClick: () => v(e.value)
+      onClick: () => s(e.value)
     }, null), l.content(), e.value.loading && l.loading()])]);
   }
 });

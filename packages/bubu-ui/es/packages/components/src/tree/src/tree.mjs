@@ -14,22 +14,24 @@ const C = /* @__PURE__ */ s({
       height: n,
       itemHeight: m
     } = u(l), {
-      slots: o
-    } = i, t = f(r == null ? void 0 : r.value, l, i);
-    p("TREE_UTILS", t);
+      slots: t
+    } = i, o = f(r == null ? void 0 : r.value, l, i);
+    p("TREE_UTILS", o), console.log("treeData", o);
     const d = (e) => a(T, c(l, {
       treeNode: e,
-      onClick: () => t.toggleNode(e)
+      onClick: () => {
+        o.toggleNode(e);
+      }
     }), {
-      content: () => o.content ? o.content(e) : e.label,
-      icon: () => o.icon ? o.icon({
+      content: () => t.content ? t.content(e) : e.label,
+      icon: () => t.icon ? t.icon({
         nodeData: e,
-        toggleNode: t.toggleNode
+        toggleNode: o.toggleNode
       }) : a(x, {
         expanded: !!e.expanded
       }, null),
-      loading: () => o.loading ? o.loading({
-        nodeData: t
+      loading: () => t.loading ? t.loading({
+        nodeData: o
       }) : a("span", {
         class: "ml-1"
       }, [g("loading...")])
@@ -41,13 +43,13 @@ const C = /* @__PURE__ */ s({
         height: `${n.value}px`
       }
     }, [a(B, {
-      data: t.expendedTree.value,
+      data: o.expendedTree.value,
       itemHeight: m.value
     }, {
       default: ({
         item: e
       }) => d(e)
-    })]) : t.expendedTree.value.map((e) => d(e))]);
+    })]) : o.expendedTree.value.map((e) => d(e))]);
   }
 });
 export {

@@ -12,23 +12,23 @@ declare const _sfc_main: import("vue").DefineComponent<import("vue").ExtractProp
     dataConfig: import("vue").Ref<{
         urls: string[];
         current: number;
-        maxZoom?: number | undefined;
-        loop?: boolean | undefined;
+        maxZoom?: number;
+        loop?: boolean;
         header?: import("vue").VNode<import("vue").RendererNode, import("vue").RendererElement, {
             [key: string]: any;
-        }> | undefined;
-        success?: ((status: string) => void) | undefined;
-        fail?: ((status: string) => void) | undefined;
+        }>;
+        success?: (status: string) => void;
+        fail?: (status: string) => void;
     }, ImgPreviewConfigType | {
         urls: string[];
         current: number;
-        maxZoom?: number | undefined;
-        loop?: boolean | undefined;
+        maxZoom?: number;
+        loop?: boolean;
         header?: import("vue").VNode<import("vue").RendererNode, import("vue").RendererElement, {
             [key: string]: any;
-        }> | undefined;
-        success?: ((status: string) => void) | undefined;
-        fail?: ((status: string) => void) | undefined;
+        }>;
+        success?: (status: string) => void;
+        fail?: (status: string) => void;
     }>;
     loading: import("vue").Ref<boolean, boolean>;
     imgInfo: {
@@ -95,5 +95,5 @@ declare const _sfc_main: import("vue").DefineComponent<import("vue").ExtractProp
     };
 }>> & Readonly<{}>, {
     config: ImgPreviewConfigType;
-}, {}, Record<string, import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions, {}, any>>, {}, string, import("vue").ComponentProvideOptions, true, {}, any>;
+}, {}, undefined, {}, string, import("vue").ComponentProvideOptions, true, {}, any>;
 export default _sfc_main;
